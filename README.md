@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| **Article** | Publication pending. This repository is released first, so that the publishers of the measured pages can check the method before the article appears. The link will be added here on publication. |
+| **Article** | https://ismybrandinai.com/do-ai-visibility-guides-link-their-sources |
 | **Retrieved** | 30 August 2026, 20:38:51–20:40:17 UTC — one 86-second window |
 | **Pages** | 38 sampled · 32 retrieved · 13 in the published table |
 | **Headline** | Across the 13 pages, a median of **33%** of blocks containing a numeric claim carry a working link to the source. The spread runs from **0% to 62%**. |
