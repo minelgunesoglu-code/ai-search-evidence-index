@@ -27,8 +27,11 @@ yarışıyor" şartı korunur.
 2. Sayfada sayısal iddia bulunacak
 3. Bizim bir sayfamızla aynı sorguda yarışıyor olacak
 
-**Hariç:** ismybrandinai.com. Kendimizi tabloya koymuyoruz *(sahip kararı,
-30.08.2026)*; kendi ölçümümüz ayrı bir not olarak verilir.
+**Hariç:** ismybrandinai.com. Gerekçe: aracı elimizde tutarken kendi
+sayfalarımızı düzelttik, ölçülen sayfalar bunu yapamadı — bizim için çıkacak
+sayı onlarınkiyle kıyaslanabilir olmazdı. Kendi rakamlarımız gizlenmiyor: dört
+sayfamızın ölçümü (%52, %42, %52, %17) makalenin "Why our own pages are not in
+the table" bölümünde yayımlanıyor.
 
 ## 3. Derinlik: site başına ÜÇ sayfa
 
