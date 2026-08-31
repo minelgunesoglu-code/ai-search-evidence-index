@@ -40,7 +40,7 @@ sponsored results were excluded.
 Result: **38 URLs, 30 distinct domains.** A domain enters as many times as Google
 ranked it; no manual selection of additional pages was made.
 
-The full frame with every URL is in `veri/sampling-frame-serp.json`.
+The full frame with every URL is in `data/sampling-frame.json`.
 
 **The authors' own site (ismybrandinai.com) is excluded from the dataset.** The
 authors had the instrument in hand while writing their own pages; the measured
@@ -51,13 +51,13 @@ pages did not. Any figure for the authors' pages would not be comparable.
 All 38 URLs were fetched inside a single window: **30 August 2026,
 20:38:51 – 20:40:17 UTC**. 32 were retrieved; **6 failed** (HTTP 403 bot
 protection or connection failure) and are listed with their status in
-`veri/cekilen-sayfalar.csv`. The failures are not random — they are larger,
+`data/retrieval-log.csv`. The failures are not random — they are larger,
 established sites — and this is stated as a limitation.
 
 **Raw HTML snapshots are not redistributed here**, to avoid republishing third-party content in
 full. Instead the dataset carries, for every retrieved page, its **URL, retrieval timestamp, byte
 size and the SHA-256 hash of the exact snapshot we measured**
-(`veri/anlik-goruntu-ozetleri.csv`).
+(`data/snapshot-hashes.csv`).
 
 That is enough to reproduce and to falsify. Re-fetch a URL, hash what you get, and compare: an
 identical hash means you are looking at the document we measured; a different one means the page
@@ -78,7 +78,7 @@ An earlier version of the instrument counted each distinct number as a separate
 claim and applied the block's link verdict to all of them. That over-credited a
 single link with sourcing several figures, and inflated pages that write
 number-dense blocks. The block was adopted as the unit; the per-number figures
-are retained in `veri/olcum-ham-v17.json` as a robustness check.
+are retained in `data/measurement-per-number.json` as a robustness check.
 
 ## 4. Coding scheme
 
@@ -123,14 +123,14 @@ Items whose codes had been disclosed in prior discussion were excluded from this
 comparison. The single disagreement was resolved by discussion and produced
 Rule K; **κ is reported from the pre-discussion codes and is not recomputed.**
 
-Materials: `kodlama/`.
+Materials: `coding/`.
 
 ## 6. Verification
 
 - Every published figure was read by a human. All 89 sourced blocks in the
   published table were inspected individually; 11 machine verdicts were rejected
-  on inspection and the rejections are listed in `belge/SON-SONUC.md`.
-- The counter was **re-implemented independently** (`kod/BAGIMSIZ-SAYAC.py`)
+  on inspection and the rejections are listed in `notes/final-results.md`.
+- The counter was **re-implemented independently** (`code/independent-counter.py`)
   without reusing any of the original code. 17 of 25 pages matched exactly; all
   8 differences were traced to two causes (a table-credit rule present in one
   implementation, and a decimal-detection gap), neither of which changes the
@@ -151,7 +151,7 @@ Materials: `kodlama/`.
 5. **Exclusion rules remove nothing from the authors' own pages** — the authors
    do not use calls to action or homepage links as sources. The rules were also
    discovered while reading measured pages, not the authors' own. The per-page
-   count of what each rule removed is published in `belge/ELLE-DOGRULAMA.md`.
+   count of what each rule removed is published in `notes/hand-verification.md`.
 6. **One page is structurally advantaged.** `industry-lens.com` is a news
    aggregator whose format links a source by default.
 7. **Single instrument, single language, one sector** (English-language B2B
@@ -160,25 +160,25 @@ Materials: `kodlama/`.
 ## 8. Files
 
 ```
-veri/     olcum-sonuclari.csv      final table, one row per published page
-          anlik-goruntu-ozetleri.csv  SHA-256 of every snapshot, for document-identity checks
-          cekilen-sayfalar.csv     all 38 URLs incl. the 6 failures, with timestamps
-          sampling-frame-serp.json the six queries and every organic result
-          olcum-blok-bazli.json    block-unit measurement (primary)
-          olcum-ham-v17.json       per-number measurement (robustness check)
-kod/      cek-v2.py                single-window retrieval
-          olc-v2-blok.py           the instrument
-          BAGIMSIZ-SAYAC.py        independent re-implementation
-          oku.py                   dumps a page's sourced blocks for human reading
-kodlama/  kodlanan-30-madde.json   the coded items
-          kodlayici1-muhurlu-kodlar.json  Coder 1, sealed with SHA-256
-          guvenilirlik-kappa.json  inter-coder result
-          iddia-dogrulama-*.json   claim-detection validation samples
-belge/    (in Turkish) design, revision history, decisions, hand-verification log
+data/     results.csv                 final table, one row per published page
+          snapshot-hashes.csv         SHA-256 of every snapshot, for document-identity checks
+          retrieval-log.csv           all 38 URLs incl. the 6 failures, with timestamps
+          sampling-frame.json         the six queries and every organic result
+          measurement-by-block.json   block-unit measurement (primary)
+          measurement-per-number.json per-number measurement (robustness check)
+code/     fetch.py                    single-window retrieval
+          measure.py                  the instrument
+          independent-counter.py      independent re-implementation
+          dump-blocks.py              dumps a page's sourced blocks for human reading
+coding/   coded-items.json            the coded items
+          coder1-sealed-codes.json    Coder 1, sealed with SHA-256
+          intercoder-kappa.json       inter-coder result
+          claim-validation-*.json     claim-detection validation samples
+notes/    (in Turkish) design, revision history, decisions, hand-verification log
 ```
 
-The documents in `belge/` are in Turkish; this README carries the method in
-English. The revision history (`ARAC-REVIZYON-GECMISI.md`) records seven
+The documents in `notes/` are in Turkish; this README carries the method in
+English. The revision history (`notes/instrument-revisions.md`) records seven
 revisions of the instrument, each with the error found and how it was found.
 
 ## 9. Reuse
