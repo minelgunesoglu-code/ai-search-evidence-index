@@ -8,7 +8,7 @@
 | **Retrieved** | 30 August 2026, 20:38:51–20:40:17 UTC — one 86-second window |
 | **Pages** | 38 sampled · 32 retrieved · 13 in the published table |
 | **Headline** | Across the 13 pages, a median of **33%** of blocks containing a numeric claim carry a working link to the source. The spread runs from **0% to 62%**. |
-| **Reliability** | Cohen's κ = 0.80 between two independent human coders (n = 12) |
+| **Reliability** | Cohen's κ = 0.80 between two independent coders (n = 12): an AI model reading the pages by hand, and a person |
 | **Licence** | CC BY 4.0 — see `LICENSE` for what it does and does not cover |
 
 
@@ -117,7 +117,8 @@ The instrument's errors are one-directional: it never labelled an unnamed source
 as named. It only missed named sources. It does not make any page look better
 than it is.
 
-**Between two independent human coders** (n = 12): agreement 92%,
+**Between two independent coders** (n = 12), one an AI model reading the pages by
+hand and one a person: agreement 92%,
 **Cohen's κ = 0.80**. Coder 1's codes were sealed (SHA-256) before Coder 2 coded.
 Items whose codes had been disclosed in prior discussion were excluded from this
 comparison. The single disagreement was resolved by discussion and produced
