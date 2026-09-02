@@ -36,7 +36,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "orchly.ai#234",
@@ -46,7 +47,8 @@
    "links": [],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "ahrefs.com#78",
@@ -69,7 +71,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#88",
@@ -79,7 +82,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "promptzero.tech#149",
@@ -89,7 +93,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "tryprofound.com-3#86",
@@ -99,7 +104,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com-2#59",
@@ -109,7 +115,8 @@
    "links": [],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "rankability.com#103",
@@ -124,7 +131,8 @@
    ],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#44",
@@ -139,7 +147,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "industry-lens.com#33",
@@ -154,7 +163,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "semrush.com#74",
@@ -164,7 +174,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#53",
@@ -179,7 +190,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "tryprofound.com#86",
@@ -198,7 +210,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "frase.io#87",
@@ -213,7 +226,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#107",
@@ -232,7 +246,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "llmrefs.com#94",
@@ -242,7 +257,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#62",
@@ -261,7 +277,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#13",
@@ -271,7 +288,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "coursera.org#0",
@@ -286,7 +304,8 @@
    ],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "keyword.com#0",
@@ -296,7 +315,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "industry-lens.com#70",
@@ -311,7 +331,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#121",
@@ -326,7 +347,8 @@
    ],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "frase.io#445",
@@ -336,7 +358,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "semrush.com#46",
@@ -346,7 +369,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "orchly.ai#75",
@@ -356,7 +380,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#105",
@@ -366,7 +391,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "llmrefs.com#27",
@@ -376,7 +402,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com#170",
@@ -386,7 +413,8 @@
    "links": [],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "frase.io#146",
@@ -396,7 +424,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "coursera.org#5",
@@ -411,7 +440,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "semrush.com#138",
@@ -426,7 +456,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com-2#177",
@@ -441,7 +472,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "promptzero.tech#13",
@@ -456,7 +488,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "ahrefs.com#21",
@@ -475,7 +508,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com#31",
@@ -494,7 +528,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com-2#339",
@@ -504,7 +539,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "aisearch.similarweb.com#140",
@@ -514,7 +550,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com-3#115",
@@ -533,7 +570,8 @@
    ],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "orchly.ai#20",
@@ -543,7 +581,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#26",
@@ -558,7 +597,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "writer.com#154",
@@ -573,7 +613,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com#140",
@@ -588,7 +629,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com#91",
@@ -607,7 +649,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "ahrefs.com#35",
@@ -617,7 +660,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "aisearch.similarweb.com#158",
@@ -627,7 +671,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "orchly.ai#163",
@@ -637,7 +682,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com-2#300",
@@ -647,7 +693,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "ahrefs.com#22",
@@ -662,7 +709,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com#123",
@@ -672,7 +720,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "segmetrics.io#291",
@@ -682,7 +731,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com-3#69",
@@ -692,7 +742,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "aisearch.similarweb.com#207",
@@ -707,7 +758,8 @@
    ],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "zapier.com#110",
@@ -717,7 +769,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "llmrefs.com#55",
@@ -727,7 +780,8 @@
    "links": [],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#80",
@@ -742,7 +796,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "industry-lens.com#72",
@@ -757,7 +812,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "seocrawl.ai#50",
@@ -767,7 +823,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "industry-lens.com#1",
@@ -777,7 +834,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#6",
@@ -796,7 +854,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "hubspot.com#58",
@@ -806,7 +865,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "zapier.com#105",
@@ -816,7 +876,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "orchly.ai#16",
@@ -826,7 +887,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "frase.io#194",
@@ -836,7 +898,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#31",
@@ -846,7 +909,8 @@
    "links": [],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "digitalapplied.com#61",
@@ -856,7 +920,8 @@
    "links": [],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "industry-lens.com#22",
@@ -866,7 +931,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "frase.io#3",
@@ -889,7 +955,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "developers.google.com-2#15",
@@ -904,7 +971,8 @@
    ],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "llmrefs.com#102",
@@ -914,7 +982,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "orchly.ai#200",
@@ -924,7 +993,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "aisearch.similarweb.com#247",
@@ -934,7 +1004,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "zapier.com#134",
@@ -944,7 +1015,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#14",
@@ -954,7 +1026,8 @@
    "links": [],
    "code": "B",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "frase.io#26",
@@ -973,7 +1046,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "hubspot.com#85",
@@ -988,7 +1062,8 @@
    ],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com-4#111",
@@ -998,7 +1073,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "orchly.ai#25",
@@ -1008,7 +1084,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "llmrefs.com#75",
@@ -1018,7 +1095,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "hubspot.com#25",
@@ -1028,7 +1106,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "zapier.com#157",
@@ -1051,7 +1130,8 @@
    ],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "tryprofound.com-4#123",
@@ -1061,7 +1141,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#95",
@@ -1071,7 +1152,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "frase.io#2",
@@ -1086,7 +1168,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "llmrefs.com#12",
@@ -1096,7 +1179,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "frase.io#332",
@@ -1106,7 +1190,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com-3#79",
@@ -1121,7 +1206,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "seocrawl.ai#70",
@@ -1131,7 +1217,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "writer.com#10",
@@ -1146,7 +1233,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#26",
@@ -1161,7 +1249,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "purposelaunch.com#0",
@@ -1171,7 +1260,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "seocrawl.ai#74",
@@ -1181,7 +1271,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "orchly.ai#207",
@@ -1191,7 +1282,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#21",
@@ -1206,7 +1298,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#34",
@@ -1221,7 +1314,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "tryprofound.com-2#163",
@@ -1231,7 +1325,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#71",
@@ -1246,7 +1341,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "orchly.ai#95",
@@ -1256,7 +1352,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#173",
@@ -1266,7 +1363,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com#150",
@@ -1276,7 +1374,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "aisearch.similarweb.com#213",
@@ -1286,7 +1385,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "frase.io#139",
@@ -1296,7 +1396,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#36",
@@ -1311,7 +1412,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   },
   {
    "id": "industry-lens.com#23",
@@ -1326,7 +1428,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "seocrawl.ai#66",
@@ -1336,7 +1439,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#114",
@@ -1346,7 +1450,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "promptzero.tech#73",
@@ -1356,7 +1461,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com-2#56",
@@ -1366,7 +1472,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "aisearch.similarweb.com#109",
@@ -1376,7 +1483,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "purposelaunch.com#20",
@@ -1386,7 +1494,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#58",
@@ -1409,7 +1518,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "writer.com#54",
@@ -1428,7 +1538,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "seocrawl.ai#129",
@@ -1438,7 +1549,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "tryprofound.com-2#262",
@@ -1448,7 +1560,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com-4#112",
@@ -1458,7 +1571,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "tryprofound.com#40",
@@ -1468,7 +1582,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": false
   },
   {
    "id": "frase.io#409",
@@ -1483,7 +1598,8 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com#50",
@@ -1493,7 +1609,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "semrush.com#90",
@@ -1503,7 +1620,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "frase.io#54",
@@ -1513,7 +1631,8 @@
    "links": [],
    "code": "C",
    "is_a_numeric_claim": false,
-   "instrument_said_sourced": false
+   "instrument_said_sourced": false,
+   "instrument_would_score": true
   },
   {
    "id": "industry-lens.com#43",
@@ -1528,7 +1647,9 @@
    ],
    "code": "A",
    "is_a_numeric_claim": true,
-   "instrument_said_sourced": true
+   "instrument_said_sourced": true,
+   "instrument_would_score": false
   }
- ]
+ ],
+ "_derived": "instrument_would_score marks the 85 of these 120 blocks that pass the instrument's own exclusions, recomputed from each block's element and text with the predicates in code/measure.py. The pool is wider than the instrument's job on purpose, so a raw count over all 120 gives 26.7% non-claims; the 22.4% reported in the article is 19 of these 85. This field is what makes that count reproducible from this file alone."
 }
