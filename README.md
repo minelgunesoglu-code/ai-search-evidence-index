@@ -139,6 +139,15 @@ the read found. It errs towards making a page look **better** sourced than it
 is. An earlier version of this README, written on a sample of thirty, reported
 the opposite direction. That was wrong.
 
+**Two known biases, pulling opposite ways.** This one moves the figure down:
+across the 120 blind-coded blocks the instrument called 36.7% of them sourced
+where the blind read called 31.7%, about five points it should not have
+credited. The non-claim correction in limit 1 below moves it up by about four.
+The two are measured on different populations and are not netted into a single
+number, but they are close in size and opposite in sign — which is why the
+figure reported is the one measured, and why neither adjustment is offered on
+its own as a better estimate.
+
 **A smaller human check** (n = 12), from an earlier round and not a subset of the
 120 above. Twelve blocks, all of them link-free, were coded blind by a second
 person on the named-source question only; eleven of twelve matched. Twelve items
