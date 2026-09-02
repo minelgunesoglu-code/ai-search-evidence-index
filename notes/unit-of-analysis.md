@@ -1,64 +1,65 @@
-# Sayım birimi kararı — 31 Ağustos 2026
+# Choosing the unit of analysis — 31 August 2026
 
-**Ölçümün birimi BLOK olarak değiştirildi.** Rakam bazlı sayım sağlamlık
-kontrolü olarak yanında raporlanır.
+**The unit of measurement was changed to the BLOCK.** The per-number count is
+reported alongside it as a robustness check.
 
-## Sorun
+## The problem
 
-v1.2'den beri araç, bir bloktaki **her ayrı rakamı** bir iddia sayıyordu ve
-hepsine bloğun link hükmünü uyguluyordu. Yani beş rakam içeren ve **tek** link
-taşıyan bir blok, **beş linkli iddia** olarak sayılıyordu.
+Since v1.2 the instrument had treated **every separate number** inside a block as
+one claim, and applied the block's link verdict to all of them. A block holding
+five numbers and carrying a **single** link was therefore counted as **five
+sourced claims**.
 
-Tek link beş rakamı kaynaklamaz. Genellikle birini kaynaklar.
+One link does not source five numbers. Usually it sources one of them.
 
-## Bu kimi kayırıyordu
+## Who this favoured
 
-Rakam yoğun bloklar yazan sayfaları — yani yazım tarzını, kaynaklama davranışını
-değil.
+Pages that write number-dense blocks — that is, a writing habit, not a sourcing
+habit.
 
-| Sayfa | Rakam bazlı | Blok bazlı | Fark |
+| Page | Per number | Per block | Change |
 |---|---|---|---|
-| `tryprofound.com` | %74 | **%55** | −19 |
-| `writer.com` | %58 | **%40** | −18 |
-| `ahrefs.com` | %57 | **%47** | −10 |
-| `industry-lens.com` | %63 | %67 | +4 |
-| `semrush.com` | %11 | %17 | +6 |
+| `tryprofound.com` | 74% | **55%** | −19 |
+| `writer.com` | 58% | **40%** | −18 |
+| `ahrefs.com` | 57% | **47%** | −10 |
+| `industry-lens.com` | 63% | 67% | +4 |
+| `semrush.com` | 11% | 17% | +6 |
 
-**Tablonun tepesindeki üç sayfa da şişmişti.** Adıyla yayınlanacak bir tabloda
-bu kabul edilemez.
+**All three pages at the top of the table were inflated.** In a table published
+with names attached, that is not acceptable.
 
-## Karar
+## The decision
 
-**Ana ölçü: blok bazlı.** Bir blok = bir iddia; blokta çalışan bir kaynak
-bağlantısı varsa ulaşılabilir sayılır.
+**Primary measure: per block.** One block is one claim; it counts as reachable if
+the block carries a working link to a source.
 
-**Gerekçe:**
-1. Tek link, bloktaki bütün rakamlara kredi kazandırmıyor
-2. Yazım tarzından (rakam yoğunluğundan) bağımsız
-3. Okuyucunun deneyimine daha yakın: kaynaklı paragraf / kaynaksız paragraf
+**Why:**
+1. One link does not earn credit for every number in the block
+2. It is independent of writing style (number density)
+3. It is closer to what a reader experiences: a sourced paragraph, or an unsourced one
 
-**Rakam bazlı ölçü kaldırılmıyor** — her tabloda ikinci sütun olarak veriliyor.
-Okuyucu iki ölçünün de sonucunu görsün.
+**The per-number measure is not dropped** — it appears as a second column in every
+table, so a reader can see what both measures say.
 
-## Alan düzeyindeki bulgu iki ölçüde de aynı
+## The field-level finding holds under either unit
 
-| | Rakam bazlı | Blok bazlı |
+| | Per number | Per block |
 |---|---|---|
-| v2 rakip medyan | %41 | **%40** |
-| Tur 5 rakip medyan | %5 | **%6** |
-| Yayılım | %0 – %74 | **%0 – %67** |
+| v2 competitor median | 41% | **40%** |
+| Round 5 competitor median | 5% | **6%** |
+| Spread | 0% – 74% | **0% – 67%** |
 
-Manşet bulgu — **norm yok, aynı site kendi içinde bile değişiyor** — birim
-seçiminden etkilenmiyor. Etkilenen tek şey tek tek sayfa yüzdeleri, ve o yüzden
-ikisi birden yayınlanıyor.
+The headline finding — **there is no norm, and the same site varies inside
+itself** — does not depend on the choice of unit. Only the individual page
+percentages move, which is why both are published.
 
-## Kendi sayfalarımız (tur 5, tabloya girmiyor ama simetri için)
+## Our own pages (round 5, excluded from the table, shown here for symmetry)
 
-| Sayfa | Rakam bazlı | Blok bazlı |
+| Page | Per number | Per block |
 |---|---|---|
-| `BIZ-cited` | %90 | %91 |
-| `BIZ-geo` | %85 | **%75** |
-| `BIZ-tools` | %74 | %74 |
-| `BIZ-track` | %24 | **%33** |
+| `OURS-cited` | 90% | 91% |
+| `OURS-geo` | 85% | **75%** |
+| `OURS-tools` | 74% | 74% |
+| `OURS-track` | 24% | **33%** |
 
-Aynı düzeltme bize de uygulandı; `BIZ-geo` 10 puan kaybetti.
+The same correction was applied to us; `OURS-geo` lost 10 points.

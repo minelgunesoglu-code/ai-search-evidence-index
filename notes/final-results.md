@@ -1,76 +1,77 @@
-# The AI Search Evidence Index — geçerli sonuç
+# The AI Search Evidence Index — the result of record
 
-**Çekim:** 30 Ağustos 2026, 20:38:51–20:40:15 UTC · **Araç:** v1.7 (blok bazlı)
-**Doğrulama:** yayınlanan her blok elle okundu (90 blok, istisnasız); 10 makine hükmü reddedildi
+**Retrieval:** 30 August 2026, 20:38:51–20:40:15 UTC · **Instrument:** v1.7 (block unit)
+**Verification:** every published block was read by hand (90 blocks, without exception); 10 machine verdicts were rejected
 
-## Tablo
+## The table
 
-Birim = **blok**. Bir blok, içinde en az bir sayısal iddia taşıyan bir paragraf,
-liste maddesi, tablo satırı ya da alıntıdır. "Kaynaklı" = blokta, o iddiayı
-kaynaklayan çalışan bir bağlantı var.
+Unit = **block**. A block is a paragraph, list item, table row or quote carrying at
+least one numeric claim. "Sourced" = the block contains a working link that leads
+to the source of that claim.
 
-| Sayfa | Blok | Kaynaklı | **A%** | *(rakam bazlı)* |
+| Page | Blocks | Sourced | **A%** | *(per number)* |
 |---|---|---|---|---|
-| industry-lens.com | 21 | 13 | **%62** | *%63* |
-| tryprofound.com — *top-experts* | 11 | 6 | **%55** | *%74* |
-| tryprofound.com — *what-is-aeo* | 10 | 5 | **%50** | *%59* |
-| promptzero.tech | 15 | 6 | **%40** | *%44* |
-| writer.com | 35 | 14 | **%40** | *%58* |
-| frase.io | 48 | 19 | **%40** | *%41* |
-| ahrefs.com | 15 | 5 | **%33** | *%57* |
-| aisearch.similarweb.com | 24 | 8 | **%33** | *%37* |
-| semrush.com | 18 | 2 | **%11** | *%11* |
-| seocrawl.ai | 17 | 1 | **%6** | *%9* |
-| tryprofound.com — *best-tools* | 17 | 1 | **%6** | *%10* |
-| llmrefs.com | 11 | 0 | **%0** | *%0* |
-| zapier.com | 10 | 0 | **%0** | *%5* |
+| industry-lens.com | 21 | 13 | **62%** | *63%* |
+| tryprofound.com — *top-experts* | 11 | 6 | **55%** | *74%* |
+| tryprofound.com — *what-is-aeo* | 10 | 5 | **50%** | *59%* |
+| promptzero.tech | 15 | 6 | **40%** | *44%* |
+| writer.com | 35 | 14 | **40%** | *58%* |
+| frase.io | 48 | 19 | **40%** | *41%* |
+| ahrefs.com | 15 | 5 | **33%** | *57%* |
+| aisearch.similarweb.com | 24 | 8 | **33%** | *37%* |
+| semrush.com | 18 | 2 | **11%** | *11%* |
+| seocrawl.ai | 17 | 1 | **6%** | *9%* |
+| tryprofound.com — *best-tools* | 17 | 1 | **6%** | *10%* |
+| llmrefs.com | 11 | 0 | **0%** | *0%* |
+| zapier.com | 10 | 0 | **0%** | *5%* |
 
-**13 sayfa · medyan %33 · aralık %0–%62 · havuz 80/252 = %31,7**
+**13 pages · median 33% · range 0%–62% · pooled 80/252 = 31.7%**
 
-10 bloktan az olan 12 sayfa yüzdesiz bırakıldı.
+Twelve (12) pages carrying fewer than 10 blocks were left without a percentage.
 
-## Elle yapılan düzeltmeler (makine → insan)
+## Corrections made by hand (machine → human)
 
-Her biri okunup reddedildi:
+Each was read and rejected:
 
-| Sayfa | Reddedilen | Gerekçe |
+| Page | Rejected | Reason |
 |---|---|---|
-| `ahrefs.com` | `help.ahrefs.com/…` · `linkedin.com/in/joshuahardwick28` | yardım dokümanı · kişi profili |
-| `frase.io` | `/blog/ai-visibility` · `/tools/geo-score?utm_…` | kendi rehberi · kendi aracı |
-| `aisearch.similarweb.com` | `/ai-brand-visibility/prompt-analysis/` | kendi aracı |
-| `promptzero.tech` | `promptzero.tech/#features` | kendi ürün bölümü |
-| `semrush.com` | `semrush.com/ai-seo/overview/` | kendi ürün sayfası |
-| `zapier.com` | `zapier.com/apps` | kendi uygulama dizini |
-| `industry-lens.com` | `ahrefs.com/pricing` ("466M prompt" için) | fiyat sayfası o rakamı taşımıyor |
-| `tryprofound.com-4` | kendi ilgili yazısı (Gartner iddiası için) | iddiayı kaynaklamıyor |
+| `ahrefs.com` | `help.ahrefs.com/…` · `linkedin.com/in/joshuahardwick28` | help document · personal profile |
+| `frase.io` | `/blog/ai-visibility` · `/tools/geo-score?utm_…` | its own guide · its own tool |
+| `aisearch.similarweb.com` | `/ai-brand-visibility/prompt-analysis/` | its own tool |
+| `promptzero.tech` | `promptzero.tech/#features` | its own product section |
+| `semrush.com` | `semrush.com/ai-seo/overview/` | its own product page |
+| `zapier.com` | `zapier.com/apps` | its own app directory |
+| `industry-lens.com` | `ahrefs.com/pricing` (for the "466M prompts" claim) | the pricing page does not carry that figure |
+| `tryprofound.com-4` | its own related article (for the Gartner claim) | does not source the claim |
 
-## Yayınla birlikte verilecek üç uyarı
+## Three warnings to publish alongside the result
 
-**1. `industry-lens.com` yapısal olarak avantajlı.** Tablo lideri, ama
-kaynaklarının çoğu **kendi `/reports/` sayfaları**. Site bir haber toplayıcı;
-her haberi zaten bir kaynağa bağlı. Bu bir üstünlük değil, bir tür farkı.
+**1. `industry-lens.com` is structurally advantaged.** It leads the table, but most
+of its sources are **its own `/reports/` pages**. The site is a news aggregator;
+every item it publishes already points at a source. That is a difference in kind,
+not a mark of superiority.
 
-**2. İddia sayımının ölçülmüş hatası: %22,4.** 120 bloklu kör örneklemde,
-aracın gerçekten puanlayacağı 85 bloğun 19'u aslında iddia değildi (tavsiye,
-biyografi, yazım örneği) — %95 GA %13–%31. Bu 19'un yalnız 3'ü kaynaklı
-sayılmıştı, yani ağırlıkla kaynaksız tarafta duruyorlar ve **yayınlanan oranlar
-gerçeğin altındadır.** 252 bloğa uygulanınca düzeltilmiş havuz tahmini
-≈ **%36**. (Daha önceki 50 bloklu geçiş tutarlı bir %22 vermişti ama madde
-bazındaki hükümleri saklanmadı; yayınlanan sayfalardan yeniden üretilemiyor.)
+**2. The measured error in claim detection: 22.4%.** In the blind 120-block sample,
+19 of the 85 blocks the instrument would actually score were not claims at all
+(advice, biography, examples of writing) — 95% CI 13%–31%. Only 3 of those 19 had
+been counted as sourced, so they sit mostly on the unsourced side, which means
+**the published rates run below the true figure.** Applied to the 252 blocks, the
+corrected pooled estimate is ≈ **36%**. (An earlier 50-block pass gave a consistent
+22%, but its per-item verdicts were not retained and cannot be reproduced from the
+published sheets.)
 
-**3. Altı sayfa çekilemedi: dördü HTTP 403 bot koruması, ikisi bağlantı hatası** ve rastgele değiller —
-searchengineland (2), business.adobe.com, technologyadvice, brafton, otterly.
-Tarayıcıda alınan kaba gözlem: %8, %14, %11, %71, %100. Ana tabloya
-katılmadılar.
+**3. Six pages could not be retrieved: four to HTTP 403 bot protection, two to connection errors** — and they are not
+random: searchengineland (2), business.adobe.com, technologyadvice, brafton,
+otterly. A rough browser-side reading gave 8%, 14%, 11%, 71%, 100%. They are not
+part of the main table.
 
-## Değişmeyen bulgu
+## The finding that did not move
 
-Ölçüm birimi değişti (rakam → blok), 10 link elle reddedildi, örneklem iki
-sorgudan altıya çıktı. **Manşet bulgu üç değişikliğin de altından aynı çıktı:**
+The unit changed (number → block), 10 links were rejected by hand, and the sample
+grew from two queries to six. **The headline finding survived all three changes:**
 
-> Bu alanda kaynak verme diye bir norm yok. Sayfalar **%0 ile %62** arasında
-> dağılıyor ve **aynı yayıncının kendi sayfaları arasındaki fark**, yayıncılar
-> arasındaki fark kadar büyük: `tryprofound.com` bir sayfasında %55, başka bir
-> sayfasında %6.
+> There is no norm for sourcing in this field. Pages run from **0% to 62%**, and
+> **the gap between one publisher's own pages** is as wide as the gap between
+> publishers: `tryprofound.com` scores 55% on one page and 6% on another.
 
-Kaynak vermek bir kurum politikası değil; sayfa sayfa, yazar yazar değişiyor.
+Sourcing is not a house policy; it varies page by page and writer by writer.
