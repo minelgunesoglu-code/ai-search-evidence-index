@@ -28,5 +28,15 @@ keywords:
   - content measurement
   - reliability
 license: CC-BY-4.0
-date-released: '2026-09-01'
+date-released: '2026-09-02'
 url: https://ismybrandinai.com/do-ai-visibility-guides-link-their-sources
+# The concept DOI always resolves to the newest round; the version DOI below
+# pins round one, so a citation can be either "the study" or "what I read".
+doi: 10.5281/zenodo.22257563
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22257563
+    description: Concept DOI — always the latest round
+  - type: doi
+    value: 10.5281/zenodo.22257564
+    description: Round one (v1.0.0)
