@@ -12,10 +12,13 @@ authors:
 abstract: >-
   A measurement of whether a reader can reach the source of a numeric claim on
   web pages that rank for AI-search-visibility queries. Thirty-eight pages from
-  six seed queries were retrieved inside a single 86-second window on 30 August
-  2026 and coded block by block for source determinability. Reported inter-coder
-  reliability is Cohen's kappa = 0.80 (n = 12). The repository carries the
-  measurement data, the coding sheets, the instrument, an independent
+  six seed queries were sampled and thirty-two were retrieved inside a single
+  84-second window on 30 August
+  2026 and coded block by block for source determinability. Agreement between the
+  instrument and a blind re-reading of 120 blocks by the same model that wrote it
+  is Cohen's kappa = 0.85 (95% CI 0.75 to 0.95); this is a consistency check, not
+  inter-coder reliability between independent parties. The repository carries the
+  measurement data, the coding sheets, the instrument, a second
   re-implementation of the counter, and SHA-256 hashes of every snapshot scored.
 keywords:
   - source determinability
@@ -25,5 +28,5 @@ keywords:
   - content measurement
   - reliability
 license: CC-BY-4.0
-date-released: '2026-08-31'
+date-released: '2026-09-01'
 url: https://ismybrandinai.com/do-ai-visibility-guides-link-their-sources

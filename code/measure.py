@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-"""EVIDENCE INDEX CODER v1.2
+"""EVIDENCE INDEX CODER v1.7
 =============================
-The AI Search Evidence Index'in ölçüm enstrümanı. Sürüm 1.2 — 30 Ağustos 2026.
+The AI Search Evidence Index'in ölçüm enstrümanı. Sürüm 1.7 — 31 Ağustos 2026.
+YAYINLANAN TABLOYU BU SÜRÜM ÜRETTİ. Revizyon geçmişi: notes/instrument-revisions.md.
 
-v1.2 DOĞRULANMIŞTIR. 92 iddialık örneklemin 46'sı elle kodlandı (insan hükmü =
-"bloktaki link GERÇEKTEN bu rakamı kaynaklıyor mu"). Araç o kümeye karşı ayarlandı.
+v1.2 (30 Ağustos) DOĞRULANMIŞTI: 92 iddialık örneklemin 46'sı elle kodlandı
+(insan hükmü = "bloktaki link GERÇEKTEN bu rakamı kaynaklıyor mu").
 
-  ÖLÇÜLEN GEÇERLİLİK: insan koduyla %82 uyum (39 kodlanabilir iddiada 32 doğru)
+  v1.2'DE ÖLÇÜLEN GEÇERLİLİK: insan koduyla %82 uyum (39 kodlanabilir iddiada 32)
   · yanlış pozitif 2  (kaynak var dedi, yok)
   · kaçırılan     5  (kaynak vardı, göremedi)
+
+v1.7'nin güvenilirliği ayrı ve daha geniş bir örneklemde ölçüldü (120 blok,
+κ = 0,85): coding/blind-sample-120.json ve notes/reliability.md.
 
 Yanlış pozitif KASITLI olarak düşük tutuldu: adıyla skor yayınlanan bir çalışmada
 "kaynağı var" deyip yanılmak, kaçırmaktan çok daha zararlıdır. %82'yi koruyan ama
@@ -77,9 +81,13 @@ Elle doğrulamada (30.08, 40 iddia) iki kusur bulundu ve ikisi de burada kapalı
 Tablo kuralı (29.08 kararı): tablonun bitişiğindeki linkli kaynak notu, o
 tablonun satırlarını da kapsar. Her siteye AYNI ŞEKİLDE uygulanır.
 """
-import re, io, os, json, glob, html, collections, statistics as st
+import re, io, os, csv, json, glob, html, collections, statistics as st
 
-D = os.path.dirname(os.path.abspath(__file__))
+D = os.path.dirname(os.path.abspath(__file__))          # code/
+KOK = os.path.dirname(D)                                # paketin kökü
+# Anlık görüntüler (v2-*.html) pakette YAYINLANMIYOR — telif. Kendi çekimini
+# code/fetch.py ile al, ya da SNAPSHOTS ile klasörünü göster.
+ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
 
 SAYI = re.compile(
     r'(?<![\w.])(?:'
@@ -225,43 +233,67 @@ def olc(h, ALAN=None):
             if not ok and advar: adli += 1          # (A)
     return n, a_, fn, fa, adli
 
-cek = json.load(io.open(os.path.join(D, "v2-cekim.json"), encoding="utf-8"))
-kume = {x["ad"]: x["sorgu"][:28] for x in cek["sayfalar"]}
+# Ölçüm yalnızca bu dosya DOĞRUDAN çalıştırılınca yapılır. blind-sample.py
+# bu modülü kural tanımları için import ediyor; import etmek yayınlanan
+# data/measurement-by-block.json dosyasının üzerine YAZMAMALI.
+if __name__ == "__main__":
+    with io.open(os.path.join(KOK, "data/retrieval-log.csv"), encoding="utf-8") as fh:
+        cek = [r for r in csv.DictReader(fh)]
+    alinan = [r for r in cek if r["status"] == "retrieved"]
+    kume = {r["page_id"]: r["seed_query"] for r in alinan}
+    # Çekim penceresi = İLK çekimin zaman damgasından SON çekiminkine. Bu, tek
+    # kaynağı yayınlanan retrieval-log.csv olduğu için yeniden üretilebilir.
+    # NOT: ilk yayınlanan dosyadaki pencere fetch.py'nin kendi baslangic/bitis
+    # saatinden geliyordu ve son sayfanın indirme süresini de içeriyordu (85,4 sn);
+    # buradan türetilen 83,6 sn. Makaledeki "86 saniyenin içinde" ifadesi ikisinde
+    # de doğru. Ayrıntı: notes/instrument-revisions.md v1.8.
+    zaman = sorted(r["retrieved_utc"] for r in alinan)
+    pencere = [zaman[0], zaman[-1]]
 
-rows = []
-for f in sorted(glob.glob(os.path.join(D, "v2-*.html"))):
-    ad = os.path.basename(f)[3:-5]
-    n, a, fn, fa, adli = olc(io.open(f, encoding="utf-8", errors="ignore").read(), ALAN=ad.split("-")[0])
-    if n + fn < 3:
-        print(f"  ATLANDI (3'ten az iddia): {ad}")
-        continue
-    rows.append({"alan": ad, "kume": kume.get(ad, "?"), "iddia": n, "ulasilir": a,
-                 "adli": adli, "fiyat": fn, "fiyat_ulasilir": fa})
+    rows = []
+    anlik = sorted(glob.glob(os.path.join(ANLIK, "v2-*.html")))
+    if not anlik:
+        raise SystemExit(f"Anlık görüntü bulunamadı: {ANLIK}\n"
+                         f"code/fetch.py ile çek, ya da SNAPSHOTS=<klasör> ver.")
+    for f in anlik:
+        ad = os.path.basename(f)[3:-5]
+        n, a, fn, fa, adli = olc(io.open(f, encoding="utf-8", errors="ignore").read(), ALAN=ad.split("-")[0])
+        if n + fn < 3:
+            print(f"  ATLANDI (3'ten az iddia): {ad}")
+            continue
+        rows.append({"page_id": ad, "seed_query": kume.get(ad, "?"),
+                     "blocks_with_numeric_claim": n, "blocks_sourced": a,
+                     "blocks_source_named_not_linked": adli,
+                     "price_claims": fn, "price_claims_sourced": fa})
 
-def pct(a, b): return 100*a/b if b else None
+    def pct(a, b): return 100*a/b if b else None
 
-ESIK = 10   # (C) bu sayinin altinda YUZDE verilmez
-print(f"\n{'site':21} {'iddia':>6} {'linkli':>7} {'adli':>6} {'ulaşılır':>9}  not")
-for r in sorted(rows, key=lambda x: -(x["ulasilir"]/x["iddia"] if x["iddia"] else 0)):
-    p = pct(r["ulasilir"], r["iddia"])
-    az = r["iddia"] < ESIK
-    gost = "az örneklem" if az else (f"%{p:.0f}" if p is not None else "—")
-    mark = "  <<<" if r["alan"].startswith("BIZ") else ""
-    print(f"  {r['alan']:19} {r['iddia']:6} {r['ulasilir']:7} {r['adli']:6} "
-          f"{gost:>9}{mark}")
+    ESIK = 10   # (C) bu sayinin altinda YUZDE verilmez
+    print(f"\n{'site':21} {'iddia':>6} {'linkli':>7} {'adli':>6} {'ulaşılır':>9}  not")
+    for r in sorted(rows, key=lambda x: -(x["blocks_sourced"]/x["blocks_with_numeric_claim"] if x["blocks_with_numeric_claim"] else 0)):
+        p = pct(r["blocks_sourced"], r["blocks_with_numeric_claim"])
+        az = r["blocks_with_numeric_claim"] < ESIK
+        gost = "az örneklem" if az else (f"%{p:.0f}" if p is not None else "—")
+        mark = "  <<<" if r["page_id"].startswith("BIZ") else ""
+        print(f"  {r['page_id']:19} {r['blocks_with_numeric_claim']:6} {r['blocks_sourced']:7} {r['blocks_source_named_not_linked']:6} "
+              f"{gost:>9}{mark}")
 
-ge = [r for r in rows if r["iddia"] >= ESIK]                 # yuzde verilebilir
-rak = [pct(r["ulasilir"], r["iddia"]) for r in ge if not r["alan"].startswith("BIZ")]
-biz = [pct(r["ulasilir"], r["iddia"]) for r in ge if r["alan"].startswith("BIZ")]
-az  = [r["alan"] for r in rows if r["iddia"] < ESIK]
-print(f"\n  (yüzde yalnızca {ESIK}+ iddiası olan sayfalar için)")
-print(f"  RAKİP {len(rak)} sayfa · medyan %{st.median(rak):.0f} · "
-      f"sıfır {sum(1 for v in rak if v == 0)} · %10 altı {sum(1 for v in rak if v < 10)}")
-print(f"  BİZ   {len(biz)} sayfa" + (f" · medyan %{st.median(biz):.0f}" if biz else " (bu cercevede yok)"))
-print(f"  az örneklemli ({ESIK}'dan az): {', '.join(az) if az else 'yok'}")
-adt = sum(r["adli"] for r in rows if not r["alan"].startswith("BIZ"))
-print(f"\n  linksiz ama KAYNAK ADI verilen iddia (rakiplerde): {adt}")
-json.dump({"cekim_penceresi": cek["cekim_penceresi"], "satirlar": rows},
-          io.open(os.path.join(D, "v2-olcum-blok.json"), "w", encoding="utf-8"),
-          ensure_ascii=False, indent=1)
-print("\n-> v2-olcum.json")
+    ge = [r for r in rows if r["blocks_with_numeric_claim"] >= ESIK]                 # yuzde verilebilir
+    rak = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in ge if not r["page_id"].startswith("BIZ")]
+    biz = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in ge if r["page_id"].startswith("BIZ")]
+    az  = [r["page_id"] for r in rows if r["blocks_with_numeric_claim"] < ESIK]
+    print(f"\n  (yüzde yalnızca {ESIK}+ iddiası olan sayfalar için)")
+    print(f"  RAKİP {len(rak)} sayfa · medyan %{st.median(rak):.0f} · "
+          f"sıfır {sum(1 for v in rak if v == 0)} · %10 altı {sum(1 for v in rak if v < 10)}")
+    print(f"  BİZ   {len(biz)} sayfa" + (f" · medyan %{st.median(biz):.0f}" if biz else " (bu cercevede yok)"))
+    print(f"  az örneklemli ({ESIK}'dan az): {', '.join(az) if az else 'yok'}")
+    adt = sum(r["blocks_source_named_not_linked"] for r in rows if not r["page_id"].startswith("BIZ"))
+    print(f"\n  linksiz ama KAYNAK ADI verilen iddia (rakiplerde): {adt}")
+    CIKTI = os.path.join(KOK, "data/measurement-by-block.json")
+    json.dump({"_about": ("Block-unit measurement (the primary unit). One row per page: "
+                          "how many blocks carry a numeric claim, and how many of those "
+                          "carry a link to the source. The instrument judges each link "
+                          "from its address and anchor text; it never opens it."),
+               "retrieval_window": pencere, "rows": rows},
+              io.open(CIKTI, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("\n-> data/measurement-by-block.json")

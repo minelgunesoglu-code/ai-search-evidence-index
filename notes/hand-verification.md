@@ -133,3 +133,41 @@ bir ölçüdür. Ama tabloya **kaynakça sütunu eklenir** ve her sayfa için
 
 Bu ekleme mekaniktir, yorum gerektirmez, ve tek başına A'ya bakan bir okuyucunun
 `ayzeo.com` ve `xseek.io` hakkında yanlış sonuca varmasını engeller.
+
+## 5. Sayfa sonu künye taraması — v2 turu (2 Eylül 2026)
+
+Tur 5'te yapılan künye taraması bu turda tekrarlanmamıştı. Makale bu boşluğu
+aracın en büyük kalan kusuru olarak anıyor ve %0'lar o tarama yapılmadan
+yayınlanacaktı. Tarama yapıldı.
+
+**Yöntem.** `code/bibliography-scan.py`: her sayfanın son üçte birinde kaynak
+başlığı aranır (`Sources`, `References`, `Bibliography`, `Citations`,
+`Works cited`, `Further reading`), bulunursa altındaki dış linkler sayılır.
+Otomatik tarama tek başına kanıt değil; her isabet elle okunur.
+
+**Sonuç: 32 sayfanın 1'inde başlık bulundu.**
+
+| Sayfa | Ölçülen A% | Başlık | Dış link |
+|---|---|---|---|
+| `ahrefs.com` | %33 | *Further reading* | 4 |
+
+Ve bu **künye değil.** Dört link: iki Search Engine Journal yazısı,
+schema.org doğrulayıcısı ve bir tane daha — gövdedeki hiçbir rakamın kaynağı
+değiller, ilgili okuma önerisi. Ahrefs'in %33'ü değişmiyor.
+
+**Elle okunanlar.** Yayınlanan yüzdesi olan en düşük dört sayfanın son
+blokları tek tek okundu, çünkü asıl risk oradaydı:
+
+| Sayfa | A% | Sayfa nasıl bitiyor |
+|---|---|---|
+| `llmrefs.com` | **%0** | madde madde "çıkarımlar" listesi |
+| `zapier.com` | **%0** | ilgili yazı kartları + ürün çağrısı |
+| `seocrawl.ai` | %6 | ürün tanıtım tablosu |
+| `tryprofound.com-2` | %6 | ilgili makale kartları |
+
+Hiçbirinde kaynak listesi yok.
+
+**Rapora giren sonuç:** bu turda hiçbir sayfa kaynaklarını sayfa sonunda
+toplamıyor. Yayınlanan iki %0, blok bazlı ölçümün gözden kaçırdığı bir künye
+yüzünden değil. Tur 5'te durum farklıydı (`ayzeo.com` 9 künye girdisi, hiçbiri
+linkli) — o yüzden kontrol her turda tekrarlanmalı, kural haline getirildi.

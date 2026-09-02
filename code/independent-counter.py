@@ -6,6 +6,13 @@ Kasitli olarak farkli yazildi: farkli HTML ayirma, farkli sayi deseni, farkli
 link kurallari sirasi. Ayni sayiyi vermesi tesadufi olmaz.
 """
 import re, io, glob, os, json, html as H
+# --- yol düzeni (paketteki bütün betiklerde aynı) ------------------------
+_D   = os.path.dirname(os.path.abspath(__file__))     # code/
+KOK  = os.path.dirname(_D)                            # paketin kökü
+# Anlık görüntüler pakette yayınlanmıyor; türetilmiş çalışma dosyaları da
+# oraya yazılır ki yayınlanan veriyle karışmasın.
+ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
+
 
 def blok_cikar(ham):
     """Etiketleri kaldirip metin uret — olcum kodundan farkli sira."""
@@ -66,7 +73,7 @@ def kaynakli_mi(ic, metin, alan):
     return False
 
 sonuc = {}
-for yol in sorted(glob.glob('v2-*.html')):
+for yol in sorted(glob.glob(os.path.join(ANLIK, 'v2-*.html'))):
     ad = os.path.basename(yol)[3:-5]
     alan = ad.split('-')[0]
     ham = io.open(yol, encoding='utf-8', errors='ignore').read()
@@ -78,5 +85,5 @@ for yol in sorted(glob.glob('v2-*.html')):
         toplam += 1
         if kaynakli_mi(ic, metin, alan):                     kaynak += 1
     if toplam: sonuc[ad] = (toplam, kaynak)
-json.dump(sonuc, io.open('bagimsiz-sonuc.json','w',encoding='utf-8'), ensure_ascii=False, indent=1)
-print(f"bagimsiz sayac: {len(sonuc)} sayfa islendi -> bagimsiz-sonuc.json")
+json.dump(sonuc, io.open(os.path.join(ANLIK, 'independent-result.json'),'w',encoding='utf-8'), ensure_ascii=False, indent=1)
+print(f"independent counter: {len(sonuc)} pages processed -> independent-result.json")

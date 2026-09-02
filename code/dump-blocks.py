@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """Bir sayfanin butun A kademesi iddialarini elle okunacak bicimde doker."""
-import re, io, sys, html
+import re, io, os, sys, html
+
+# --- yol düzeni (paketteki bütün betiklerde aynı) ------------------------
+_D   = os.path.dirname(os.path.abspath(__file__))     # code/
+KOK  = os.path.dirname(_D)                            # paketin kökü
+# Anlık görüntüler pakette yayınlanmıyor; türetilmiş çalışma dosyaları da
+# oraya yazılır ki yayınlanan veriyle karışmasın.
+ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
+
 SAYI = re.compile(r'(?<![\w.])(?:\$\s?\d[\d,]*(?:\.\d+)?(?:\s?[kKmMbB]\b)?|\d+(?:\.\d+)?\s?%|\d+(?:\.\d+)?\s?x\b|\b\d{2,}(?:,\d{3})*\b|\b\d+\s+(?:engines?|sources?|prompts?|questions?|tools?|models?|domains?|platforms?|queries|sites?|brands?|weeks?|months?|days?|runs?|citations?)\b)', re.I)
 AY = r'(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*'
 TARIH = re.compile(r'(last (updated|reviewed)|published|posted|updated on)\b', re.I)
@@ -29,8 +37,12 @@ def linkli(ham, c, alan):
         if any(s and s in cip for s in say): return u, cip, "D-sayı"
         if len(kel(cip) & cum) >= 2: return u, cip, "D-kelime"
     return None, None, None
+if len(sys.argv) < 2:
+    raise SystemExit("kullanım: python3 code/dump-blocks.py <page_id>\n"
+                     "  örnek : python3 code/dump-blocks.py ahrefs.com\n"
+                     "  page_id değerleri: data/results.csv")
 ad = sys.argv[1]; alan = ad.split('-')[0]
-h = io.open(f'v2-{ad}.html', encoding='utf-8', errors='ignore').read()
+h = io.open(os.path.join(ANLIK, f'v2-{ad}.html'), encoding='utf-8', errors='ignore').read()
 h = re.sub(r'(?is)<(script|style|nav|header|footer|form|noscript)\b.*?</\1>', ' ', h)
 n = 0
 print(f"=== {ad} ===")

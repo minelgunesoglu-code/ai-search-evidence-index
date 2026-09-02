@@ -1,152 +1,155 @@
-[
- {
-  "sayfa": "industry-lens.com",
-  "deger": "$205",
-  "metin": "Peec AI : Peec AI Reduces Annual Plan Pricing to $80/mo for Brands and $205/mo for Agencies"
- },
- {
-  "sayfa": "hubspot.com",
-  "deger": "$50",
-  "metin": "HubSpot AEO is the best way to get started with your own AEO strategy. For $50/month, it gives you instant visibility into how your brand is showing up across answer engines with no additional HubSpot […]"
- },
- {
-  "sayfa": "writer.com",
-  "deger": "2.8x",
-  "metin": "Earned media — PR, analyst coverage, reviews — drives most AI citations. Over 85% of non-paid AI citations come from earned media sources , according to Muck Rack’s analysis of over one million AI pro […]"
- },
- {
-  "sayfa": "promptzero.tech",
-  "deger": "40%",
-  "metin": "Content that includes citations from authoritative, third-party sources saw the largest visibility boost in the study, up to 40%. […]"
- },
- {
-  "sayfa": "tryprofound.com-3",
-  "deger": "10%",
-  "metin": "Other top pairs: NerdWallet + The Points Guy (14%) in personal finance, The Verge + TechRadar (10%) in tech news, and MDPI + NIH (7%) in health"
- },
- {
-  "sayfa": "aisearch.similarweb.com",
-  "deger": "20",
-  "metin": "Limor brings 20 years of expertise in SEO and AI Search. She thrives on solving complex problems, creating scalable strategies, and building amazing dashboards."
- },
- {
-  "sayfa": "tryprofound.com-2",
-  "deger": "10",
-  "metin": "Tracks 10+ answer engines through real user interfaces, updated daily"
- },
- {
-  "sayfa": "writer.com",
-  "deger": "30%",
-  "metin": "A 30% improvement in search rankings across 50+ priority keywords in competitive categories."
- },
- {
-  "sayfa": "writer.com",
-  "deger": "20",
-  "metin": "20 hours per week of manual work eliminated from the demand generation team."
- },
- {
-  "sayfa": "seocrawl.ai",
-  "deger": "10",
-  "metin": "I've spent the last 10+ years completely obsessed with SEO — and honestly, I wouldn't have it any other way."
- },
- {
-  "sayfa": "frase.io",
-  "deger": "13",
-  "metin": "SEO rankings persist for months or years. GEO citations decay; 50% of content cited in AI answers is less than 13 weeks old ."
- },
- {
-  "sayfa": "semrush.com",
-  "deger": "67",
-  "metin": "These benchmarks aren’t rigid rules. Surfer itself notes that a Content Score of 67+ generally indicates “ optimum quality and relevance. […]"
- },
- {
-  "sayfa": "promptzero.tech",
-  "deger": "4.4x",
-  "metin": "AI models are increasingly integrated into the B2B research process. When a VP of Marketing asks ChatGPT “What are the best AI visibility platforms for B2B SaaS?”, the response shapes their shortlist […]"
- },
- {
-  "sayfa": "writer.com",
-  "deger": "20%",
-  "metin": "Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) are the practices of structuring your content and brand presence so AI systems like ChatGPT, Perplexity, Google AI Overviews, […]"
- },
- {
-  "sayfa": "industry-lens.com",
-  "deger": "$80",
-  "metin": "Start with your budget and whether you need execution or just diagnosis. Knowatoa is positioned as a diagnostic 'grader' that scores AI visibility but does not execute fixes — fine for audits, not for […]"
- },
- {
-  "sayfa": "tryprofound.com-2",
-  "deger": "20%",
-  "metin": "Scrunch monitors brand visibility across answer engines for 500-plus brands, adds site auditing, and runs an Agent Experience Platform that serves an AI-optimized version of a page to crawlers without […]"
- },
- {
-  "sayfa": "industry-lens.com",
-  "deger": "$95",
-  "metin": "AthenaHQ's self-serve annual plan starts at $95/month; Profound requires a sales demo for any paid tier — making entry cost and time-to-value the defining purchase variable."
- },
- {
-  "sayfa": "writer.com",
-  "deger": "500",
-  "metin": "What’s different at enterprise scale. Fortune 500 buying decisions look nothing like consumer purchases. Research cycles stretch over months. […]"
- },
- {
-  "sayfa": "frase.io",
-  "deger": "70",
-  "metin": "Frase: Purpose-built for answer engine optimization with question research, answer-first content templates, and FAQ optimization . […]"
- },
- {
-  "sayfa": "industry-lens.com",
-  "deger": "350",
-  "metin": "Naveed Ratansi is the Founder of IndustryLens. He works with B2B SaaS sales, marketing, and product teams to turn competitor activity across 350+ data sources into weekly intelligence they can act on."
- },
- {
-  "sayfa": "writer.com",
-  "deger": "2x",
-  "metin": "2x content engagement on campaigns optimized with the GEO agent."
- },
- {
-  "sayfa": "seocrawl.ai",
-  "deger": "20",
-  "metin": "You do not need to rank #1 to be cited in an AI Overview — Google's RAG pipeline frequently pulls cited sources from positions 4–20 based on passage quality and trust signals."
- },
- {
-  "sayfa": "aisearch.similarweb.com",
-  "deger": "10",
-  "metin": "The underlying formula is Share of Model (SoM): your brand mentions divided by the total number of AI answers in the tracked set. […]"
- },
- {
-  "sayfa": "frase.io",
-  "deger": "10",
-  "metin": "Google AI Overviews build on existing Google ranking factors but add emphasis on structured data and direct answer formats. […]"
- },
- {
-  "sayfa": "frase.io",
-  "deger": "65%",
-  "metin": "65% of Google searches now end without a click to any website , according to recent industry research. […]"
- },
- {
-  "sayfa": "industry-lens.com",
-  "deger": "31",
-  "metin": "Otterly.ai : Otterly.ai Study Documents 61% Increase in AI Citations via Temporal Title Optimization 31 Jul 2026"
- },
- {
-  "sayfa": "ahrefs.com",
-  "deger": "50",
-  "metin": "We analyzed the top 50 websites mentioned across 76.7 million AI Overviews and found a strong correlation (0.70) between being mentioned on highly-linked pages and AI Overview visibility."
- },
- {
-  "sayfa": "industry-lens.com",
-  "deger": "$199",
-  "metin": "Pricing is fragmenting fast. Peec AI cut annual Brand Starter pricing 16% to $80/mo (agencies pay $205/mo), while Knowatoa holds a two-tier structure at $59/mo Starter and $199/mo Growth — with report […]"
- },
- {
-  "sayfa": "zapier.com",
-  "deger": "89",
-  "metin": "Peec AI Smart suggestions Free trial available; from €89/month"
- },
- {
-  "sayfa": "purposelaunch.com",
-  "deger": "40",
-  "metin": "Lead every page with a 40 to 60 word direct answer to the question it targets."
- }
-]
+{
+  "_about": "Claim-detection validation, sample of 30. Each block was read to answer one question: does it actually contain a numeric claim, or did the instrument count something that is not a claim (advice, an author biography, a plan name, a scale definition)?",
+  "items": [
+    {
+      "page": "industry-lens.com",
+      "value": "$205",
+      "text": "Peec AI : Peec AI Reduces Annual Plan Pricing to $80/mo for Brands and $205/mo for Agencies"
+    },
+    {
+      "page": "hubspot.com",
+      "value": "$50",
+      "text": "HubSpot AEO is the best way to get started with your own AEO strategy. For $50/month, it gives you instant visibility into how your brand is showing up across answer engines with no additional HubSpot […]"
+    },
+    {
+      "page": "writer.com",
+      "value": "2.8x",
+      "text": "Earned media — PR, analyst coverage, reviews — drives most AI citations. Over 85% of non-paid AI citations come from earned media sources , according to Muck Rack’s analysis of over one million AI pro […]"
+    },
+    {
+      "page": "promptzero.tech",
+      "value": "40%",
+      "text": "Content that includes citations from authoritative, third-party sources saw the largest visibility boost in the study, up to 40%. […]"
+    },
+    {
+      "page": "tryprofound.com-3",
+      "value": "10%",
+      "text": "Other top pairs: NerdWallet + The Points Guy (14%) in personal finance, The Verge + TechRadar (10%) in tech news, and MDPI + NIH (7%) in health"
+    },
+    {
+      "page": "aisearch.similarweb.com",
+      "value": "20",
+      "text": "Limor brings 20 years of expertise in SEO and AI Search. She thrives on solving complex problems, creating scalable strategies, and building amazing dashboards."
+    },
+    {
+      "page": "tryprofound.com-2",
+      "value": "10",
+      "text": "Tracks 10+ answer engines through real user interfaces, updated daily"
+    },
+    {
+      "page": "writer.com",
+      "value": "30%",
+      "text": "A 30% improvement in search rankings across 50+ priority keywords in competitive categories."
+    },
+    {
+      "page": "writer.com",
+      "value": "20",
+      "text": "20 hours per week of manual work eliminated from the demand generation team."
+    },
+    {
+      "page": "seocrawl.ai",
+      "value": "10",
+      "text": "I've spent the last 10+ years completely obsessed with SEO — and honestly, I wouldn't have it any other way."
+    },
+    {
+      "page": "frase.io",
+      "value": "13",
+      "text": "SEO rankings persist for months or years. GEO citations decay; 50% of content cited in AI answers is less than 13 weeks old ."
+    },
+    {
+      "page": "semrush.com",
+      "value": "67",
+      "text": "These benchmarks aren’t rigid rules. Surfer itself notes that a Content Score of 67+ generally indicates “ optimum quality and relevance. […]"
+    },
+    {
+      "page": "promptzero.tech",
+      "value": "4.4x",
+      "text": "AI models are increasingly integrated into the B2B research process. When a VP of Marketing asks ChatGPT “What are the best AI visibility platforms for B2B SaaS?”, the response shapes their shortlist […]"
+    },
+    {
+      "page": "writer.com",
+      "value": "20%",
+      "text": "Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) are the practices of structuring your content and brand presence so AI systems like ChatGPT, Perplexity, Google AI Overviews, […]"
+    },
+    {
+      "page": "industry-lens.com",
+      "value": "$80",
+      "text": "Start with your budget and whether you need execution or just diagnosis. Knowatoa is positioned as a diagnostic 'grader' that scores AI visibility but does not execute fixes — fine for audits, not for […]"
+    },
+    {
+      "page": "tryprofound.com-2",
+      "value": "20%",
+      "text": "Scrunch monitors brand visibility across answer engines for 500-plus brands, adds site auditing, and runs an Agent Experience Platform that serves an AI-optimized version of a page to crawlers without […]"
+    },
+    {
+      "page": "industry-lens.com",
+      "value": "$95",
+      "text": "AthenaHQ's self-serve annual plan starts at $95/month; Profound requires a sales demo for any paid tier — making entry cost and time-to-value the defining purchase variable."
+    },
+    {
+      "page": "writer.com",
+      "value": "500",
+      "text": "What’s different at enterprise scale. Fortune 500 buying decisions look nothing like consumer purchases. Research cycles stretch over months. […]"
+    },
+    {
+      "page": "frase.io",
+      "value": "70",
+      "text": "Frase: Purpose-built for answer engine optimization with question research, answer-first content templates, and FAQ optimization . […]"
+    },
+    {
+      "page": "industry-lens.com",
+      "value": "350",
+      "text": "Naveed Ratansi is the Founder of IndustryLens. He works with B2B SaaS sales, marketing, and product teams to turn competitor activity across 350+ data sources into weekly intelligence they can act on."
+    },
+    {
+      "page": "writer.com",
+      "value": "2x",
+      "text": "2x content engagement on campaigns optimized with the GEO agent."
+    },
+    {
+      "page": "seocrawl.ai",
+      "value": "20",
+      "text": "You do not need to rank #1 to be cited in an AI Overview — Google's RAG pipeline frequently pulls cited sources from positions 4–20 based on passage quality and trust signals."
+    },
+    {
+      "page": "aisearch.similarweb.com",
+      "value": "10",
+      "text": "The underlying formula is Share of Model (SoM): your brand mentions divided by the total number of AI answers in the tracked set. […]"
+    },
+    {
+      "page": "frase.io",
+      "value": "10",
+      "text": "Google AI Overviews build on existing Google ranking factors but add emphasis on structured data and direct answer formats. […]"
+    },
+    {
+      "page": "frase.io",
+      "value": "65%",
+      "text": "65% of Google searches now end without a click to any website , according to recent industry research. […]"
+    },
+    {
+      "page": "industry-lens.com",
+      "value": "31",
+      "text": "Otterly.ai : Otterly.ai Study Documents 61% Increase in AI Citations via Temporal Title Optimization 31 Jul 2026"
+    },
+    {
+      "page": "ahrefs.com",
+      "value": "50",
+      "text": "We analyzed the top 50 websites mentioned across 76.7 million AI Overviews and found a strong correlation (0.70) between being mentioned on highly-linked pages and AI Overview visibility."
+    },
+    {
+      "page": "industry-lens.com",
+      "value": "$199",
+      "text": "Pricing is fragmenting fast. Peec AI cut annual Brand Starter pricing 16% to $80/mo (agencies pay $205/mo), while Knowatoa holds a two-tier structure at $59/mo Starter and $199/mo Growth — with report […]"
+    },
+    {
+      "page": "zapier.com",
+      "value": "89",
+      "text": "Peec AI Smart suggestions Free trial available; from €89/month"
+    },
+    {
+      "page": "purposelaunch.com",
+      "value": "40",
+      "text": "Lead every page with a 40 to 60 word direct answer to the question it targets."
+    }
+  ]
+}

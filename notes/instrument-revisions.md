@@ -262,3 +262,91 @@ yolunda `/products/` geçiyor diye eleniyorlardı. Kural **yalnız iç linklere*
 | `frase.io` | %42 | %41 |
 | `purposelaunch.com` | %10 | %10 *(dış link, geri geldi)* |
 | **rakip medyan** | **%36** | **%23** |
+
+## v1.8 — 1 Eylül 2026, paketleme onarımı (ÖLÇÜM MANTIĞI DEĞİŞMEDİ)
+
+31 Ağustos'ta dosya ve klasör adları Türkçe'den İngilizce'ye çevrildi, ama kod
+güncellenmedi. Sonuç: **yayınlanan kod yayınlanan veriyi okuyamıyordu.** Kaynağa
+ulaşılabilirliği ölçen bir çalışmada, çalışmanın kendisi çalıştırılamıyordu.
+
+Bu revizyonda **hiçbir ölçüm kuralına dokunulmadı.** Kanıt: onarımdan sonra
+`measure.py` yeniden çalıştırıldı ve `data/measurement-by-block.json`'ın 25
+satırının 25'i, beş alanın hepsinde birebir aynı çıktı.
+
+### Onarılanlar
+
+1. **Yollar.** Bütün betikler `code/` klasörüne göreliydi; artık paketin kökünü
+   buluyorlar. Anlık görüntüler `SNAPSHOTS` ortam değişkeniyle gösteriliyor
+   (varsayılan `snapshots/`), çünkü telif nedeniyle yayınlanmıyorlar.
+2. **`retrieval-log.csv` gerçek bir CSV.** `measure.py` ona `json.load()`
+   uyguluyordu, `fetch.py` ise üzerine JSON yazıyordu. İkisi de düzeltildi;
+   `fetch.py` artık yayınlanan dosyayla aynı sütunları yazıyor ve çekilemeyen
+   sayfaları satır olarak bırakıyor (`status = failed_http_<kod>`).
+3. **`sampling-frame.json` anahtarı.** `fetch.py` `sorgular` arıyordu, dosyada
+   `queries` yazıyor.
+4. **Çıktı anahtarları.** `measure.py` Türkçe anahtar yazıyordu; artık
+   yayınlanan dosyanın İngilizce anahtarlarını üretiyor.
+5. **`seed_query` kırpması.** Kodda 28 karakterlik bir kısaltma vardı. Yayınlanan
+   dosyada tam sorgular yazılı, yani kırpma oraya hiç yansımamıştı — ama kod
+   çalıştırılsaydı yansıyacaktı, çünkü yayınlanan dosyayı üreten sürüm bu
+   kısaltmayı taşımıyordu. Kısaltma tamamen kaldırıldı.
+6. **Import yan etkisi.** `measure.py` modül düzeyinde ölçümü çalıştırıp
+   `data/measurement-by-block.json`'ın üzerine yazıyordu; `blind-sample.py` onu
+   import ediyor. Onarımdan ÖNCE bu tehlike gerçekleşemiyordu, çünkü kod zaten
+   yol hatasından çöküyordu (madde 1) — ama yollar düzelir düzelmez aktif hale
+   geldi. Ölçüm artık `if __name__ == "__main__"` koruması altında.
+7. **`blind-sample.py` veri siliyordu.** Yayınlanan `blind-sample-120.json`
+   TAMAMLANMIŞ sayfadır (120 insan kodu + aracın hükmü). Betik ise BOŞ sayfa
+   üretir ve aynı yola yazıyordu. Aynı şekilde bu da onarımdan önce çökme
+   nedeniyle gerçekleşemiyordu; onarım sırasında bir kez gerçekleşti ve 120
+   insan kodu silindi, yedekten birebir geri alındı. Betik artık çıktısını
+   `SNAPSHOTS` klasörüne yazıyor.
+9. **`blind-sample.py` dosya adı çıkarımı.** Yolları mutlaklaştırırken
+   `alan = f[3:-5]` satırı `os.path.basename` almadan kaldı; blok kimlikleri
+   tam dosya yolu olarak üretilmeye başladı ve `alan` bozulduğu için
+   kendi-alan-adı kuralı yanlış çalıştı — tek bir blokta (`hubspot.com#85`)
+   aracın hükmü değişiyordu ve κ 0,852 yerine 0,835 çıkıyordu. Bu hata
+   onarım sırasında ÜRETİLDİ, aynı gün yapılan bağımsız denetimde yakalandı ve
+   düzeltildi. Düzeltmeden sonra betik yayınlanan örneklemi birebir yeniden
+   üretiyor: aynı 120 kimlik, aynı metinler, aynı hükümler, matris (37,1,7,75),
+   κ = 0,8522, %95 GA 0,753–0,951.
+8. **`dump-blocks.py`** `os`'u import etmiyordu ve argümansız çağrılınca
+   traceback veriyordu; artık kullanım satırı yazdırıyor.
+
+### Çekim penceresi — küçük ama bildirilmesi gereken fark
+
+Yayınlanan `retrieval_window` değeri `fetch.py`'nin kendi başlangıç/bitiş
+saatinden geliyordu ve son sayfanın indirme süresini de içeriyordu: 85,4 sn.
+`retrieval-log.csv`'deki satır zaman damgalarından türetilen pencere 83,6 sn.
+Tek kaynak artık CSV, çünkü yayınlanan tek şey o. Paketin tamamı bu değere
+hizalandı: makale, README, CITATION.cff, `notes/final-results.md` ve
+`data/measurement-per-number.json` artık 20:38:51–20:40:15 ve "84 saniye"
+diyor. `measurement-per-number.json` bu paketteki tek elle düzeltilen veri
+alanıdır; onu üreten bir betik yayınlanmıyor.
+
+### Onarımın sağladığı: bağımsız sayaç iddiası ilk kez doğrulandı
+
+Kod çalışır hale gelince `independent-counter.py` ilk kez v1.7 verisine karşı
+çalıştırılabildi. Makale ve README'nin **"25 sayfanın 17'si birebir tuttu, 8
+fark"** iddiası **doğrulandı** — ama yalnız doğru tabanda karşılaştırılınca.
+
+Bağımsız sayaçta fiyat ayrımı yok: fiyat bloklarını da toplam iddiaya katıyor.
+Karşılaştırma bu yüzden aletin fiyat DAHİL sayılarıyla yapılmalı — ve **hem
+toplam iddia hem kaynaklı sayısı** birlikte kıyaslanmalı. Yalnız toplamlara
+bakılırsa 19/25 çıkar; yayınlanan 17/25 ve adı geçen 8 sayfa ancak iki sayı
+birlikte kıyaslanınca üretilir:
+
+| karşılaştırma tabanı | birebir tutan | fark |
+|---|---|---|
+| fiyat dahil (sayacın saydığı gibi) | **17 / 25** | **8** — yayınlanan iddia |
+| fiyat ayrı (aletin saydığı gibi) | 11 / 25 | 14 |
+
+İlk denemede ikinci satırı hesaplayıp iddianın yeniden üretilemediğini
+sandım; hata bendeydi, iddiada değil. **Ders:** makale "17 of 25" derken hangi
+tabanda karşılaştırıldığını yazmıyor. Yazmalı — yoksa doğrulamaya çalışan
+okuyucu da aynı yanlış tabanı seçip iddiayı çürütülmüş sanır.
+
+Fiyat dahil tabanda kalan 8 fark: ahrefs.com, aisearch.similarweb.com,
+digitalapplied.com, frase.io, llmrefs.com, orchly.ai, seocrawl.ai, writer.com.
+README bunları iki nedene bağlıyor (bir uygulamada olan tablo-kredi kuralı ve
+ondalık yakalama boşluğu); sayıları yukarıdaki tabloyla tutuyor.

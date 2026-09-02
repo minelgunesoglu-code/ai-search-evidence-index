@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 """v2 ÇEKİM — altı sorgunun organik sonuçları, TEK zaman damgasıyla.
 
-Çerçeve: serp-v2.json (30.08.2026, google.com, hl=en&gl=us).
+Çerçeve: data/sampling-frame.json (30.08.2026, google.com, hl=en&gl=us).
 Yayın platformları ve sponsorlu sonuçlar SERP çıkarımında zaten elenmişti.
 
 Çekilemeyen (403, ölü, boş) LİSTEDEN DÜŞER ve düştüğü raporlanır — sessizce atlanmaz.
 Dosyalar v2-<alan>[-N].html olarak yazılır; tur 3/4/5 dosyalarına DOKUNULMAZ.
 """
-import subprocess, os, json, datetime, time, collections
+import subprocess, os, csv, json, datetime, time, collections
 import urllib.parse as up
 
-D = os.path.dirname(os.path.abspath(__file__))
+D = os.path.dirname(os.path.abspath(__file__))          # code/
+KOK = os.path.dirname(D)                                # paketin kökü
+ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
+os.makedirs(ANLIK, exist_ok=True)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
-serp = json.load(open(os.path.join(D, "serp-v2.json"), encoding="utf-8"))
+serp = json.load(open(os.path.join(KOK, "data/sampling-frame.json"), encoding="utf-8"))
 
 hedef = []
 say = collections.Counter()
-for q, urls in serp["sorgular"].items():
+for q, urls in serp["queries"].items():
     for u in urls:
         alan = up.urlparse(u).netloc.replace("www.", "")
         say[alan] += 1
@@ -38,16 +41,21 @@ for ad, u, q in hedef:
         dusen.append((ad, u, kod, len(govde)))
         print(f"  DUSTU  {ad:26} http {kod} · {len(govde)} bayt")
         continue
-    f = os.path.join(D, f"v2-{ad}.html")
+    f = os.path.join(ANLIK, f"v2-{ad}.html")
     open(f, "w", encoding="utf-8").write(govde)
-    meta.append({"ad": ad, "url": u, "sorgu": q, "zaman": t.isoformat(), "bayt": len(govde)})
+    meta.append({"ad": ad, "url": u, "sorgu": q, "zaman": t.isoformat(), "karakter": len(govde)})
     print(f"  ok     {ad:26} http 200 · {len(govde):>8} bayt")
     time.sleep(0.6)
 son = datetime.datetime.now(datetime.timezone.utc)
-json.dump({"cekim_penceresi": [bas.isoformat(), son.isoformat()],
-           "alinan": len(meta), "dusen": [{"ad": a, "url": u, "http": k, "bayt": b} for a, u, k, b in dusen],
-           "sayfalar": meta},
-          open(os.path.join(D, "v2-cekim.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+# Çıktı gerçek bir CSV. Çekilemeyen sayfalar SATIR OLARAK kalır (sessizce
+# düşmez); sorgu ve zaman sütunları boş, status = failed_http_<kod>.
+with open(os.path.join(KOK, "data/retrieval-log.csv"), "w", encoding="utf-8", newline="") as fh:
+    w = csv.writer(fh)
+    w.writerow(["page_id", "url", "seed_query", "retrieved_utc", "characters", "status"])
+    for m in meta:
+        w.writerow([m["ad"], m["url"], m["sorgu"], m["zaman"], m["karakter"], "retrieved"])
+    for a, u, k, b in dusen:
+        w.writerow([a, u, "", "", b, f"failed_http_{k}"])
 print(f"\nalinan {len(meta)} · dusen {len(dusen)} · sure {(son-bas).seconds} sn")
 print(f"pencere: {bas.strftime('%H:%M:%S')} - {son.strftime('%H:%M:%S')} UTC")
 if dusen:

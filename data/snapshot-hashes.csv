@@ -1,4 +1,4 @@
-page_id,url,retrieved_utc,bytes,sha256_of_snapshot
+page_id,url,retrieved_utc,characters,sha256_of_snapshot
 developers.google.com,https://developers.google.com/search/docs/fundamentals/ai-optimization-guide,2026-08-30T20:38:51.621519+00:00,190503,d334ec5f0bffa27d80b589c7c224f663d5fcd160d7cc80fef5e7136169876b8f
 aisearch.similarweb.com,https://aisearch.similarweb.com/blog/what-is-geo/,2026-08-30T20:38:53.494037+00:00,657785,f7ecc7bbe9e61ddf0fb7ff3a1515c5c8576383df6db25da9bf66876b48aa9648
 tryprofound.com,https://www.tryprofound.com/articles/top-experts-in-generative-engine-optimization,2026-08-30T20:38:56.146244+00:00,233257,dfdba698c69b3a2b7724592fd5a187c322a136e650335dc86631617c695a0ffa

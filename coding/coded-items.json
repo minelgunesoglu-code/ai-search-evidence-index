@@ -1,272 +1,281 @@
-[
- {
-  "sayfa": "nav43.com",
-  "tur": "p",
-  "deger": "100,000",
-  "cumle": "One of the most important findings from recent research: only 11% domain overlap exists between ChatGPT and Perplexity citations for the same queries (Joshua Blyskal/Profound, 100,000 prompts analyzed […]",
-  "blok": "One of the most important findings from recent research: only 11% domain overlap exists between ChatGPT and Perplexity citations for the same queries (Joshua Blyskal/Profound, 100,000 prompts analyzed […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
+{
+ "_about": "The thirty blocks put in front of a coder to test the instrument. Each carries the sentence as it appeared on the page, the links found inside the block, and the verdict the instrument gave it.",
+ "_codes": {
+  "A": "a working link inside the block leads to the source of the figure",
+  "B": "a source is named in the block but not linked",
+  "C": "neither"
  },
- {
-  "sayfa": "dageno.ai",
-  "tur": "p",
-  "deger": "200",
-  "cumle": "Start with 50–200 prompts across different buyer intent categories.",
-  "blok": "Start with 50–200 prompts across different buyer intent categories.",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "llmpulse.ai",
-  "tur": "p",
-  "deger": "10",
-  "cumle": "Indig’s data showed pages above 20,000 characters averaged 10.18 citations versus 2.39 for pages under 500 characters.",
-  "blok": "Indig’s data showed pages above 20,000 characters averaged 10.18 citations versus 2.39 for pages under 500 characters. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "frase.io",
-  "tur": "p",
-  "deger": "68%",
-  "cumle": "About 68% of Google searches ended without a click in early 2026, up sharply year over year, according to SparkToro's analysis of Similarweb clickstream data from January to April 2026.",
-  "blok": "Search is moving into the answer itself. About 68% of Google searches ended without a click in early 2026, up sharply year over year, according to SparkToro's analysis of Similarweb clickstream data f […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "obapr.com",
-  "tur": "p",
-  "deger": "000",
-  "cumle": "One exceptional 3,000-word guide outperforms 10 brief posts.",
-  "blok": "The reality: ChatGPT strongly favors depth. One exceptional 3,000-word guide outperforms 10 brief posts.",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "BIZ-track",
-  "tur": "p",
-  "deger": "10",
-  "cumle": "How do I monitor my brand in ChatGPT? Build a fixed set of 10–15 prompts that real buyers would ask across awareness, comparison, and problem intents, then run them through ChatGPT (test both the free […]",
-  "blok": "How do I monitor my brand in ChatGPT? Build a fixed set of 10–15 prompts that real buyers would ask across awareness, comparison, and problem intents, then run them through ChatGPT (test both the free […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "usegrowthos.com",
-  "tur": "p",
-  "deger": "34%",
-  "cumle": "A typical Action Center recommendation reads something like this: \"Add a comparison table to your pricing page, since competitors are cited in 34% of related prompts and you're cited in only 6%.\" That […]",
-  "blok": "A typical Action Center recommendation reads something like this: \"Add a comparison table to your pricing page, since competitors are cited in 34% of related prompts and you're cited in only 6%.\" That […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "aitoolssme.com",
-  "tur": "p",
-  "deger": "70%",
-  "cumle": "It currently holds around 70% market share.",
-  "blok": "ChatGPT is first priority, full stop. It currently holds around 70% market share. If you’re only going to focus on one platform for brand citations, it’s this one.",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "ayzeo.com",
-  "tur": "p",
-  "deger": "40%",
-  "cumle": "The authority for this is Google's own guidance: its Creating Helpful, Reliable, People-First Content documentation strongly encourages \"adding accurate authorship information, such as bylines,\" and i […]",
-  "blok": "Authorship is the E-E-A-T lever most sites leave on the table. Formatting and schema get a page eligible to be cited; a credible, verifiable author is often what tips a model toward trusting it. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "BIZ-cited",
-  "tur": "p",
-  "deger": "34.3%",
-  "cumle": "Around 52.2% of cited posts had it, and the highest-performing pages combined an answer capsule with original data — 34.3% did both, and that combination cited best of all.",
-  "blok": "After answer capsules, the second-strongest trait in the cited-content audit was original or \"owned\" data: proprietary statistics, first-party benchmarks, a branded point of view. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "BIZ-tools",
-  "tur": "p",
-  "deger": "$20",
-  "cumle": "How much do AI search visibility tools cost? Entry-level monitoring starts around $29/mo (Otterly.ai) or $20/mo (Rankscale.ai Essentials).",
-  "blok": "How much do AI search visibility tools cost? Entry-level monitoring starts around $29/mo (Otterly.ai) or $20/mo (Rankscale.ai Essentials). […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "industry-lens.com",
-  "tur": "p",
-  "deger": "38%",
-  "cumle": "Ahrefs' own research undercuts the 'rank well and you will be cited' assumption: only 38% of pages Google AI Overviews cite also appear in the top ten organic results, down from 76% a year earlier.",
-  "blok": "Ahrefs' own research undercuts the 'rank well and you will be cited' assumption: only 38% of pages Google AI Overviews cite also appear in the top ten organic results, down from 76% a year earlier. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "aitoolssme.com",
-  "tur": "p",
-  "deger": "60",
-  "cumle": "This is James’s fastest method for lifting brand citations, and it’s the one that produced those 60-minute results he mentioned at the start.",
-  "blok": "Find what’s already being cited and get into it. This is James’s fastest method for lifting brand citations, and it’s the one that produced those 60-minute results he mentioned at the start. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "nav43.com",
-  "tur": "p",
-  "deger": "10",
-  "cumle": "According to BrightEdge, 83.3% of AI Overview citations come from pages beyond the traditional top-10 Google results.",
-  "blok": "Google AI Overviews adds another layer of complexity. According to BrightEdge, 83.3% of AI Overview citations come from pages beyond the traditional top-10 Google results. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "data-mania.com",
-  "tur": "li",
-  "deger": "$199",
-  "cumle": "What the price note means or $199/mo via One Starter (50 prompts)",
-  "blok": "What the price note means or $199/mo via One Starter (50 prompts)",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "BIZ-tools",
-  "tur": "p",
-  "deger": "$399",
-  "cumle": "Profound covers one engine at $99 and three at $399.",
-  "blok": "Profound covers one engine at $99 and three at $399. Broader coverage is an enterprise conversation.",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "BIZ-geo",
-  "tur": "p",
-  "deger": "000",
-  "cumle": "When I checked the results for this term on 14 August 2026, the page ranking second ran past 5,000 words and cited six external sources for its statistics without collecting any data of its own.",
-  "blok": "The field is roughly two years old. Almost every guide you will read, including the ones ranking above this page, is a synthesis of other people's claims rather than anything the author measured. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "evertune.ai",
-  "tur": "li",
-  "deger": "24",
-  "cumle": "Technical AEO Monitoring: 24/7 technical audits and alerts to ensure your most important assets remain accessible to AI crawlers.",
-  "blok": "Technical AEO Monitoring: 24/7 technical audits and alerts to ensure your most important assets remain accessible to AI crawlers.",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "frase.io",
-  "tur": "p",
-  "deger": "$39",
-  "cumle": "Frase plans start at $39/month billed yearly, with AI visibility tracking included in the platform.",
-  "blok": "Pricing ranges from entry-level monitoring plans up to enterprise tiers built for large prompt sets and global coverage. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "thehoth.com",
-  "tur": "p",
-  "deger": "900",
-  "cumle": "More than 900 million people use ChatGPT every week, and a growing share of them use it the way they used to use Google: to find a product, compare options, and decide who to buy from.",
-  "blok": "More than 900 million people use ChatGPT every week, and a growing share of them use it the way they used to use Google: to find a product, compare options, and decide who to buy from. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "usegrowthos.com",
-  "tur": "p",
-  "deger": "$250",
-  "cumle": "It's SOC 2 compliant, but pricing starts around $250 to $300 a month with no low-cost tier, so it fits larger teams more than solo marketers or small businesses.",
-  "blok": "It is built for enterprise teams and agencies that want AI visibility tracking paired with technical content delivery. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "ayzeo.com",
-  "tur": "blockquote",
-  "deger": "12%",
-  "cumle": "Stat: Only ~12% of websites use schema at all.",
-  "blok": "Stat: Only ~12% of websites use schema at all. However, \"LLMs grounded in knowledge graphs achieve 300% higher accuracy compared to those using only unstructured data.\" By contributing your site's dat […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "useomnia.com",
-  "tur": "p",
-  "deger": "30",
-  "cumle": "Here’s a simple 30-day plan for boosting brand visibility on ChatGPT.",
-  "blok": "Here’s a simple 30-day plan for boosting brand visibility on ChatGPT.",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "llmrefs.com",
-  "tur": "li",
-  "deger": "10%",
-  "cumle": "Vercel reports that 10% of new signups now come from ChatGPT referrals.",
-  "blok": "Growing referral traffic. ChatGPT alone is already driving referral traffic to tens of thousands of distinct domains. Vercel reports that 10% of new signups now come from ChatGPT referrals.",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "istudiosmedia.com",
-  "tur": "p",
-  "deger": "25%",
-  "cumle": "Gartner predicts that by 2026, traditional search engine volume will drop by 25% as consumers pivot toward AI-powered agents and chatbots.",
-  "blok": "Gartner predicts that by 2026, traditional search engine volume will drop by 25% as consumers pivot toward AI-powered agents and chatbots. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "llmrefs.com",
-  "tur": "p",
-  "deger": "20%",
-  "cumle": "Research from GEO firm Brandlight suggests that the overlap between top Google links and AI-cited sources has dropped from 70% to below 20%.",
-  "blok": "Research from GEO firm Brandlight suggests that the overlap between top Google links and AI-cited sources has dropped from 70% to below 20%. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "aiclicks.io",
-  "tur": "tr",
-  "deger": "$99",
-  "cumle": "Starts from $99/mo",
-  "blok": "Gauge - AI visibility tracking across ChatGPT, Perplexity, Google AI Overviews, Google AI Mode, and other major AI engines - Prompt discovery and share-of-voice tracking across AI platforms - Citation […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "industry-lens.com",
-  "tur": "p",
-  "deger": "22,000",
-  "cumle": "Generative Engine Optimization (GEO) — getting your brand cited inside ChatGPT, Perplexity, Gemini and Google's AI Overviews — went from a fringe idea to a 22,000-search-a-month category in 2026.",
-  "blok": "Generative Engine Optimization (GEO) — getting your brand cited inside ChatGPT, Perplexity, Gemini and Google's AI Overviews — went from a fringe idea to a 22,000-search-a-month category in 2026. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "semrush.com",
-  "tur": "li",
-  "deger": "100",
-  "cumle": "AI Visibility Score (0-100) : Measures how often your brand appears in ChatGPT answers relative to competitors—a quick indicator of how strong your overall footprint is compared to co",
-  "blok": "AI Visibility Score (0-100) : Measures how often your brand appears in ChatGPT answers relative to competitors—a quick indicator of how strong your overall footprint is compared to competitors",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- },
- {
-  "sayfa": "useomnia.com",
-  "tur": "p",
-  "deger": "30",
-  "cumle": "We've also included a 30-day execution plan to help you move from baseline to visibility fast.",
-  "blok": "This guide shows you how to improve brand visibility in ChatGPT — from understanding how answers are formed, to what influences mentions and citations, to measuring progress. […]",
-  "linkler": [],
-  "makine": "ULASILAMAZ"
- }
-]
+ "items": [
+  {
+   "page": "nav43.com",
+   "element": "p",
+   "value": "100,000",
+   "sentence": "One of the most important findings from recent research: only 11% domain overlap exists between ChatGPT and Perplexity citations for the same queries (Joshua Blyskal/Profound, 100,000 prompts analyzed […]",
+   "block": "One of the most important findings from recent research: only 11% domain overlap exists between ChatGPT and Perplexity citations for the same queries (Joshua Blyskal/Profound, 100,000 prompts analyzed […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "dageno.ai",
+   "element": "p",
+   "value": "200",
+   "sentence": "Start with 50–200 prompts across different buyer intent categories.",
+   "block": "Start with 50–200 prompts across different buyer intent categories.",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "llmpulse.ai",
+   "element": "p",
+   "value": "10",
+   "sentence": "Indig’s data showed pages above 20,000 characters averaged 10.18 citations versus 2.39 for pages under 500 characters.",
+   "block": "Indig’s data showed pages above 20,000 characters averaged 10.18 citations versus 2.39 for pages under 500 characters. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "frase.io",
+   "element": "p",
+   "value": "68%",
+   "sentence": "About 68% of Google searches ended without a click in early 2026, up sharply year over year, according to SparkToro's analysis of Similarweb clickstream data from January to April 2026.",
+   "block": "Search is moving into the answer itself. About 68% of Google searches ended without a click in early 2026, up sharply year over year, according to SparkToro's analysis of Similarweb clickstream data f […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "obapr.com",
+   "element": "p",
+   "value": "000",
+   "sentence": "One exceptional 3,000-word guide outperforms 10 brief posts.",
+   "block": "The reality: ChatGPT strongly favors depth. One exceptional 3,000-word guide outperforms 10 brief posts.",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "BIZ-track",
+   "element": "p",
+   "value": "10",
+   "sentence": "How do I monitor my brand in ChatGPT? Build a fixed set of 10–15 prompts that real buyers would ask across awareness, comparison, and problem intents, then run them through ChatGPT (test both the free […]",
+   "block": "How do I monitor my brand in ChatGPT? Build a fixed set of 10–15 prompts that real buyers would ask across awareness, comparison, and problem intents, then run them through ChatGPT (test both the free […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "usegrowthos.com",
+   "element": "p",
+   "value": "34%",
+   "sentence": "A typical Action Center recommendation reads something like this: \"Add a comparison table to your pricing page, since competitors are cited in 34% of related prompts and you're cited in only 6%.\" That […]",
+   "block": "A typical Action Center recommendation reads something like this: \"Add a comparison table to your pricing page, since competitors are cited in 34% of related prompts and you're cited in only 6%.\" That […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "aitoolssme.com",
+   "element": "p",
+   "value": "70%",
+   "sentence": "It currently holds around 70% market share.",
+   "block": "ChatGPT is first priority, full stop. It currently holds around 70% market share. If you’re only going to focus on one platform for brand citations, it’s this one.",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "ayzeo.com",
+   "element": "p",
+   "value": "40%",
+   "sentence": "The authority for this is Google's own guidance: its Creating Helpful, Reliable, People-First Content documentation strongly encourages \"adding accurate authorship information, such as bylines,\" and i […]",
+   "block": "Authorship is the E-E-A-T lever most sites leave on the table. Formatting and schema get a page eligible to be cited; a credible, verifiable author is often what tips a model toward trusting it. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "BIZ-cited",
+   "element": "p",
+   "value": "34.3%",
+   "sentence": "Around 52.2% of cited posts had it, and the highest-performing pages combined an answer capsule with original data — 34.3% did both, and that combination cited best of all.",
+   "block": "After answer capsules, the second-strongest trait in the cited-content audit was original or \"owned\" data: proprietary statistics, first-party benchmarks, a branded point of view. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "BIZ-tools",
+   "element": "p",
+   "value": "$20",
+   "sentence": "How much do AI search visibility tools cost? Entry-level monitoring starts around $29/mo (Otterly.ai) or $20/mo (Rankscale.ai Essentials).",
+   "block": "How much do AI search visibility tools cost? Entry-level monitoring starts around $29/mo (Otterly.ai) or $20/mo (Rankscale.ai Essentials). […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "industry-lens.com",
+   "element": "p",
+   "value": "38%",
+   "sentence": "Ahrefs' own research undercuts the 'rank well and you will be cited' assumption: only 38% of pages Google AI Overviews cite also appear in the top ten organic results, down from 76% a year earlier.",
+   "block": "Ahrefs' own research undercuts the 'rank well and you will be cited' assumption: only 38% of pages Google AI Overviews cite also appear in the top ten organic results, down from 76% a year earlier. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "aitoolssme.com",
+   "element": "p",
+   "value": "60",
+   "sentence": "This is James’s fastest method for lifting brand citations, and it’s the one that produced those 60-minute results he mentioned at the start.",
+   "block": "Find what’s already being cited and get into it. This is James’s fastest method for lifting brand citations, and it’s the one that produced those 60-minute results he mentioned at the start. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "nav43.com",
+   "element": "p",
+   "value": "10",
+   "sentence": "According to BrightEdge, 83.3% of AI Overview citations come from pages beyond the traditional top-10 Google results.",
+   "block": "Google AI Overviews adds another layer of complexity. According to BrightEdge, 83.3% of AI Overview citations come from pages beyond the traditional top-10 Google results. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "data-mania.com",
+   "element": "li",
+   "value": "$199",
+   "sentence": "What the price note means or $199/mo via One Starter (50 prompts)",
+   "block": "What the price note means or $199/mo via One Starter (50 prompts)",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "BIZ-tools",
+   "element": "p",
+   "value": "$399",
+   "sentence": "Profound covers one engine at $99 and three at $399.",
+   "block": "Profound covers one engine at $99 and three at $399. Broader coverage is an enterprise conversation.",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "BIZ-geo",
+   "element": "p",
+   "value": "000",
+   "sentence": "When I checked the results for this term on 14 August 2026, the page ranking second ran past 5,000 words and cited six external sources for its statistics without collecting any data of its own.",
+   "block": "The field is roughly two years old. Almost every guide you will read, including the ones ranking above this page, is a synthesis of other people's claims rather than anything the author measured. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "evertune.ai",
+   "element": "li",
+   "value": "24",
+   "sentence": "Technical AEO Monitoring: 24/7 technical audits and alerts to ensure your most important assets remain accessible to AI crawlers.",
+   "block": "Technical AEO Monitoring: 24/7 technical audits and alerts to ensure your most important assets remain accessible to AI crawlers.",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "frase.io",
+   "element": "p",
+   "value": "$39",
+   "sentence": "Frase plans start at $39/month billed yearly, with AI visibility tracking included in the platform.",
+   "block": "Pricing ranges from entry-level monitoring plans up to enterprise tiers built for large prompt sets and global coverage. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "thehoth.com",
+   "element": "p",
+   "value": "900",
+   "sentence": "More than 900 million people use ChatGPT every week, and a growing share of them use it the way they used to use Google: to find a product, compare options, and decide who to buy from.",
+   "block": "More than 900 million people use ChatGPT every week, and a growing share of them use it the way they used to use Google: to find a product, compare options, and decide who to buy from. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "usegrowthos.com",
+   "element": "p",
+   "value": "$250",
+   "sentence": "It's SOC 2 compliant, but pricing starts around $250 to $300 a month with no low-cost tier, so it fits larger teams more than solo marketers or small businesses.",
+   "block": "It is built for enterprise teams and agencies that want AI visibility tracking paired with technical content delivery. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "ayzeo.com",
+   "element": "blockquote",
+   "value": "12%",
+   "sentence": "Stat: Only ~12% of websites use schema at all.",
+   "block": "Stat: Only ~12% of websites use schema at all. However, \"LLMs grounded in knowledge graphs achieve 300% higher accuracy compared to those using only unstructured data.\" By contributing your site's dat […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "useomnia.com",
+   "element": "p",
+   "value": "30",
+   "sentence": "Here’s a simple 30-day plan for boosting brand visibility on ChatGPT.",
+   "block": "Here’s a simple 30-day plan for boosting brand visibility on ChatGPT.",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "llmrefs.com",
+   "element": "li",
+   "value": "10%",
+   "sentence": "Vercel reports that 10% of new signups now come from ChatGPT referrals.",
+   "block": "Growing referral traffic. ChatGPT alone is already driving referral traffic to tens of thousands of distinct domains. Vercel reports that 10% of new signups now come from ChatGPT referrals.",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "istudiosmedia.com",
+   "element": "p",
+   "value": "25%",
+   "sentence": "Gartner predicts that by 2026, traditional search engine volume will drop by 25% as consumers pivot toward AI-powered agents and chatbots.",
+   "block": "Gartner predicts that by 2026, traditional search engine volume will drop by 25% as consumers pivot toward AI-powered agents and chatbots. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "llmrefs.com",
+   "element": "p",
+   "value": "20%",
+   "sentence": "Research from GEO firm Brandlight suggests that the overlap between top Google links and AI-cited sources has dropped from 70% to below 20%.",
+   "block": "Research from GEO firm Brandlight suggests that the overlap between top Google links and AI-cited sources has dropped from 70% to below 20%. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "aiclicks.io",
+   "element": "tr",
+   "value": "$99",
+   "sentence": "Starts from $99/mo",
+   "block": "Gauge - AI visibility tracking across ChatGPT, Perplexity, Google AI Overviews, Google AI Mode, and other major AI engines - Prompt discovery and share-of-voice tracking across AI platforms - Citation […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "industry-lens.com",
+   "element": "p",
+   "value": "22,000",
+   "sentence": "Generative Engine Optimization (GEO) — getting your brand cited inside ChatGPT, Perplexity, Gemini and Google's AI Overviews — went from a fringe idea to a 22,000-search-a-month category in 2026.",
+   "block": "Generative Engine Optimization (GEO) — getting your brand cited inside ChatGPT, Perplexity, Gemini and Google's AI Overviews — went from a fringe idea to a 22,000-search-a-month category in 2026. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "semrush.com",
+   "element": "li",
+   "value": "100",
+   "sentence": "AI Visibility Score (0-100) : Measures how often your brand appears in ChatGPT answers relative to competitors—a quick indicator of how strong your overall footprint is compared to co",
+   "block": "AI Visibility Score (0-100) : Measures how often your brand appears in ChatGPT answers relative to competitors—a quick indicator of how strong your overall footprint is compared to competitors",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  },
+  {
+   "page": "useomnia.com",
+   "element": "p",
+   "value": "30",
+   "sentence": "We've also included a 30-day execution plan to help you move from baseline to visibility fast.",
+   "block": "This guide shows you how to improve brand visibility in ChatGPT — from understanding how answers are formed, to what influences mentions and citations, to measuring progress. […]",
+   "links": [],
+   "machine_verdict": "not_sourced"
+  }
+ ],
+ "_note": "Every block in this set was mechanically established to contain no link before coding, so the machine verdict is 'not_sourced' throughout and the coders judged only whether a source was named."
+}

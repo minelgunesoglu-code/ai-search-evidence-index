@@ -5,17 +5,18 @@
 | | |
 |---|---|
 | **Article** | https://ismybrandinai.com/do-ai-visibility-guides-link-their-sources |
-| **Retrieved** | 30 August 2026, 20:38:51–20:40:17 UTC — one 86-second window |
+| **Repository** | https://github.com/minelgunesoglu-code/ai-search-evidence-index |
+| **Retrieved** | 30 August 2026, 20:38:51–20:40:15 UTC, one 84-second window |
 | **Pages** | 38 sampled · 32 retrieved · 13 in the published table |
-| **Headline** | Across the 13 pages, a median of **33%** of blocks containing a numeric claim carry a working link to the source. The spread runs from **0% to 62%**. |
-| **Reliability** | Cohen's κ = 0.80 between two independent coders (n = 12): an AI model reading the pages by hand, and a person |
-| **Licence** | CC BY 4.0 — see `LICENSE` for what it does and does not cover |
+| **Headline** | Across the 13 pages, a median of **33%** of blocks containing a numeric claim carry a link to the source. The spread runs from **0% to 62%**. |
+| **Reliability** | Cohen's κ = 0.85, 95% CI [0.75–0.95], on 120 blocks coded blind against the instrument |
+| **Licence** | CC BY 4.0; see `LICENSE` for what it does and does not cover |
 
 
 Data, code and coding materials for a measurement of whether a reader can reach
 the source of a numeric claim on pages that rank for AI-search-visibility queries.
 
-**What is measured:** determinability — can a reader reach the source of a figure.
+**What is measured:** determinability: can a reader reach the source of a figure.
 **What is NOT measured:** whether any figure is correct. No accuracy claim is made
 about any page in this dataset.
 
@@ -42,17 +43,26 @@ ranked it; no manual selection of additional pages was made.
 
 The full frame with every URL is in `data/sampling-frame.json`.
 
-**The authors' own site (ismybrandinai.com) is excluded from the dataset.** The
+**The authors' own site is excluded from the measured pages and from every published
+percentage.** It is not excluded from the calibration material: four of the authors' own pages
+appear in `coding/coded-items.json`, the thirty-block set used in an earlier round to test the
+instrument against a coder. They are marked `BIZ-*` and are named here so nobody has to find them.
+The
 authors had the instrument in hand while writing their own pages; the measured
 pages did not. Any figure for the authors' pages would not be comparable.
 
 ## 2. Retrieval
 
 All 38 URLs were fetched inside a single window: **30 August 2026,
-20:38:51 – 20:40:17 UTC**. 32 were retrieved; **6 failed** (HTTP 403 bot
+20:38:51 – 20:40:15 UTC**. 32 were retrieved; **6 failed** (HTTP 403 bot
 protection or connection failure) and are listed with their status in
-`data/retrieval-log.csv`. The failures are not random — they are larger,
-established sites — and this is stated as a limitation.
+`data/retrieval-log.csv`. The failures are not random: they are larger,
+established sites, and this is stated as a limitation.
+
+Of the 32 retrieved pages, **25 carry a measurement row**. The instrument skips a page that
+carries fewer than three claim blocks, on the grounds that a percentage over one or two blocks is
+noise; seven pages fell there. Of the 25, **13 carry ten or more claim blocks** and are given a
+percentage; the other twelve are counted in the totals but not rated.
 
 **Raw HTML snapshots are not redistributed here**, to avoid republishing third-party content in
 full. Instead the dataset carries, for every retrieved page, its **URL, retrieval timestamp, byte
@@ -61,18 +71,22 @@ size and the SHA-256 hash of the exact snapshot we measured**
 
 That is enough to reproduce and to falsify. Re-fetch a URL, hash what you get, and compare: an
 identical hash means you are looking at the document we measured; a different one means the page
-has changed since 30 August 2026 — which is itself worth knowing. In an earlier round one page
+has changed since 30 August 2026, which is itself worth knowing. In an earlier round one page
 lost 181 footnote links between two retrievals a day apart.
 
 Quoted excerpts appear only in the coding sheets, only where they are needed to show why a block
-was coded as it was, and are capped at roughly 200 characters. Across all measured pages the
-excerpts total about 16,000 characters — for most pages between 1% and 3% of the page. Snapshots
-are retained by the authors and can be made available for verification on request.
+was coded as it was. They are capped at 200 characters in the three coding sheets and at 700 in the
+reliability sample. Counting each published excerpt once, they total about 43,000 characters, which for
+most pages is between 1% and 5% of the page. Snapshots are retained by the authors and can be made
+available for verification on request.
 
 ## 3. Unit of analysis
 
 The unit is a **block**: a `<p>`, `<li>`, `<tr>` or `<blockquote>` element of at
-least 60 characters that contains at least one numeric claim.
+least 60 characters that contains at least one numeric claim. Headings and date
+lines are excluded; counting headings was one of the errors the first revision
+fixed. Blocks whose numbers are all prices are counted separately and are not in
+the published percentages.
 
 An earlier version of the instrument counted each distinct number as a separate
 claim and applied the block's link verdict to all of them. That over-credited a
@@ -86,13 +100,13 @@ Each block receives one code:
 
 | Code | Definition |
 |---|---|
-| **A** | A working link inside the block leads to the source of the figure |
+| **A** | A link inside the block points to the source of the figure. The instrument judges the link from its address and anchor text; it never opens it |
 | **B** | A source is named in the block but not linked |
 | **C** | Neither |
 
 **Only A is reported as a percentage.** Agreement between the instrument and a
-human coder on the B tier reached Cohen's κ = 0.66 — below the level at which a
-percentage should be published. B is reported as a flag with hand-verified
+blind read on the B tier is weaker than on the first tier, below the level at
+which a percentage should be published. B is reported as a flag with hand-verified
 examples instead.
 
 ### Link rules (in order of application)
@@ -112,44 +126,62 @@ the codebook did not cover the case. This is disclosed rather than backdated.
 
 ## 5. Reliability
 
-**Instrument vs. human coder** (n = 30): agreement 83%, **Cohen's κ = 0.66**.
-The instrument's errors are one-directional: it never labelled an unnamed source
-as named. It only missed named sources. It does not make any page look better
-than it is.
+**Blind check against the instrument** (n = 120). Of the 470 claim-carrying
+blocks across the 32 retrieved pages, 120 were drawn at random with a fixed seed
+and coded without seeing the instrument's verdict. Agreement **112 of 120,
+93.3%**; **Cohen's κ = 0.85, 95% CI [0.75–0.95]**. Every block is published with
+its text, its links and the code it was given: `coding/blind-sample-120.json`.
+The sample is reproducible from `code/blind-sample.py`.
 
-**Between two independent coders** (n = 12), one an AI model reading the pages by
-hand and one a person: agreement 92%,
-**Cohen's κ = 0.80**. Coder 1's codes were sealed (SHA-256) before Coder 2 coded.
-Items whose codes had been disclosed in prior discussion were excluded from this
-comparison. The single disagreement was resolved by discussion and produced
-Rule K; **κ is reported from the pre-discussion codes and is not recomputed.**
+**Which way the instrument errs.** In seven of the eight disagreements the
+instrument credited a source the blind read did not; in one it missed a source
+the read found. It errs towards making a page look **better** sourced than it
+is. An earlier version of this README, written on a sample of thirty, reported
+the opposite direction. That was wrong.
+
+**A smaller human check** (n = 12), from an earlier round and not a subset of the
+120 above. Twelve blocks, all of them link-free, were coded blind by a second
+person on the named-source question only; eleven of twelve matched. Twelve items
+is too small to publish as a rate. The single mismatch produced Rule K.
+
+**Who coded.** Except where a second person is named above, the coder was the
+language model that built the instrument. See section 11.
 
 Materials: `coding/`.
 
 ## 6. Verification
 
-- Every published figure was read by a human. All 89 sourced blocks in the
-  published table were inspected individually; 11 machine verdicts were rejected
+- Every published figure was read. All 90 sourced blocks in the published table
+  were inspected individually; 10 machine verdicts were rejected
   on inspection and the rejections are listed in `notes/final-results.md`.
 - The counter was **re-implemented independently** (`code/independent-counter.py`)
-  without reusing any of the original code. 17 of 25 pages matched exactly; all
+  without reusing any of the original code. The re-implementation has no price
+  rule, so the comparison is made on totals with price blocks left in: on that
+  basis 17 of 25 pages matched exactly; all
   8 differences were traced to two causes (a table-credit rule present in one
   implementation, and a decimal-detection gap), neither of which changes the
   published table by more than one block on one page.
 
 ## 7. Known limitations
 
-1. **Claim detection has a measured error rate.** 50 blocks were hand-coded for
-   whether they contain a numeric claim at all; **11 (22%, 95% CI 11–33%) did
-   not** — advice, author biographies, examples of good writing. Roughly 86% of
-   these sat in unsourced blocks, so **the reported percentages understate the
-   true rate.** A corrected pool estimate is ≈39% against a raw 31.7%.
+1. **Claim detection has a measured error rate.** In the 120-block reliability
+   sample, **32 (27%, 95% CI 19–35%) carry no numeric claim at all**: advice,
+   author biographies, plan names, scale definitions. That figure can be
+   recomputed from `coding/blind-sample-120.json`, where every item carries an
+   `is_a_numeric_claim` field. On the 85 of those 120 blocks the instrument
+   would actually score, the rate is 22.4% (95% CI 13–31%), and only 3 of those
+   19 non-claims were credited with a source — so they sit mostly on the
+   unsourced side and **the reported percentages understate the true rate.**
+   Applying that rate to the 252 blocks in the table gives a corrected pool
+   estimate of **≈36%** against a raw 31.7%. An earlier 50-block pass gave a
+   consistent 22%, but its per-item verdicts were not retained, so it cannot be
+   recomputed from the published sheets and is reported only as corroboration.
 2. **Six pages could not be retrieved** and are not random.
 3. **One day, one snapshot.** Pages change; one page in an earlier round lost
    181 footnote links between two retrievals.
 4. **Non-probability sample.** Six queries are not a field. Findings are stated
    as "these pages, on this date".
-5. **Exclusion rules remove nothing from the authors' own pages** — the authors
+5. **Exclusion rules remove nothing from the authors' own pages**: the authors
    do not use calls to action or homepage links as sources. The rules were also
    discovered while reading measured pages, not the authors' own. The per-page
    count of what each rule removed is published in `notes/hand-verification.md`.
@@ -164,16 +196,19 @@ Materials: `coding/`.
 data/     results.csv                 final table, one row per published page
           snapshot-hashes.csv         SHA-256 of every snapshot, for document-identity checks
           retrieval-log.csv           all 38 URLs incl. the 6 failures, with timestamps
+          compute-log.json            tokens and model calls, by day
           sampling-frame.json         the six queries and every organic result
           measurement-by-block.json   block-unit measurement (primary)
           measurement-per-number.json per-number measurement (robustness check)
 code/     fetch.py                    single-window retrieval
           measure.py                  the instrument
           independent-counter.py      independent re-implementation
-          dump-blocks.py              dumps a page's sourced blocks for human reading
-coding/   coded-items.json            the coded items
-          coder1-sealed-codes.json    Coder 1, sealed with SHA-256
-          intercoder-kappa.json       inter-coder result
+          blind-sample.py             draws the 120-block sample, fixed seed
+          dump-blocks.py              dumps a page's sourced blocks for reading
+          bibliography-scan.py        checks for end-of-page source lists
+coding/   blind-sample-120.json       the 120-block blind sample, every code published
+          coded-items.json            the thirty items from the earlier round
+          coder1-sealed-codes.json    those thirty, sealed with SHA-256
           claim-validation-*.json     claim-detection validation samples
 notes/    (in Turkish) design, revision history, decisions, hand-verification log
 ```
@@ -191,7 +226,19 @@ a coding decision.
 
 If you find an error, tell us. We will correct it and record what changed.
 
-- **An error in the measurement, the code or the coding** — open an issue on this
+- **An error in the measurement, the code or the coding**: open an issue on this
   repository, or write to minel@ismybrandinai.com.
-- **You publish one of the measured pages and want an excerpt removed** — write to
+- **You publish one of the measured pages and want an excerpt removed**: write to
   info@ismybrandinai.com and it will be removed.
+
+## 11. Who did the work
+
+This study was run by a person and a language model. Minel Gunesoglu set the
+question, made every decision about scope and publication, and reviewed the
+results. The model wrote the instrument, retrieved the pages, coded the blocks
+and drafted the write-up. Where a figure depends on someone reading a page
+rather than a script parsing it, the reader was the model unless a second person
+is named.
+
+The author takes full responsibility for the content, including the parts
+produced with AI assistance.

@@ -1,4 +1,4 @@
-page_id,url,seed_query,retrieved_utc,bytes,status
+page_id,url,seed_query,retrieved_utc,characters,status
 developers.google.com,https://developers.google.com/search/docs/fundamentals/ai-optimization-guide,generative engine optimization guide 2026,2026-08-30T20:38:51.621519+00:00,190503,retrieved
 aisearch.similarweb.com,https://aisearch.similarweb.com/blog/what-is-geo/,generative engine optimization guide 2026,2026-08-30T20:38:53.494037+00:00,657785,retrieved
 tryprofound.com,https://www.tryprofound.com/articles/top-experts-in-generative-engine-optimization,generative engine optimization guide 2026,2026-08-30T20:38:56.146244+00:00,233257,retrieved

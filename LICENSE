@@ -1,8 +1,9 @@
-The AI Search Evidence Index — licence
+The AI Search Evidence Index: licence
 ======================================
 
-The material produced by the authors in this repository — the measurement
-data, the coding sheets, the instrument and the supporting documents — is
+The material produced by the authors in this repository, meaning the
+measurement data, the coding sheets, the instrument and the supporting
+documents, is
 released under the Creative Commons Attribution 4.0 International licence
 (CC BY 4.0).
 
@@ -24,12 +25,13 @@ What this licence does NOT cover
 --------------------------------
 
 Short quoted excerpts from the measured pages appear in the coding sheets
-(`kodlama/`) where they are needed to show why a block received the code it
+(`coding/`) where they are needed to show why a block received the code it
 did. Those excerpts remain the property of their original publishers and are
 reproduced here for the purpose of criticism, review and research. They are
 not licensed under CC BY 4.0 by the authors, who cannot license what they do
-not own. Excerpts are capped at roughly 200 characters and total about 16,000
-characters across all measured pages.
+not own. Excerpts are capped at 200 characters in the three coding sheets and at 700 in
+the reliability sample, and total about 38,000 characters across all measured
+pages, which for most pages is between 1% and 5% of the text.
 
 Raw HTML snapshots of the measured pages are not redistributed. The repository
 carries the SHA-256 hash of each snapshot instead, so that document identity

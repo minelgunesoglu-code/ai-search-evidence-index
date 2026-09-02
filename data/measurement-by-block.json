@@ -1,233 +1,234 @@
 {
- "cekim_penceresi": [
-  "2026-08-30T20:38:51.621393+00:00",
-  "2026-08-30T20:40:17.031790+00:00"
+ "_about": "Block-unit measurement (the primary unit). One row per page: how many blocks carry a numeric claim, and how many of those carry a link to the source. The instrument judges each link from its address and anchor text; it never opens it.",
+ "retrieval_window": [
+  "2026-08-30T20:38:51.621519+00:00",
+  "2026-08-30T20:40:15.210877+00:00"
  ],
- "satirlar": [
+ "rows": [
   {
-   "alan": "ahrefs.com",
-   "kume": "how to rank in google ai ove",
-   "iddia": 15,
-   "ulasilir": 7,
-   "adli": 2,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "ahrefs.com",
+   "seed_query": "how to rank in google ai overviews",
+   "blocks_with_numeric_claim": 15,
+   "blocks_sourced": 7,
+   "blocks_source_named_not_linked": 2,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "aisearch.similarweb.com",
-   "kume": "generative engine optimizati",
-   "iddia": 24,
-   "ulasilir": 9,
-   "adli": 2,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "aisearch.similarweb.com",
+   "seed_query": "generative engine optimization guide 2026",
+   "blocks_with_numeric_claim": 24,
+   "blocks_sourced": 9,
+   "blocks_source_named_not_linked": 2,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "digitalapplied.com",
-   "kume": "generative engine optimizati",
-   "iddia": 4,
-   "ulasilir": 1,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "digitalapplied.com",
+   "seed_query": "generative engine optimization guide 2026",
+   "blocks_with_numeric_claim": 4,
+   "blocks_sourced": 1,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "evertune.ai",
-   "kume": "best AI search visibility to",
-   "iddia": 6,
-   "ulasilir": 1,
-   "adli": 0,
-   "fiyat": 1,
-   "fiyat_ulasilir": 0
+   "page_id": "evertune.ai",
+   "seed_query": "best AI search visibility tools comparison 2026",
+   "blocks_with_numeric_claim": 6,
+   "blocks_sourced": 1,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 1,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "frase.io",
-   "kume": "generative engine optimizati",
-   "iddia": 48,
-   "ulasilir": 21,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "frase.io",
+   "seed_query": "generative engine optimization guide 2026",
+   "blocks_with_numeric_claim": 48,
+   "blocks_sourced": 21,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "hubspot.com",
-   "kume": "what is answer engine optimi",
-   "iddia": 7,
-   "ulasilir": 0,
-   "adli": 1,
-   "fiyat": 1,
-   "fiyat_ulasilir": 0
+   "page_id": "hubspot.com",
+   "seed_query": "what is answer engine optimization",
+   "blocks_with_numeric_claim": 7,
+   "blocks_sourced": 0,
+   "blocks_source_named_not_linked": 1,
+   "price_claims": 1,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "industry-lens.com",
-   "kume": "best AI search visibility to",
-   "iddia": 21,
-   "ulasilir": 14,
-   "adli": 1,
-   "fiyat": 8,
-   "fiyat_ulasilir": 4
+   "page_id": "industry-lens.com",
+   "seed_query": "best AI search visibility tools comparison 2026",
+   "blocks_with_numeric_claim": 21,
+   "blocks_sourced": 14,
+   "blocks_source_named_not_linked": 1,
+   "price_claims": 8,
+   "price_claims_sourced": 4
   },
   {
-   "alan": "instantpress.co",
-   "kume": "how to get cited by chatgpt",
-   "iddia": 3,
-   "ulasilir": 0,
-   "adli": 1,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "instantpress.co",
+   "seed_query": "how to get cited by chatgpt",
+   "blocks_with_numeric_claim": 3,
+   "blocks_sourced": 0,
+   "blocks_source_named_not_linked": 1,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "keyword.com",
-   "kume": "how to track brand mentions ",
-   "iddia": 3,
-   "ulasilir": 1,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "keyword.com",
+   "seed_query": "how to track brand mentions in chatgpt",
+   "blocks_with_numeric_claim": 3,
+   "blocks_sourced": 1,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "llmrefs.com",
-   "kume": "generative engine optimizati",
-   "iddia": 11,
-   "ulasilir": 0,
-   "adli": 2,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "llmrefs.com",
+   "seed_query": "generative engine optimization guide 2026",
+   "blocks_with_numeric_claim": 11,
+   "blocks_sourced": 0,
+   "blocks_source_named_not_linked": 2,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "orchly.ai",
-   "kume": "best AI search visibility to",
-   "iddia": 6,
-   "ulasilir": 0,
-   "adli": 0,
-   "fiyat": 25,
-   "fiyat_ulasilir": 13
+   "page_id": "orchly.ai",
+   "seed_query": "best AI search visibility tools comparison 2026",
+   "blocks_with_numeric_claim": 6,
+   "blocks_sourced": 0,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 25,
+   "price_claims_sourced": 13
   },
   {
-   "alan": "promptzero.tech",
-   "kume": "generative engine optimizati",
-   "iddia": 15,
-   "ulasilir": 7,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "promptzero.tech",
+   "seed_query": "generative engine optimization guide 2026",
+   "blocks_with_numeric_claim": 15,
+   "blocks_sourced": 7,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "purposelaunch.com",
-   "kume": "how to get cited by chatgpt",
-   "iddia": 6,
-   "ulasilir": 1,
-   "adli": 2,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "purposelaunch.com",
+   "seed_query": "how to get cited by chatgpt",
+   "blocks_with_numeric_claim": 6,
+   "blocks_sourced": 1,
+   "blocks_source_named_not_linked": 2,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "rankability.com",
-   "kume": "how to track brand mentions ",
-   "iddia": 5,
-   "ulasilir": 5,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "rankability.com",
+   "seed_query": "how to track brand mentions in chatgpt",
+   "blocks_with_numeric_claim": 5,
+   "blocks_sourced": 5,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "segmetrics.io",
-   "kume": "how to rank in google ai ove",
-   "iddia": 2,
-   "ulasilir": 0,
-   "adli": 0,
-   "fiyat": 1,
-   "fiyat_ulasilir": 0
+   "page_id": "segmetrics.io",
+   "seed_query": "how to rank in google ai overviews",
+   "blocks_with_numeric_claim": 2,
+   "blocks_sourced": 0,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 1,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "semrush.com-3",
-   "kume": "what is answer engine optimi",
-   "iddia": 4,
-   "ulasilir": 2,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "semrush.com-3",
+   "seed_query": "what is answer engine optimization",
+   "blocks_with_numeric_claim": 4,
+   "blocks_sourced": 2,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "semrush.com-4",
-   "kume": "how to rank in google ai ove",
-   "iddia": 4,
-   "ulasilir": 2,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "semrush.com-4",
+   "seed_query": "how to rank in google ai overviews",
+   "blocks_with_numeric_claim": 4,
+   "blocks_sourced": 2,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "semrush.com",
-   "kume": "best AI search visibility to",
-   "iddia": 18,
-   "ulasilir": 3,
-   "adli": 2,
-   "fiyat": 5,
-   "fiyat_ulasilir": 0
+   "page_id": "semrush.com",
+   "seed_query": "best AI search visibility tools comparison 2026",
+   "blocks_with_numeric_claim": 18,
+   "blocks_sourced": 3,
+   "blocks_source_named_not_linked": 2,
+   "price_claims": 5,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "seocrawl.ai",
-   "kume": "how to rank in google ai ove",
-   "iddia": 17,
-   "ulasilir": 1,
-   "adli": 4,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "seocrawl.ai",
+   "seed_query": "how to rank in google ai overviews",
+   "blocks_with_numeric_claim": 17,
+   "blocks_sourced": 1,
+   "blocks_source_named_not_linked": 4,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "tryprofound.com-2",
-   "kume": "best AI search visibility to",
-   "iddia": 17,
-   "ulasilir": 1,
-   "adli": 2,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "tryprofound.com-2",
+   "seed_query": "best AI search visibility tools comparison 2026",
+   "blocks_with_numeric_claim": 17,
+   "blocks_sourced": 1,
+   "blocks_source_named_not_linked": 2,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "tryprofound.com-3",
-   "kume": "how to get cited by chatgpt",
-   "iddia": 7,
-   "ulasilir": 0,
-   "adli": 1,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "tryprofound.com-3",
+   "seed_query": "how to get cited by chatgpt",
+   "blocks_with_numeric_claim": 7,
+   "blocks_sourced": 0,
+   "blocks_source_named_not_linked": 1,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "tryprofound.com-4",
-   "kume": "what is answer engine optimi",
-   "iddia": 10,
-   "ulasilir": 6,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "tryprofound.com-4",
+   "seed_query": "what is answer engine optimization",
+   "blocks_with_numeric_claim": 10,
+   "blocks_sourced": 6,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "tryprofound.com",
-   "kume": "generative engine optimizati",
-   "iddia": 11,
-   "ulasilir": 6,
-   "adli": 0,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "tryprofound.com",
+   "seed_query": "generative engine optimization guide 2026",
+   "blocks_with_numeric_claim": 11,
+   "blocks_sourced": 6,
+   "blocks_source_named_not_linked": 0,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "writer.com",
-   "kume": "generative engine optimizati",
-   "iddia": 35,
-   "ulasilir": 14,
-   "adli": 1,
-   "fiyat": 0,
-   "fiyat_ulasilir": 0
+   "page_id": "writer.com",
+   "seed_query": "generative engine optimization guide 2026",
+   "blocks_with_numeric_claim": 35,
+   "blocks_sourced": 14,
+   "blocks_source_named_not_linked": 1,
+   "price_claims": 0,
+   "price_claims_sourced": 0
   },
   {
-   "alan": "zapier.com",
-   "kume": "best AI search visibility to",
-   "iddia": 10,
-   "ulasilir": 1,
-   "adli": 1,
-   "fiyat": 5,
-   "fiyat_ulasilir": 0
+   "page_id": "zapier.com",
+   "seed_query": "best AI search visibility tools comparison 2026",
+   "blocks_with_numeric_claim": 10,
+   "blocks_sourced": 1,
+   "blocks_source_named_not_linked": 1,
+   "price_claims": 5,
+   "price_claims_sourced": 0
   }
  ]
 }

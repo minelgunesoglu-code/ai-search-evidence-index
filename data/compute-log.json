@@ -1,0 +1,59 @@
+{
+ "_about": "Compute used to produce The AI Search Evidence Index, counted from the Claude Code session logs for this project. Tokens are tokens processed by the model, not billed units; most are cached context read again rather than new work. Counted per assistant message that carries a usage record.",
+ "_method": "Sum of the usage fields on every assistant message in the project's session transcripts, grouped by UTC date. Cache reads are counted because they are tokens the model processed.",
+ "study_window": {
+  "from": "2026-08-27",
+  "to": "2026-09-02",
+  "_note": "Covers the measurement (27-31 August) and the two verification rounds that followed (1-2 September).",
+  "model_calls": 5706,
+  "tokens_total": 3025017902,
+  "cache_read": 2976106360,
+  "cache_creation": 43365155,
+  "input": 11398,
+  "output": 5534989,
+  "cached_share": 98.4
+ },
+ "project_total": {
+  "model_calls": 21076,
+  "tokens_total": 9562533958,
+  "output": 29727688
+ },
+ "by_day": [
+  {
+   "date": "2026-08-27",
+   "model_calls": 566,
+   "tokens_total": 360965272,
+   "output": 589509
+  },
+  {
+   "date": "2026-08-28",
+   "model_calls": 487,
+   "tokens_total": 208943481,
+   "output": 402008
+  },
+  {
+   "date": "2026-08-29",
+   "model_calls": 782,
+   "tokens_total": 396853753,
+   "output": 715334
+  },
+  {
+   "date": "2026-08-30",
+   "model_calls": 813,
+   "tokens_total": 395991703,
+   "output": 921345
+  },
+  {
+   "date": "2026-08-31",
+   "model_calls": 1386,
+   "tokens_total": 725651979,
+   "output": 1438889
+  },
+  {
+   "date": "2026-09-01",
+   "model_calls": 1672,
+   "tokens_total": 936611714,
+   "output": 1467904
+  }
+ ]
+}

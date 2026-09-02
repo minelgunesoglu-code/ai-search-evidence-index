@@ -1,0 +1,1534 @@
+{
+ "_about": "The blind reliability sample for The AI Search Evidence Index, round one. 120 claim blocks drawn at random from the 470 claim-carrying blocks across the 32 retrieved pages, coded without seeing the instrument's verdict. Every block is here with its text, its links, the code it was given, and what the instrument had decided.",
+ "_codes": {
+  "A": "a working link inside the block leads to the source of the figure",
+  "B": "a source is named in the block but not linked",
+  "C": "neither"
+ },
+ "_sampling": "random.sample over the 470 blocks found in all 32 retrieved snapshots, random.seed(20260901). Reproducible from code/blind-sample.py. Note this pool is wider than the 309 blocks the instrument scores on the 25 measured pages: it applies only the 60-character and numeric-claim filters, not the instrument's exclusions.",
+ "n": 120,
+ "agreement": 112,
+ "observed_agreement": 0.9333,
+ "expected_agreement": 0.5489,
+ "cohens_kappa": 0.852,
+ "ci95": [
+  0.753,
+  0.951
+ ],
+ "instrument_credited_a_source_the_read_did_not": [
+  "rankability.com#103",
+  "coursera.org#0",
+  "writer.com#121",
+  "semrush.com-3#115",
+  "aisearch.similarweb.com#207",
+  "developers.google.com-2#15",
+  "zapier.com#157"
+ ],
+ "instrument_missed_a_source_the_read_found": [
+  "semrush.com#138"
+ ],
+ "items": [
+  {
+   "id": "writer.com#29",
+   "page": "writer.com",
+   "element": "p",
+   "text": "GEO is 80% strategic and only 20% technical. Most organizations pull the wrong 20% first. They focus on schema markup, heading structure, and FAQ sections (all important, all covered below) while skipping the strategic foundation that determines whether any of it matters.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "orchly.ai#234",
+   "page": "orchly.ai",
+   "element": "p",
+   "text": "AI visibility is included in the SEMrush One plan, which starts around $199 per month . This includes access to the broader SEO toolkit as well.",
+   "links": [],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "ahrefs.com#78",
+   "page": "ahrefs.com",
+   "element": "p",
+   "text": "According to Ahrefs alumni Joshua Hardwick —who recently researched fan-out query behavior in AI Overviews alongside SurferSEO —pages that rank across these fan-out queries are 161% more likely to be cited in the final AI Overview than pages that only rank for the primary search term.",
+   "links": [
+    {
+     "href": "https://uk.linkedin.com/in/joshuahardwick28",
+     "anchor": "Joshua Hardwick"
+    },
+    {
+     "href": "https://surferseo.com/blog/query-fan-out-impact/",
+     "anchor": "fan-out query behavior in AI Overviews"
+    },
+    {
+     "href": "https://surferseo.com/",
+     "anchor": "SurferSEO"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "writer.com#88",
+   "page": "writer.com",
+   "element": "li",
+   "text": "Don’t stuff keywords for AI. Keyword stuffing and writing for every long-tail variation of a query is a relic of old SEO. AI engines read for meaning and context, not keyword density. Focus on answering the question well, not repeating it 15 times.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "promptzero.tech#149",
+   "page": "promptzero.tech",
+   "element": "p",
+   "text": "Yes, and this is one of GEO’s most important characteristics. Unlike SEO, where incumbents have years of accumulated backlink authority and Domain Rating, the GEO landscape is still forming. Large brands have not yet allocated serious resources to generative engine optimization, which creates a window for smaller, more agile teams to establish strong positions. A startup that publishes the most comprehensive, best-sourced, most frequently updated guide on a topic can outperform a Fortune 500 competitor in AI visibility if the larger company has not optimized for generative engines. First-mover advantage is real in this channel, and it favors teams that move fast.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-3#86",
+   "page": "tryprofound.com-3",
+   "element": "p",
+   "text": "An observational study of 24,135 responses and agent traffic found that Claude and Claude Code behave like distinct Answer Engines. They search at different rates, mention different brands, and visit different types of webpages. The findings suggest marketers should optimize for each separately.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-2#59",
+   "page": "tryprofound.com-2",
+   "element": "tr",
+   "text": "Evertune Agencies watching brand accuracy for clients Strong brand-accuracy monitoring backed by a 25-million-person consumer panel Topic-level clustering rather than prompt-level demand, and no published SOC 2 Brand-accuracy and misinformation monitoring",
+   "links": [],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "rankability.com#103",
+   "page": "rankability.com",
+   "element": "li",
+   "text": "How to track brand mentions in Claude (2026 guide) Learn how to track brand mentions in Claude with a repeatable workflow: prompt maps, consistent answer capture, GA4 attribution, share of voice scoring, and reporting so you can measure AI visibility and turn findings into SEO actions. 15 min read",
+   "links": [
+    {
+     "href": "/blog/how-to-track-brand-mentions-in-claude/",
+     "anchor": "How to track brand mentions in Claude (2026 guide) Learn how to track brand mentions in Claude with a repeatable workflow: prompt maps, consistent answer capture, GA4 attribution, share of voice scoring, and reporting so you can measure AI visibility and turn findings into SEO actions. 15 min read"
+    }
+   ],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "industry-lens.com#44",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Profound : Profound Releases FactCheck to Monitor and Correct Inaccurate AI Claims 14 Jul 2026",
+   "links": [
+    {
+     "href": "https://www.tryprofound.com/blog/introducing-factcheck",
+     "anchor": "Profound Releases FactCheck to Monitor and Correct Inaccurate AI Claims"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "industry-lens.com#33",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Ahrefs Brand Radar : Ahrefs Brand Radar includes Claude 4.6 visibility monitoring 28 Jul 2026",
+   "links": [
+    {
+     "href": "https://www.linkedin.com/posts/ahrefs_new-in-brand-radar-claude-available-activity-7487794036255334404-SzL0",
+     "anchor": "Ahrefs Brand Radar includes Claude 4.6 visibility monitoring"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "semrush.com#74",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "For example, when I looked at visitors to esportsworldcup.com in the U.S., Discord usage was +93.2% above average and X (Twitter) was +22.3%, while Facebook trailed at -6.3%.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#53",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Ahrefs Brand Radar : Industry Analyst Review Identifies Capability Gaps in Ahrefs Brand Radar Automation and Depth 1 Jul 2026",
+   "links": [
+    {
+     "href": "https://aimultiple.com/answer-engine-optimization-tools",
+     "anchor": "Industry Analyst Review Identifies Capability Gaps in Ahrefs Brand Radar Automation and Depth"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "tryprofound.com#86",
+   "page": "tryprofound.com",
+   "element": "li",
+   "text": "In 2026, Barnard organized that work into the AI Engine Pipeline , a ten-gate model running from discovery and indexing through grounding, display, and winning. His delegation boundary extends the framework to the point where an AI system acts for the user.",
+   "links": [
+    {
+     "href": "https://searchengineland.com/ai-engine-pipeline-gates-470610",
+     "anchor": "AI Engine Pipeline"
+    },
+    {
+     "href": "https://searchengineland.com/the-delegation-boundary-how-ai-decides-which-brands-win-477194",
+     "anchor": "delegation boundary"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "frase.io#87",
+   "page": "frase.io",
+   "element": "p",
+   "text": "Score your ten most-trafficked articles. The low scorers are your refresh queue; the high scorers are your distribution targets. Re-score quarterly. The research behind every dimension is moving — expect weights to shift over the next 12 months as nearly 80% of top news publishers now block at least one AI training crawler , shifting where AI engines pull from.",
+   "links": [
+    {
+     "href": "https://pressgazette.co.uk/platforms/eight-in-ten-of-worlds-biggest-news-websites-now-block-ai-training-bots/",
+     "anchor": "nearly 80% of top news publishers now block at least one AI training crawler"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "writer.com#107",
+   "page": "writer.com",
+   "element": "p",
+   "text": "The data on named authors is striking. Pages with a named author, title, and linked bio earn approximately 60% more AI citations than equivalent anonymous content , according to Presenc AI’s tracking across 1,800 brand-query pairs. Onely’s large-scale cross-platform study found that 76.4% of AI-cited content has attributed authors, and authored content earns 2.3x more AI citations than anonymous content. If your content is published under a generic brand account with no byline, you’re leaving citations on the table.",
+   "links": [
+    {
+     "href": "https://presenc.ai/research/does-author-eeat-signals-improve-ai-visibility-2026",
+     "anchor": "Pages with a named author, title, and linked bio earn approximately 60% more AI citations than equivalent anonymous content"
+    },
+    {
+     "href": "https://betteraisearch.com/tactics/author-bio-ai-search",
+     "anchor": "Onely&#8217;s large-scale cross-platform study"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "llmrefs.com#94",
+   "page": "llmrefs.com",
+   "element": "p",
+   "text": "ChatGPT has the largest market share at around 70% of AI search usage. It draws from a mix of live web search and its training data. It favors comprehensive, well-sourced content with clear expertise signals. ChatGPT is increasingly driving measurable referral traffic through its citations.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#62",
+   "page": "industry-lens.com",
+   "element": "tr",
+   "text": "Execution vs. diagnosis Profound: automated correction loop; Knowatoa: diagnostic grader only Profound Scales Ad Volume 5x Amid AEO Pricing — August 2026 Knowatoa: Two-Tier Pricing Gates Reporting Integrations — August 2026",
+   "links": [
+    {
+     "href": "/reports/ahrefs-brand-radar-profound-scales-ad-volume-august-2026",
+     "anchor": "Profound Scales Ad Volume 5x Amid AEO Pricing — August 2026"
+    },
+    {
+     "href": "/reports/signal-spotlight-knowatoa",
+     "anchor": "Knowatoa: Two-Tier Pricing Gates Reporting Integrations — August 2026"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "industry-lens.com#13",
+   "page": "industry-lens.com",
+   "element": "p",
+   "text": "https://industry-lens.com/reports/ahrefs-brand-radar-peec-ai-cuts-pricing-august-2026",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "coursera.org#0",
+   "page": "coursera.org",
+   "element": "p",
+   "text": "Grow on your schedule with big savings on Coursera Plus. Save 40% for 3 months .",
+   "links": [
+    {
+     "href": "https://www.coursera.org/courseraplus/special/cplus-monthly-august-2026-global?utm_medium=coursera&amp;utm_source=bluebanner&amp;utm_campaign=2026AugustQ3CplusTentpole",
+     "anchor": "Save 40% for 3 months"
+    }
+   ],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "keyword.com#0",
+   "page": "keyword.com",
+   "element": "h1",
+   "text": "How to Track and Optimize Your Brand Mentions in ChatGPT in 2026",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#70",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Semrush AI Toolkit: Current Promotional — August 2026 Adobe has completed a $1.9 billion acquisition of Semrush, a move that directly impacts the strategic positioning of the Semrush AI Toolkit. For CI and marketing leaders, this acquisition signals a ma… August 9, 2026",
+   "links": [
+    {
+     "href": "/reports/signal-spotlight-semrush-ai-toolkit",
+     "anchor": "Semrush AI Toolkit: Current Promotional — August 2026"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "writer.com#121",
+   "page": "writer.com",
+   "element": "p",
+   "text": "The methodology is more straightforward than you might expect. Define 20 to 30 category prompts spanning four query types — discovery (“which [solutions] should we evaluate for [category]?”), comparison (“how does X compare to Y for [use case]?”), evaluation (“is X right for a company like ours?”), and implementation (“how do we get started with X?”). Run each prompt in a fresh session on ChatGPT, Perplexity, Google AI Mode, Claude, and Gemini once a week. For each response, log whether your brand is mentioned, whether a competitor is mentioned, how prominently you appear (primary recommendation, one of several, or passing reference), and what the sentiment is — positive, neutral, or negativ",
+   "links": [
+    {
+     "href": "https://searchengineland.com/guide/how-to-measure-brand-visibility",
+     "anchor": "(your appearances ÷ total prompts) × 100"
+    }
+   ],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "frase.io#445",
+   "page": "frase.io",
+   "element": "h3",
+   "text": "The 10 Best GEO Tools in 2026 (Generative Engine Optimization Software Compared)",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "semrush.com#46",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "The advantage is context. You're not just seeing that ChatGPT mentions a competitor more often — you can trace it back to the web signals behind that answer and figure out what to fix. This is the setup most marketers should be using in 2026.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "orchly.ai#75",
+   "page": "orchly.ai",
+   "element": "p",
+   "text": "You can see that clearly in the pricing. Plans start around $499 per month , and most meaningful features sit behind higher tiers.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#105",
+   "page": "industry-lens.com",
+   "element": "p",
+   "text": "Naveed Ratansi is the Founder of IndustryLens. He works with B2B SaaS sales, marketing, and product teams to turn competitor activity across 350+ data sources into weekly intelligence they can act on.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "llmrefs.com#27",
+   "page": "llmrefs.com",
+   "element": "tr",
+   "text": "Query length Short keywords (average 4 words) Conversational questions (average 23 words)",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "semrush.com#170",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "Testing note : I was unable to run a hands-on test for Screaming Frog’s AI prompts due to paywall/access limits. Findings are based on the official docs (last updated September 2025).",
+   "links": [],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#146",
+   "page": "frase.io",
+   "element": "p",
+   "text": "Recency Emphasis: Perplexity strongly favors fresh content. Publish dates within the past 3 months receive significant ranking boosts. Update existing content regularly and prominently display publication dates.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "coursera.org#5",
+   "page": "coursera.org",
+   "element": "li",
+   "text": "According to Semrush, in 2025, visitors arrive through AI search at a conversion rate 4.4 times higher than those from traditional organic search [ 1 ].",
+   "links": [
+    {
+     "href": "https://www.semrush.com/blog/ai-search-seo-traffic-study/",
+     "anchor": "1"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "semrush.com#138",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "Surfer’s “ Facts ” tab (Coverage Booster) scans the top 20 ranking pages.",
+   "links": [
+    {
+     "href": "https://docs.surferseo.com/en/articles/10717145-facts",
+     "anchor": "Facts"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-2#177",
+   "page": "tryprofound.com-2",
+   "element": "p",
+   "text": "Ahrefs’ real gaps sit elsewhere . Brand Radar's prompts are derived from People Also Ask questions and Ahrefs' keyword index rather than real AI conversations. Most chatbot platforms refresh only monthly on a 90-day rolling window, and Ahrefs itself calls the numbers directional, modeled signals rather than performance data. Add no AEO content workflows and no published enterprise compliance on the AI product, and it's clearly a strong SEO tool feeling its way into AI, not a platform built for it. For directional monitoring inside a tool your team already trusts, that's fine.",
+   "links": [
+    {
+     "href": "https://www.tryprofound.com/resources/articles/profound-vs-ahrefs",
+     "anchor": "Ahrefs’ real gaps sit elsewhere"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "promptzero.tech#13",
+   "page": "promptzero.tech",
+   "element": "p",
+   "text": "The term was coined in the November 2023 paper “GEO: Generative Engine Optimization” by researchers at Princeton University and Georgia Tech. The study tested nine distinct content optimization strategies against a generative engine prototype and measured their impact on source visibility within AI-generated responses. The results were significant: content enriched with cited sources saw visibility improvements of up to 40%, while adding relevant statistics boosted visibility by approximately 30%.",
+   "links": [
+    {
+     "href": "https://arxiv.org/abs/2311.09735",
+     "anchor": "“GEO: Generative Engine Optimization”"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "ahrefs.com#21",
+   "page": "ahrefs.com",
+   "element": "p",
+   "text": "Our own study shows that AI Overviews have caused click-through rate drops of 34.5%, with new research from Seer Interactive reporting drops as high as 61% .",
+   "links": [
+    {
+     "href": "https://ahrefs.com/blog/ai-overviews-reduce-clicks/",
+     "anchor": "study shows that AI Overviews"
+    },
+    {
+     "href": "https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update",
+     "anchor": "Seer Interactive reporting drops as high as 61%"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "tryprofound.com#31",
+   "page": "tryprofound.com",
+   "element": "p",
+   "text": "The real shift is not simply that AI is diverting clicks from blue-link search. Buyers are outsourcing more of discovery, comparison, and evaluation to the model. G2 found that 51% of B2B software buyers now begin their research with an AI chatbot more often than Google, and that chatbots are the most influential source shaping vendor shortlists. Meanwhile, 68% of U.S. Google searches in the first four months of 2026 ended without a click.",
+   "links": [
+    {
+     "href": "https://learn.g2.com/g2-2026-ai-search-insight-report",
+     "anchor": "G2 found that 51% of B2B software buyers"
+    },
+    {
+     "href": "https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/?utm_source=chatgpt.com",
+     "anchor": "68% of U.S. Google searches"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "tryprofound.com-2#339",
+   "page": "tryprofound.com-2",
+   "element": "p",
+   "text": "Enough to cover where your clients' buyers actually are. ChatGPT, Perplexity, and Google AI Overviews are the baseline every serious tool should hit. From there, Claude, Gemini, Copilot, Grok, Meta AI, and DeepSeek matter to different degrees depending on a client's audience and region. Tools that cap at four or five engines leave blind spots in your reporting; the ones tracking all 10 give you the full picture across a varied client base.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "aisearch.similarweb.com#140",
+   "page": "aisearch.similarweb.com",
+   "element": "li",
+   "text": "Cvent (22 citations, primarily their annual Top Meeting Hotels rankings)",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "semrush.com-3#115",
+   "page": "semrush.com-3",
+   "element": "p",
+   "text": "It was shared on Reddit , cited in newsletters, and linked to over 1,900 times (according to Domain Overview ).",
+   "links": [
+    {
+     "href": "https://www.reddit.com/r/SEO_Digital_Marketing/comments/1ki07av/googles_ai_overviews_doubled_in_just_2_months/",
+     "anchor": "shared on Reddit"
+    },
+    {
+     "href": "https://www.semrush.com/analytics/overview/",
+     "anchor": "Domain Overview"
+    }
+   ],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "orchly.ai#20",
+   "page": "orchly.ai",
+   "element": "tr",
+   "text": "PromptWatch Prompt-level AI tracking Basic Wide model tracking $89 / month",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#26",
+   "page": "writer.com",
+   "element": "p",
+   "text": "The real shift sits in this table. SEO was primarily a first-party game — you optimized your own website. GEO is primarily a third-party game. About 85% of brand mentions in AI search originate from third-party pages, not brand-owned sites , with brands 6.5x more likely to be cited through third-party sources than through their owned domains, according to AirOps’ analysis of over a billion citations. When a buyer asks ChatGPT “which [brand] should I trust for [category],” the answer is synthesized from industry publications, analyst reports, consumer reviews, trade press, and earned media — not from your homepage. A CMO at a consumer goods company, a head of marketing at a financial services",
+   "links": [
+    {
+     "href": "https://machinerelations.ai/research/earned-vs-owned-ai-citation-rates-2026",
+     "anchor": "About 85% of brand mentions in AI search originate from third-party pages, not brand-owned sites"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "writer.com#154",
+   "page": "writer.com",
+   "element": "p",
+   "text": "One more step that doesn’t fit neatly in the 30 days but matters enormously: bring your sales team into the loop. Your sales reps are the ones sitting across from buyers who’ve already done their AI research. Brief them on the questions buyers are asking in AI, equip them to address AI-influenced perspectives, and add “how did you first hear about us?” to your discovery call script. When a prospect mentions they researched your category in ChatGPT or Perplexity, that’s your AI visibility ROI showing up in the pipeline. Forrester’s research shows nearly 9 in 10 B2B buyers use genAI tools during purchasing — if your sales team isn’t prepared to meet those AI-informed buyers where they are, you",
+   "links": [
+    {
+     "href": "https://www.forrester.com/blogs/ai-search-will-crack-the-foundation-of-b2b-marketings-accountability-model/",
+     "anchor": "nearly 9 in 10 B2B buyers use genAI tools during purchasing"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "semrush.com#140",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "I wasn’t able to test this feature directly, but the product demo shows how it works in practice. Surfer also claims that filling gaps with “Facts” can increase AI citations by up to 25% .",
+   "links": [
+    {
+     "href": "https://surferseo.com/blog/whats-new-at-surfer-august-2025/",
+     "anchor": "increase AI citations by up to 25%"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "tryprofound.com#91",
+   "page": "tryprofound.com",
+   "element": "p",
+   "text": "Lily Ray is one of AI search’s strongest forensic researchers. Her gullibility experiment showed Google AI Overviews, AI Mode, Gemini, and ChatGPT incorporating a fabricated ranking within 24 hours, direct evidence of how quickly weak claims can enter answer systems.",
+   "links": [
+    {
+     "href": "https://www.linkedin.com/in/lily-ray-44755615/",
+     "anchor": "Lily Ray"
+    },
+    {
+     "href": "https://lilyray.nyc/which-ai-search-tools-llms-are-the-most-gullible/?utm_source=chatgpt.com",
+     "anchor": "gullibility experiment"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "ahrefs.com#35",
+   "page": "ahrefs.com",
+   "element": "p",
+   "text": "For example, AI Overviews appear in 57.9% of question queries…",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "aisearch.similarweb.com#158",
+   "page": "aisearch.similarweb.com",
+   "element": "p",
+   "text": "Use Similarweb AI Brand Visibility to establish your baseline Share of Model. Configure a campaign for your domain, select the topic clusters your customers care about (not SEO topics, the actual questions they ask AI: “best hotels for business travel,” “top rewards programs for families,” “which CRM for a 50-person team”), and run it across ChatGPT, Gemini, Perplexity, and Google AI Mode. Record your Share of Model and sentiment breakdown.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "orchly.ai#163",
+   "page": "orchly.ai",
+   "element": "p",
+   "text": "While the entry price starts around $249 per month , many important features are not included at that level. Even on higher plans, some key parts of the Action Center and technical fixes require further upgrades. The full experience becomes expensive quickly.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-2#300",
+   "page": "tryprofound.com-2",
+   "element": "p",
+   "text": "AIclicks tracks brand mentions across more than 10 platforms, and, like the stronger tools here, queries them through real user interfaces rather than APIs. Its Recommendations tab turns visibility data into a prioritized action list across three fronts: create AI-optimized content, earn mentions on the sources engines already trust, and join conversations on platforms like Reddit. The agency program is real, with a Certified Partners Directory and recurring revenue on client accounts, and AIclicks says it's used by 400-plus agencies.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "ahrefs.com#22",
+   "page": "ahrefs.com",
+   "element": "p",
+   "text": "And research from Pew shows users who encounter an AI summary click on a traditional search result in just 8% of visits, compared to 15% without one.",
+   "links": [
+    {
+     "href": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/",
+     "anchor": "research from Pew"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "semrush.com#123",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "Pricing : Essential ($99 per month), Scale ($219 per month), Enterprise (custom pricing)",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "segmetrics.io#291",
+   "page": "segmetrics.io",
+   "element": "p",
+   "text": "John Lee Dumas sold an impressive $2,137,739 in online courses in 2015. But did Infusionsoft’s lacking analytics cause EOFire to",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "semrush.com-3#69",
+   "page": "semrush.com-3",
+   "element": "blockquote",
+   "text": "\"Among other things, we find that including citations, quotations from relevant sources, and statistics can significantly boost source visibility, with an increase of over 40% across various queries.\"",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "aisearch.similarweb.com#207",
+   "page": "aisearch.similarweb.com",
+   "element": "p",
+   "text": "A well-established SEO toolset that added AI Overview visibility tracking to its rank tracker in 2025. Useful for monitoring which keywords trigger AI Overviews and whether your pages appear in them, which makes it a solid AEO tool for Google-specific surfaces.",
+   "links": [
+    {
+     "href": "https://www.similarweb.com/corp/search/seo/",
+     "anchor": "SEO toolset"
+    }
+   ],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "zapier.com#110",
+   "page": "zapier.com",
+   "element": "p",
+   "text": "Semrush AI Toolkit pricing: Available as an add-on for existing Semrush users, starting at $99 /month/domain/sub-user. It includes tracking across ChatGPT, Google AI, Gemini, and Perplexity, as well as 1 domain for brand performance analysis, 300 daily queries in AI Analysis reports, 25 prompts for prompt tracking, and AI Search Checks in Site Audit for up to 100 pages.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "llmrefs.com#55",
+   "page": "llmrefs.com",
+   "element": "li",
+   "text": "Growing referral traffic. ChatGPT alone is already driving referral traffic to tens of thousands of distinct domains. Vercel reports that 10% of new signups now come from ChatGPT referrals.",
+   "links": [],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#80",
+   "page": "writer.com",
+   "element": "p",
+   "text": "Google’s official position (May 2026): Google published its first dedicated generative AI search guide on May 15, 2026. It states plainly that structured data isn’t required for AI Overviews or AI Mode, and there’s no special schema.org markup you need to add for them. The guide includes a “Mythbusting generative AI search” section that explicitly calls out tactics it considers unnecessary, including llms.txt files and content chunking.",
+   "links": [
+    {
+     "href": "https://www.searchenginejournal.com/googles-new-ai-search-guide-calls-aeo-and-geo-still-seo/575026/",
+     "anchor": "It states plainly that structured data isn&#8217;t required for AI Overviews or AI Mode, and there&#8217;s no special schema.org markup you need to add"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "industry-lens.com#72",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Peec AI: Reduces Annual Plan Pricing to $80/mo — July 2026 Peec AI has reduced its annual plan pricing to $80/mo for Brands and $205/mo for Agencies. This aggressive pricing adjustment by Peec AI, paired with its growth to 3,000 customers and $10M ARR, forces… August 3, 2026",
+   "links": [
+    {
+     "href": "/reports/signal-spotlight-peec-ai",
+     "anchor": "Peec AI: Reduces Annual Plan Pricing to $80/mo — July 2026"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "seocrawl.ai#50",
+   "page": "seocrawl.ai",
+   "element": "blockquote",
+   "text": "The December 2025 Core Update extended E-E-A-T requirements beyond YMYL topics to all content categories, which means expertise signals are now relevant for every niche, not just health and finance.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#1",
+   "page": "industry-lens.com",
+   "element": "p",
+   "text": "Generative Engine Optimization (GEO) — getting your brand cited inside ChatGPT, Perplexity, Gemini and Google's AI Overviews — went from a fringe idea to a 22,000-search-a-month category in 2026. A wave of dedicated tools now monitors and optimizes that visibility. IndustryLens tracks ten of them — Profound, AthenaHQ, Peec AI, Otterly.ai, Knowatoa, Scrunch AI, Brandlight, Goodie AI, plus the SEO-suite add-ons Ahrefs Brand Radar and Semrush AI Toolkit — comparing pricing, positioning and the shift from passive monitoring to agentic execution.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#6",
+   "page": "writer.com",
+   "element": "p",
+   "text": "In 2024, Gartner predicted that traditional search engine volume would drop 25% by 2026. It’s July 2026, and that prediction has become our reality. Where AI Overviews appear, AI Overviews now reduce the click-through rate for the top-ranking page by up to 58% — from 7.3% to 1.6% on AI Overview keywords, according to Ahrefs’ analysis of 300,000 keywords comparing December 2023 to December 2025 data. Seer Interactive’s separate study of 3,119 informational queries found organic CTR for AI Overview queries fell 61% , from 1.76% to 0.61%.",
+   "links": [
+    {
+     "href": "https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/",
+     "anchor": "AI Overviews now reduce the click-through rate for the top-ranking page by up to 58%"
+    },
+    {
+     "href": "https://www.searchengineland.com/google-ai-overviews-drive-drop-organic-paid-ctr-464212/",
+     "anchor": "organic CTR for AI Overview queries fell 61%"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "hubspot.com#58",
+   "page": "hubspot.com",
+   "element": "li",
+   "text": "In a matter of weeks, we drove roughly 8,000 new website visitors and lifted our Brand Visibility Score by two percentage points with AEO, all during one of our slowest months of the year. Emily Davidson Director of Marketing Sandler",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "zapier.com#105",
+   "page": "zapier.com",
+   "element": "p",
+   "text": "Like Profound, they operate an extensive prompt database: 260+ million prompts in total. And while not exhaustive compared to other options on this list, they track many of the most popular answer engines, including ChatGPT, Google AI, Gemini, and Perplexity.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "orchly.ai#16",
+   "page": "orchly.ai",
+   "element": "tr",
+   "text": "Ahrefs Brand Radar SEO research + AI insights Minimal actions Existing Ahrefs users $199 + SEO plan",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#194",
+   "page": "frase.io",
+   "element": "p",
+   "text": "Display publication and last-updated dates prominently. Update core pillar content every 90-180 days to maintain citation freshness, particularly for Perplexity and Google AI Overviews which strongly favor recent content.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#31",
+   "page": "industry-lens.com",
+   "element": "p",
+   "text": "Peec AI launched a Query Fanouts page to reveal technical LLM search behavior, while AthenaHQ's Citation Engine (ACE) provides a predictive ML model to estimate brand citation probability. Otterly.ai found that Claude drives 10.6% of signups while GA4 captures only 0.1% — exposing a massive attribution gap in legacy stacks.",
+   "links": [],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "digitalapplied.com#61",
+   "page": "digitalapplied.com",
+   "element": "p",
+   "text": "\"According to Gartner's 2025 AI report, 73% of enterprises plan to implement AI marketing tools by 2026 (Source: Gartner, November 2025).\"",
+   "links": [],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#22",
+   "page": "industry-lens.com",
+   "element": "p",
+   "text": "Meanwhile, Ahrefs Brand Radar standalone access got more expensive: logged at $199/mo in May, the live page now lists £318/mo for select platforms and £560/mo for full access to 476M+ organic prompts. Semrush AI Toolkit removed its free tier, signaling a shift toward paid-only conversion.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#3",
+   "page": "frase.io",
+   "element": "p",
+   "text": "Generative Engine Optimization (GEO) is the practice of optimizing your content to appear as sources and citations in AI-generated responses from platforms like ChatGPT, Perplexity, Google AI Overviews, and Claude. Unlike traditional SEO that focuses on ranking in search results, GEO ensures your content gets cited when AI engines answer user questions. The shift is accelerating: AI-referred sessions jumped 527% year-over-year in the first five months of 2025 , according to Previsible's 2025 AI Traffic Report. For Google's own position, see what Google's official AI guidance says about GEO . If you've just been handed GEO, start with a practical first-week GEO plan .",
+   "links": [
+    {
+     "href": "https://searchengineland.com/ai-traffic-up-seo-rewritten-459954",
+     "anchor": "AI-referred sessions jumped 527% year-over-year in the first five months of 2025"
+    },
+    {
+     "href": "/blog/google-ai-optimization-guide",
+     "anchor": "what Google&#x27;s official AI guidance says about GEO"
+    },
+    {
+     "href": "/blog/you-ve-been-tasked-with-geo-here-s-what-to-do-first",
+     "anchor": "a practical first-week GEO plan"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "developers.google.com-2#15",
+   "page": "developers.google.com-2",
+   "element": "p",
+   "text": "Make sure your pages meet our technical requirements for Google Search , so that we can find them, crawl them, index them, and consider them for showing in our results. This includes making sure that Googlebot isn't blocked, the page works (Google receives an HTTP 200 (success) status code), and the page has indexable content. Meeting the technical requirements covers you for search generally, including AI formats.",
+   "links": [
+    {
+     "href": "/search/docs/essentials/technical",
+     "anchor": "technical requirements for Google Search"
+    }
+   ],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "llmrefs.com#102",
+   "page": "llmrefs.com",
+   "element": "p",
+   "text": "Here is a step-by-step checklist you can follow to implement generative engine optimization alongside your existing SEO strategy. These are the best practices for 2026.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "orchly.ai#200",
+   "page": "orchly.ai",
+   "element": "p",
+   "text": "There is a free tier with limited report runs and baseline visibility insights. Pay-as-you-go pricing starts at $0.10 per conversation run , which includes scheduled reports, trend tracking, and optimization suggestions.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "aisearch.similarweb.com#247",
+   "page": "aisearch.similarweb.com",
+   "element": "p",
+   "text": "Initial traction is possible within 4-8 weeks for well-optimized content on an authoritative domain. Building consistent, stable AI visibility across platforms typically takes 3-6 months of sustained effort. Unlike SEO, where rankings can persist for years, AI citation patterns are highly volatile, a 30-day measurement cadence is the minimum reliable baseline for tracking progress.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "zapier.com#134",
+   "page": "zapier.com",
+   "element": "p",
+   "text": "Clearscope pricing: Pricing starts at $129/month for the Essentials plan, which includes 20 AI Tracked Topics, 20 monthly Topic Explorations, 20 monthly AI Drafts, and 50 Content Inventory pages.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#14",
+   "page": "writer.com",
+   "element": "li",
+   "text": "Only 16% of brands track their AI search performance (McKinsey)",
+   "links": [],
+   "code": "B",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#26",
+   "page": "frase.io",
+   "element": "p",
+   "text": "GEO is no longer a US-only concern: Google AI Overviews spans 200+ countries in 40+ languages, and ChatGPT processes 2.5 billion prompts per day as of mid-2025. At the same time, nearly 80% of top news publishers now block at least one AI training crawler . That creates a content scarcity dynamic: brands that make their content AI-accessible and well-structured gain an outsized advantage.",
+   "links": [
+    {
+     "href": "https://techcrunch.com/2025/07/21/chatgpt-users-send-2-5-billion-prompts-a-day/",
+     "anchor": "ChatGPT processes 2.5 billion prompts per day"
+    },
+    {
+     "href": "https://pressgazette.co.uk/platforms/eight-in-ten-of-worlds-biggest-news-websites-now-block-ai-training-bots/",
+     "anchor": "nearly 80% of top news publishers now block at least one AI training crawler"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "hubspot.com#85",
+   "page": "hubspot.com",
+   "element": "p",
+   "text": "The HubSpot AEO tool tracks all of these in one dashboard, so you can see what's moving and what isn't. HubSpot’s 850 AEO beta customers drove 20% more traffic from AI than customers not using the tool.",
+   "links": [
+    {
+     "href": "https://www.hubspot.com/products/aeo",
+     "anchor": "HubSpot AEO tool"
+    }
+   ],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-4#111",
+   "page": "tryprofound.com-4",
+   "element": "p",
+   "text": "Days 31 to 60: Implement Q&A headings, schema markup, and FAQ blocks on priority pages. Add answer summaries at the top of articles, break content into atomic paragraphs, and refresh authorship and citation information. Test changes on a small set of pages before scaling.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "orchly.ai#25",
+   "page": "orchly.ai",
+   "element": "tr",
+   "text": "Trakkr AI visibility & crawler analytics Limited Budget-conscious teams $49 / month",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "llmrefs.com#75",
+   "page": "llmrefs.com",
+   "element": "p",
+   "text": "For example, if someone asks ChatGPT \"What is the best email marketing platform for a small e-commerce business with less than 10,000 subscribers?\" the AI might search for \"best email marketing platforms 2026,\" \"email marketing e-commerce features,\" and \"email marketing pricing small business.\"",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "hubspot.com#25",
+   "page": "hubspot.com",
+   "element": "li",
+   "text": "Clicks from answer engines often convert at higher rates: Visitors arriving through chat-based search typically have more context; they’ve already learned about your products and compared alternatives before clicking through. Internally, HubSpot saw 3x better conversion from leads coming from AEO.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "zapier.com#157",
+   "page": "zapier.com",
+   "element": "li",
+   "text": "Best apps The 6 best Replit alternatives in 2026 The 6 best Replit alternatives in 2026",
+   "links": [
+    {
+     "href": "/blog/replit-alternatives/",
+     "anchor": ""
+    },
+    {
+     "href": "/blog/all-articles/best-apps",
+     "anchor": "Best apps"
+    },
+    {
+     "href": "/blog/replit-alternatives/",
+     "anchor": "The 6 best Replit alternatives in 2026The 6 best Replit alternatives in 2026"
+    }
+   ],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "tryprofound.com-4#123",
+   "page": "tryprofound.com-4",
+   "element": "p",
+   "text": "Lead with a 30 to 60-word direct answer, use question-based headings, add FAQ schema, and write in natural, conversational language. Keep paragraphs short (1 to 3 sentences), include credible citations, and refresh content regularly to maintain trust signals.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#95",
+   "page": "writer.com",
+   "element": "li",
+   "text": "Implement proper HTTP status codes to help crawlers understand when content has moved (301/302) or no longer exists (404/410).",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#2",
+   "page": "frase.io",
+   "element": "blockquote",
+   "text": "TL;DR: Generative Engine Optimization (GEO) is the practice of structuring content so AI engines cite it as a source in their answers. Also called AEO, LLMO, GSO, or AIO. Early movers capture citation share while competition is low, and research-backed strategies can boost AI visibility by up to 40% .",
+   "links": [
+    {
+     "href": "https://arxiv.org/html/2311.09735v3",
+     "anchor": "research-backed strategies can boost AI visibility by up to 40%"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "llmrefs.com#12",
+   "page": "llmrefs.com",
+   "element": "li",
+   "text": "Query fan-out. The AI does not paste the full prompt into a search engine. It breaks the question into smaller sub-queries and searches for each one separately. If someone asks \"What is the best VPN for streaming Netflix in Europe?\" the AI might search for \"best VPN 2026,\" \"VPN Netflix streaming,\" and \"VPN Europe servers\" as three separate queries.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#332",
+   "page": "frase.io",
+   "element": "p",
+   "text": "List 10-15 questions your content definitively answers. These should be specific enough to avoid returning hundreds of possible citations but broad enough to generate AI responses.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "semrush.com-3#79",
+   "page": "semrush.com-3",
+   "element": "p",
+   "text": "A recent AirOps study found that 95% of ChatGPT citations come from content published or updated within the last 10 months, and pages with a clear \"last updated\" timestamp receive 1.8x more citations than those without one.",
+   "links": [
+    {
+     "href": "https://www.airops.com/blog/content-refresh-launch",
+     "anchor": "recent AirOps study"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "seocrawl.ai#70",
+   "page": "seocrawl.ai",
+   "element": "p",
+   "text": "FAQ schema, HowTo schema, and Article schema help Google identify what type of content is on a page and extract it more reliably. They reduce ambiguity about the structure and intent of a page's content. Adding or updating Article, FAQ, and Organization schema on priority pages is one of the most actionable steps following the March 2026 update.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#10",
+   "page": "writer.com",
+   "element": "p",
+   "text": "What makes this moment promising: just 16% of brands systematically track their AI search performance today , according to McKinsey. While most of the market is still optimizing for a world that’s fading, teams that move now have a real chance to build an advantage. They won’t just catch up — they’ll help define what visibility means in the AI era.",
+   "links": [
+    {
+     "href": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/new-front-door-to-the-internet-winning-in-the-age-of-ai-search",
+     "anchor": "just 16% of brands systematically track their AI search performance today"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "industry-lens.com#26",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "AthenaHQ : AthenaHQ Launches 'Essential' Free Tier and Unbundles API Access for Starter Plan 31 Jul 2026",
+   "links": [
+    {
+     "href": "https://athenahq.ai/plans/",
+     "anchor": "AthenaHQ Launches &#x27;Essential&#x27; Free Tier and Unbundles API Access for Starter Plan"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "purposelaunch.com#0",
+   "page": "purposelaunch.com",
+   "element": "p",
+   "text": "To get cited by ChatGPT and Google AI Overviews, your brand must exist as a high-confidence entity across the open web. That takes four things: (1) consistent Organization, Person, and Product schema, (2) content structured as direct 40–60 word answers under question-based headings, (3) third-party mentions on authoritative sites tying your brand to your topic, and (4) visible E-E-A-T signals — real authors, credentials, and fresh dates. Brands that win AI citations are recognized, not just ranked.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "seocrawl.ai#74",
+   "page": "seocrawl.ai",
+   "element": "p",
+   "text": "Longer content isn't inherently more citeable; comprehensiveness is. A 600-word page that fully answers a specific query with clear structure can outperform a 3,000-word page that buries its answers in padding. That said, queries with eight words or more are significantly more likely to trigger an AI Overview, and those longer, more specific queries tend to reward deeper content. Match depth to the actual complexity of the query, not to a word count target.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "orchly.ai#207",
+   "page": "orchly.ai",
+   "element": "p",
+   "text": "There is an introductory plan that starts around $95 for the first month , after which pricing moves closer to $295 per month .",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#21",
+   "page": "industry-lens.com",
+   "element": "p",
+   "text": "Pricing is fragmenting fast. Peec AI cut annual Brand Starter pricing 16% to $80/mo (agencies pay $205/mo), while Knowatoa holds a two-tier structure at $59/mo Starter and $199/mo Growth — with reporting integrations gated to the Growth tier. At the low end, AthenaHQ launched an 'Essential' free tier with 300 monthly credits, removing the API access gate previously restricted to enterprise contracts.",
+   "links": [
+    {
+     "href": "https://industry-lens.com/reports/ahrefs-brand-radar-peec-ai-cuts-pricing-august-2026",
+     "anchor": "Peec AI cut annual Brand Starter pricing 16% to $80/mo"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "industry-lens.com#34",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Ahrefs Brand Radar : Ahrefs Brand Radar Introduces Dual-Index Methodology for Google AI Surface Visibility 10 Jul 2026",
+   "links": [
+    {
+     "href": "https://ahrefs.com/blog/brand-radar-methodology/",
+     "anchor": "Ahrefs Brand Radar Introduces Dual-Index Methodology for Google AI Surface Visibility"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "tryprofound.com-2#163",
+   "page": "tryprofound.com-2",
+   "element": "p",
+   "text": "Semrush has been an SEO fixture for 15 years, and for the 100,000-plus teams already inside it, the AI Visibility Toolkit adds share of voice, sentiment, and prompt tracking without adopting another login. For an agency that lives in Semrush all day, that convenience is nothing to scoff at.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#71",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Peec AI Cuts Pricing 16% as GEO Adoption Spikes — July 2026 Peec AI reduced annual plan pricing by 16% and crossed the 3,000-customer milestone as B2B marketing leaders pivot toward Generative Engine Optimization (GEO). This period saw a surge in specialized m… August 5, 2026",
+   "links": [
+    {
+     "href": "/reports/ahrefs-brand-radar-peec-ai-cuts-pricing-august-2026",
+     "anchor": "Peec AI Cuts Pricing 16% as GEO Adoption Spikes — July 2026"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "orchly.ai#95",
+   "page": "orchly.ai",
+   "element": "p",
+   "text": "Pricing starts at $89 per month , which is reasonable for what you get.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#173",
+   "page": "writer.com",
+   "element": "li",
+   "text": "2x content engagement on campaigns optimized with the GEO agent.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "semrush.com#150",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "I tested the workflow on five articles. Within about 15 minutes, AirOps had extracted the content, flagged AI-visibility improvements, and applied suggested edits.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "aisearch.similarweb.com#213",
+   "page": "aisearch.similarweb.com",
+   "element": "p",
+   "text": "The citation economics of agentic AI are even more constrained than conversational AI. A conversational model might cite 5-7 sources. An agent acting on a purchase decision will likely converge on one or two.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#139",
+   "page": "frase.io",
+   "element": "p",
+   "text": "Comprehensive Coverage: ChatGPT tends to cite longer, more thorough resources (often exceeding 2,000 words) over brief articles. However, the critical factor is topical completeness, not merely word count.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#36",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Peec AI : Peec AI Launches Query Fanouts Page to Reveal Technical LLM Search Behavior 6 Jul 2026",
+   "links": [
+    {
+     "href": "https://www.linkedin.com/posts/peec-ai_new-query-fanouts-page-every-llm-answer-activity-7478014480191348736-Efvb",
+     "anchor": "Peec AI Launches Query Fanouts Page to Reveal Technical LLM Search Behavior"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "industry-lens.com#23",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Peec AI : Peec AI Reduces Annual Plan Pricing to $80/mo for Brands and $205/mo for Agencies",
+   "links": [
+    {
+     "href": "https://peec.ai/pricing",
+     "anchor": "Peec AI Reduces Annual Plan Pricing to $80/mo for Brands and $205/mo for Agencies"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "seocrawl.ai#66",
+   "page": "seocrawl.ai",
+   "element": "p",
+   "text": "The first 100 words of any section are the highest-value real estate for AI Overview citation. Lead with the direct answer, not with context-setting or restating the question. Every word before the actual answer is friction for both the AI system and the reader.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "writer.com#114",
+   "page": "writer.com",
+   "element": "p",
+   "text": "AI recommendation rate. Are you named when buyers ask about your category — whether that’s “which enterprise AI platform should we evaluate,” “what are the best CRM solutions for a global retail brand,” or “which financial planning tools do Fortune 500 companies use”? Test this manually across ChatGPT, Perplexity, Google AI Mode, and Claude. Track whether you appear, where you appear, and what’s said about you. Set a baseline and measure monthly.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "promptzero.tech#73",
+   "page": "promptzero.tech",
+   "element": "li",
+   "text": "Lead with the answer. State the core takeaway in the first 50-60 words of each section.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-2#56",
+   "page": "tryprofound.com-2",
+   "element": "tr",
+   "text": "Conductor Enterprise agencies already on Conductor Extends an enterprise SEO platform agencies already run, with 160+ countries Prompts are synthetic and keyword-derived, with updates landing twice a week Enterprise SEO heritage with an AI layer",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "aisearch.similarweb.com#109",
+   "page": "aisearch.similarweb.com",
+   "element": "p",
+   "text": "The underlying formula is Share of Model (SoM): your brand mentions divided by the total number of AI answers in the tracked set. A brand visibility score of 30% means your brand appears in 3 out of 10 AI responses to your target query cluster.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "purposelaunch.com#20",
+   "page": "purposelaunch.com",
+   "element": "li",
+   "text": "Lead every page with a 40 to 60 word direct answer to the question it targets.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#58",
+   "page": "industry-lens.com",
+   "element": "tr",
+   "text": "Entry price (annual) Peec AI: $80/mo for brands; Knowatoa: $59/mo Starter; AthenaHQ: free tier with 300 credits Peec AI: Reduces Annual Plan Pricing to $80/mo — July 2026 Knowatoa: Two-Tier Pricing Gates Reporting Integrations — August 2026 Peec AI Cuts Pricing 16% as GEO Adoption Spikes — July 2026",
+   "links": [
+    {
+     "href": "/reports/signal-spotlight-peec-ai",
+     "anchor": "Peec AI: Reduces Annual Plan Pricing to $80/mo — July 2026"
+    },
+    {
+     "href": "/reports/signal-spotlight-knowatoa",
+     "anchor": "Knowatoa: Two-Tier Pricing Gates Reporting Integrations — August 2026"
+    },
+    {
+     "href": "/reports/ahrefs-brand-radar-peec-ai-cuts-pricing-august-2026",
+     "anchor": "Peec AI Cuts Pricing 16% as GEO Adoption Spikes — July 2026"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "writer.com#54",
+   "page": "writer.com",
+   "element": "p",
+   "text": "Research on content formats tells the story clearly. Content formatted as lists, tables, or step-by-step guides has 2.5x higher citation probability than paragraph-only content , according to GetCite’s analysis of 10,000 pages. FAQ sections have the highest citation probability of any format at 81%. A study of 3,200 cited passages by MaxAEO found that statistic lines get 3.4x more pull than plain narrative, definition sentences get 3.1x, and table rows get 2.7x — while plain narrative paragraphs are the baseline at 1.0x. Structure your content for extractability.",
+   "links": [
+    {
+     "href": "https://getcite.ai/blog/ai-citation-optimization-benchmark",
+     "anchor": "Content formatted as lists, tables, or step-by-step guides has 2.5x higher citation probability than paragraph-only content"
+    },
+    {
+     "href": "https://maxaeo.ai/blog/what-content-ai-quotes-most/",
+     "anchor": "study of 3,200 cited passages"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "seocrawl.ai#129",
+   "page": "seocrawl.ai",
+   "element": "p",
+   "text": "No single factor dominates. Citation is the result of several signals working together. The five pillars are topical authority, E-E-A-T, content comprehensiveness, structured and scannable formatting, and technical crawlability. Since the December 2025 Core Update, E-E-A-T requirements have expanded beyond YMYL topics to all content categories, raising the baseline across the board.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-2#262",
+   "page": "tryprofound.com-2",
+   "element": "li",
+   "text": "A 25-million-person consumer panel behind its topic-level data",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com-4#112",
+   "page": "tryprofound.com-4",
+   "element": "p",
+   "text": "Days 61 to 90: Distribute optimized content to authoritative platforms in your industry. Launch monitoring across major answer engines to track citations and brand mentions. Iterate on pages with low citation share, testing different structural patterns and trust signals to improve visibility.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "tryprofound.com#40",
+   "page": "tryprofound.com",
+   "element": "tr",
+   "text": "25% Demonstrated results Published case studies or platform features that measurably move *answer share of voice* for brands",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#409",
+   "page": "frase.io",
+   "element": "p",
+   "text": "Generative Engine Optimization represents a fundamental shift in how content creates business value. As AI-referred sessions jumped 527% year-over-year in the first half of 2025 , the businesses implementing GEO now are capturing citation share while competition remains relatively low.",
+   "links": [
+    {
+     "href": "https://searchengineland.com/ai-traffic-up-seo-rewritten-459954",
+     "anchor": "AI-referred sessions jumped 527% year-over-year in the first half of 2025"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  },
+  {
+   "id": "semrush.com#50",
+   "page": "semrush.com",
+   "element": "li",
+   "text": "Advanced ($549/month): 200 prompts daily, 5,000 keywords, SEO Share of Voice, and expanded API and Model Context Protocol (MCP) access",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "semrush.com#90",
+   "page": "semrush.com",
+   "element": "p",
+   "text": "A standard search goes two levels deep and usually returns around 25 related questions. With a “deep” search, the tool goes three levels down, surfacing around 100 questions at once.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "frase.io#54",
+   "page": "frase.io",
+   "element": "p",
+   "text": "SEO optimizes at the page level: keyword in title, strong headings, thorough coverage. GEO optimizes at the fact level: each statistic, definition, or concept needs standalone clarity. An AI engine might cite one 60-word paragraph from your 3,000-word article, ignoring the rest entirely.",
+   "links": [],
+   "code": "C",
+   "is_a_numeric_claim": false,
+   "instrument_said_sourced": false
+  },
+  {
+   "id": "industry-lens.com#43",
+   "page": "industry-lens.com",
+   "element": "li",
+   "text": "Profound : Profound Formalizes Enterprise Agency Partnership with iPullRank 31 Jul 2026",
+   "links": [
+    {
+     "href": "https://finance.yahoo.com/technology/ai/articles/ipullrank-named-profound-agency-partner-110000495.html",
+     "anchor": "Profound Formalizes Enterprise Agency Partnership with iPullRank"
+    }
+   ],
+   "code": "A",
+   "is_a_numeric_claim": true,
+   "instrument_said_sourced": true
+  }
+ ]
+}
