@@ -2,11 +2,11 @@
 """Bir sayfanin butun A kademesi iddialarini elle okunacak bicimde doker."""
 import re, io, os, sys, html
 
-# --- yol düzeni (paketteki bütün betiklerde aynı) ------------------------
+# --- path layout (identical in every script in this package) --------------
 _D   = os.path.dirname(os.path.abspath(__file__))     # code/
-KOK  = os.path.dirname(_D)                            # paketin kökü
-# Anlık görüntüler pakette yayınlanmıyor; türetilmiş çalışma dosyaları da
-# oraya yazılır ki yayınlanan veriyle karışmasın.
+KOK  = os.path.dirname(_D)                            # the package root
+# Snapshots are not published in the package; derived working files are
+# written there as well, so they cannot be mistaken for published data.
 ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
 
 SAYI = re.compile(r'(?<![\w.])(?:\$\s?\d[\d,]*(?:\.\d+)?(?:\s?[kKmMbB]\b)?|\d+(?:\.\d+)?\s?%|\d+(?:\.\d+)?\s?x\b|\b\d{2,}(?:,\d{3})*\b|\b\d+\s+(?:engines?|sources?|prompts?|questions?|tools?|models?|domains?|platforms?|queries|sites?|brands?|weeks?|months?|days?|runs?|citations?)\b)', re.I)
@@ -34,13 +34,13 @@ def linkli(ham, c, alan):
         if FIYATSAYFA.search(u) and FIYATIDDIA.search(c): return u, cip, "F-fiyat"
         if ANA.match(u): continue
         say = re.findall(r'\d[\d,.]*', c)
-        if any(s and s in cip for s in say): return u, cip, "D-sayı"
+        if any(s and s in cip for s in say): return u, cip, "D-number"
         if len(kel(cip) & cum) >= 2: return u, cip, "D-kelime"
     return None, None, None
 if len(sys.argv) < 2:
-    raise SystemExit("kullanım: python3 code/dump-blocks.py <page_id>\n"
-                     "  örnek : python3 code/dump-blocks.py ahrefs.com\n"
-                     "  page_id değerleri: data/results.csv")
+    raise SystemExit("usage  : python3 code/dump-blocks.py <page_id>\n"
+                     "  example: python3 code/dump-blocks.py ahrefs.com\n"
+                     "  page_id values: data/results.csv")
 ad = sys.argv[1]; alan = ad.split('-')[0]
 h = io.open(os.path.join(ANLIK, f'v2-{ad}.html'), encoding='utf-8', errors='ignore').read()
 h = re.sub(r'(?is)<(script|style|nav|header|footer|form|noscript)\b.*?</\1>', ' ', h)

@@ -1,76 +1,74 @@
-# İddia sayımının doğrulanması — 31 Ağustos 2026
+# Validating claim detection — 31 August 2026
 
-Şimdiye kadar aracın **hükmü** sınandı ("bu rakamın linki var mı"). Bu belge
-aracın **sayımını** sınar: *makinenin iddia saydığı şey gerçekten bir iddia mı?*
+Until now what was tested was the instrument's **verdict** ("does this number have
+a link"). This document tests its **counting**: *is what the machine counts as a
+claim actually a claim?*
 
-Bu, yüzdelerin **paydası** demektir. Payda şişerse bütün oranlar düşer.
+That is the **denominator** of the percentages. If the denominator inflates, every
+rate falls.
 
-## Yöntem
+## Method
 
-İki bağımsız örneklem, ikisi de rastgele (tohum kayıtlı), toplam **50 madde**
-elle kodlandı. Soru tek: *bu, okuyucunun kaynağını sorabileceği bir olgusal
-sayısal iddia mı?*
+Two independent samples, both random (seed recorded), **50 items** in total, coded
+by hand. One question: *is this a factual numeric claim whose source a reader could
+ask for?*
 
-- **İddia sayılanlar:** araştırma istatistiği, fiyat, ürün kapsamı (motor/dil
-  sayısı), vaka sonucu, kendi ölçümlerinin metodolojisi
-- **İddia sayılmayanlar:** tavsiye ("her 90 günde bir güncelleyin"), yazar
-  biyografisi, iyi yazım örneği, deyim ("Fortune 500"), tarih, formül örneği
+- **Counted as a claim:** a research statistic, a price, product scope (number of engines or languages), a case-study result, the methodology of the page's own measurements
+- **Not counted as a claim:** advice ("refresh every 90 days"), an author biography, an example of good writing, an idiom ("Fortune 500"), a date, a worked formula
 
-## Sonuç
+## Result
 
 | | |
 |---|---|
-| Kodlanan madde | **50** |
-| İddia olmayan | **11** |
-| **Yanlış pozitif oranı** | **%22** (95% GA: %11 – %33) |
-| Bunların linksiz olanı | **6/7** *(ilk örneklemde ölçüldü)* |
+| Items coded | **50** |
+| Not a claim | **11** |
+| **False-positive rate** | **22%** (95% CI: 11% – 33%) |
+| Of those, unlinked | **6/7** *(measured in the first sample)* |
 
-## Önemli olan yön
+## The direction is what matters
 
-Yanlış pozitiflerin neredeyse tamamı **linksiz**. Yani payda şişiyor, pay
-şişmiyor → **bütün yüzdeler olduğundan DÜŞÜK.** Bu, herkesi (bizi de) daha
-kötü gösteren bir hata.
+Almost all the false positives are **unlinked**. So the denominator inflates while
+the numerator does not → **every percentage runs below the truth.** It is an error
+that makes everyone, ourselves included, look worse.
 
-| | Ham | Düzeltilmiş nokta tahmin | Aralık |
+| | Raw | Corrected point estimate | Range |
 |---|---|---|---|
-| Havuz oranı (474 iddia, 178 linkli) | **%37,6** | **%46,3** | %41 – %53 |
-| Sayfa medyanı | **%24** | **~%29** | — |
+| Pooled rate (474 claims, 178 linked) | **37.6%** | **46.3%** | 41% – 53% |
+| Page median | **24%** | **~29%** | — |
 
-## Mekanik düzeltme DENENDİ ve YETMEDİ
+## A mechanical fix was TRIED and was NOT enough
 
-v1.7'de kesin olan kategoriler elendi (biyografi kalıpları, `N out of M` formül
-örneği, `31 Jul 2026` tarih biçimi, `Fortune 500`). 474 iddiadan 13'ü düştü,
-medyan %23'ten %24'e çıktı.
+In v1.7 the unambiguous categories were filtered out (biography patterns, the
+`N out of M` formula example, the `31 Jul 2026` date format, `Fortune 500`).
+13 of 474 claims dropped, and the median moved from 23% to 24%.
 
-**Ama ikinci örneklemde yanlış pozitif oranı %20 kaldı** (%23'ten). Filtreler
-o özel ifadeleri yakaladı, kategoriyi yakalamadı:
+**But in the second sample the false-positive rate stayed at 20%** (from 23%). The
+filters caught those particular phrasings, not the category:
 
-| Kaçan | Neden regex yakalayamaz |
+| What slipped through | Why a regex cannot catch it |
 |---|---|
-| "Review top-performing content every 90 days" | tavsiye — dilbilgisel olarak iddiadan ayırt edilemez |
-| "worked as senior SEO specialist for Chess.com — one of the top 100 most visited websites" | biyografi ama farklı ifade |
-| `GEO-optimized: "Video content is increasingly surfaced by AI engines…"` | iyi yazım örneği, tırnak içinde ama şablon filtresi kaçırıyor |
-| "Choose Google AI Overviews if: You already rank well organically" | tavsiye |
+| "Review top-performing content every 90 days" | advice — grammatically indistinguishable from a claim |
+| "worked as senior SEO specialist for Chess.com — one of the top 100 most visited websites" | a biography, phrased differently |
+| `GEO-optimized: "Video content is increasingly surfaced by AI engines…"` | an example of good writing, inside quotes, but the template filter misses it |
+| "Choose Google AI Overviews if: You already rank well organically" | advice |
 
-**Karar: daha fazla desen eklenmeyecek.** Her ekleme yeni yanlış alarm üretti
-(bkz. `ARAC-REVIZYON-GECMISI.md` v1.4, v1.6). Onun yerine **kalibrasyon
-yayınlanacak**: ham rakam + elle ölçülmüş %22 yanlış pozitif oranı + güven
-aralığı + düzeltilmiş tahmin.
+**Decision: no more patterns will be added.** Every addition produced a new false
+alarm (see `instrument-revisions.md`, v1.4 and v1.6). Instead, **the calibration is
+published**: the raw figure, the hand-measured 22% false-positive rate, the
+confidence interval, and the corrected estimate.
 
-## Rapora gireceği hâl
+## As it will appear in the report
 
-> Aracımız her sayfadaki sayısal iddiaları otomatik sayar. 50 iddianın elle
-> kontrolünde bunların **%22'sinin (95% GA: %11–%33)** aslında iddia olmadığını
-> ölçtük — tavsiye cümleleri, yazar biyografileri, yazım örnekleri. Bu
-> yanlış sayımların neredeyse tamamı linksiz bloklarda; yani yayınladığımız
-> oranlar **gerçeğin altındadır**. Ham ve düzeltilmiş rakamları birlikte
-> veriyoruz; ham rakam ölçtüğümüz, düzeltilmiş rakam tahminimizdir.
+> Our instrument counts the numeric claims on each page automatically. Checking 50
+> claims by hand, we measured that **22% of them (95% CI: 11%–33%)** were not
+> claims at all — sentences of advice, author biographies, examples of writing.
+> Almost all of these miscounts sit in unlinked blocks, which means the rates we
+> publish are **below the true figure**. We give the raw and the corrected numbers
+> together; the raw one is what we measured, the corrected one is our estimate.
 
-## Bu neden kabul edilebilir
+## Why this is acceptable
 
-1. Hata **simetriktir** — aynı araç herkese uygulandı, sıralama değişmez
-2. Yönü **bilinir ve tek yönlüdür** — kimseyi olduğundan iyi göstermiyor
-3. Büyüklüğü **ölçülmüştür**, tahmin değil
-4. Asıl bulgu (**%0–%74 yayılım, aynı site içinde bile**) bu düzeltmeden
-   etkilenmiyor — yayılım oranların mutlak düzeyine değil, aralarındaki farka
-   dayanıyor
+1. The error is **symmetrical** — the same instrument was applied to everyone, so the ranking does not change
+2. Its direction is **known and one-way** — it makes nobody look better than they are
+3. Its size is **measured**, not guessed
+4. The finding itself (**a 0%–74% spread, even within one site**) is unaffected by this correction — the spread rests on the differences between the rates, not on their absolute level

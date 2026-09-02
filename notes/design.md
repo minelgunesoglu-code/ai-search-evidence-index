@@ -1,109 +1,111 @@
-# Genişletilmiş tasarım (v2) — 30 Ağustos 2026
+# Extended design (v2) — 30 August 2026
 
-Tur 5 geçerli ama **dar**: 19 sayfa, 19 alan adı, site başına tek sayfa.
-Söyleyebildiğimiz tek şey "bu sayfa" hakkındaydı. v2 bunu genişletir.
+Round 5 stands, but it is **narrow**: 19 pages, 19 domains, one page per site. All
+we could speak about was "this page". v2 widens that.
 
-**Kural: bu belge ölçüm başlamadan yazıldı. Ölçüm sırasında değiştirilmez.**
-Değişirse tarihiyle not düşülür ve etkilenen her şey yeniden ölçülür.
+**Rule: this document was written before measurement began. It is not changed
+during measurement.** If it changes, the change is dated and everything affected
+is re-measured.
 
-## 1. Örnekleme çerçevesi
+## 1. Sampling frame
 
-Aday havuzu, **altı tohum sorguda** ilk on organik sonuç. İki sorgu tur 5'ten
-devralındı, dört tanesi kendi sayfalarımızın hedef sorgularından eklendi:
+The candidate pool is the first ten organic results for **six seed queries**. Two
+queries carry over from round 5; four were added from our own pages' target
+queries:
 
-1. `generative engine optimization guide 2026` *(devralındı)*
-2. `best AI search visibility tools comparison 2026` *(devralındı)*
+1. `generative engine optimization guide 2026` *(carried over)*
+2. `best AI search visibility tools comparison 2026` *(carried over)*
 3. `how to get cited by ChatGPT`
 4. `how to track brand mentions in ChatGPT`
 5. `what is answer engine optimization`
 6. `how to rank in AI Overviews`
 
-Sorgular kendi sayfalarımızın hedefleridir; böylece "bizimle aynı sorguda
-yarışıyor" şartı korunur.
+The queries are our own pages' targets, which keeps the condition "competing in
+the same query as us" intact.
 
-## 2. Dahil etme (tur 5'ten aynen devralındı)
+## 2. Inclusion (carried over from round 5 unchanged)
 
-1. Bağımsız site — yayın platformu değil (Medium, LinkedIn, Substack hariç)
-2. Sayfada sayısal iddia bulunacak
-3. Bizim bir sayfamızla aynı sorguda yarışıyor olacak
+1. An independent site — not a publishing platform (Medium, LinkedIn, Substack excluded)
+2. The page must carry a numeric claim
+3. It must be competing in the same query as one of our pages
 
-**Hariç:** ismybrandinai.com. Gerekçe: aracı elimizde tutarken kendi
-sayfalarımızı düzelttik, ölçülen sayfalar bunu yapamadı — bizim için çıkacak
-sayı onlarınkiyle kıyaslanabilir olmazdı. Kendi rakamlarımız gizlenmiyor: dört
-sayfamızın ölçümü (%52, %42, %52, %17) makalenin "Why our own pages are not in
-the table" bölümünde yayımlanıyor.
+**Excluded:** ismybrandinai.com. The reason: while the instrument was in our hands
+we corrected our own pages, and the measured pages could not do that — a figure
+for us would not be comparable with theirs. Our own numbers are not hidden: the
+measurement of our four pages (52%, 42%, 52%, 17%) is published in the article's
+"Why our own pages are not in the table" section.
 
-## 3. Derinlik: site başına ÜÇ sayfa
+## 3. Depth: THREE pages per site
 
-Her nitelikli alan adından, aynı türden üç sayfa (rakam taşıyan rehber ya da
-karşılaştırma). Ortalaması alınmaz — **üçü de ayrı raporlanır.** Sayfa içi
-değişkenlik başlı başına bir bulgudur: bir site bir sayfasında kaynak verip
-diğerinde vermiyorsa, bunu görmek isteriz.
+From each qualifying domain, three pages of the same kind (a guide or comparison
+carrying numbers). They are not averaged — **all three are reported separately.**
+Within-site variation is a finding in its own right: if a site sources one page and
+not another, we want to see it.
 
-Üç sayfa bulunamayan siteler bulunanla girer ve kaç sayfayla girdiği yazılır.
+Sites where three pages cannot be found enter with what is found, and the number of
+pages they entered with is recorded.
 
-## 4. Tür ayrımı (v2'de EKLENDİ)
+## 4. Splitting by type (ADDED in v2)
 
-Tur 5'te iki farklı tür tek metrikte karışmıştı:
+Round 5 mixed two different kinds of page into one metric:
 
-| Tür | İddiaların doğası | Ulaşılabilirlik ne demek |
+| Kind | Nature of the claims | What reachability means |
 |---|---|---|
-| **Araç karşılaştırma** | fiyat / özellik ("$99/ay, 10 motor") | satıcının fiyat sayfası linklendi mi |
-| **Rehber / araştırma** | istatistik ("%68 tıklamasız arama") | çalışma linklendi mi |
+| **Tool comparison** | price / feature ("$99/month, 10 engines") | is the vendor's pricing page linked |
+| **Guide / research** | statistics ("68% of searches end without a click") | is the study linked |
 
-İkisi **ayrı raporlanır.** Araç zaten fiyat iddialarını ayrı sayıyor
-(`fiyat` / `fiyat_ulasilir` sütunları); v2'de bu ayrım rapora taşınır.
+The two are **reported separately.** The instrument already counts price claims
+apart (`fiyat` / `fiyat_ulasilir` columns); v2 carries that split through to the
+report.
 
-## 5. Ölçüm
+## 5. Measurement
 
-- Araç **v1.5**, dondurulmuş. Ölçüm sırasında değiştirilmez.
-- Tek zaman damgası, hepsi arka arkaya çekilir, çekilemeyen düşer ve raporlanır.
-- **A kademesi (linkli) yüzde olarak yayınlanır** — elle ölçülmüş %82 geçerlilik.
-- **B kademesi yüzde olarak YAYINLANMAZ** — işaret + doğrulanmış örnek.
-- **Kaynakça sütunu**: sayfa sonu künyesi kaç tane, kaçı linkli.
-- 10'dan az iddiası olan sayfa yüzde almaz.
+- Instrument **v1.5**, frozen. Not changed during measurement.
+- One timestamp, everything fetched back to back; whatever cannot be fetched drops out and is reported.
+- **Tier A (linked) is published as a percentage** — hand-measured at 82% validity.
+- **Tier B is NOT published as a percentage** — signal plus a verified example.
+- **Bibliography column**: how many entries the end-of-page list holds, and how many are linked.
+- A page with fewer than 10 claims gets no percentage.
 
-## 6. Doğrulama
+## 6. Verification
 
-- Yayınlanan **her** A kademesi linki elle okunur. İstisnasız.
-- Her sayfa için bir B örneği elle doğrulanır.
-- Yeni eklenen sayfalardan rastgele 20 iddia kör kodlanır; araçla uyum raporlanır
-  (tur 5'te 30 maddede %83'tü).
+- **Every** published tier-A link is read by hand. Without exception.
+- One tier-B example per page is verified by hand.
+- 20 claims drawn at random from the newly added pages are coded blind; agreement with the instrument is reported (in round 5 it was 83% across 30 items).
 
-## 7. Baştan kabul edilen sınırlar
+## 7. Limits accepted in advance
 
-1. Tek gün, tek çekim. Sayfalar değişebilir — `data-mania.com` tur 3'te
-   181 dipnot linkini kaybetmişti, kanıtı saklı.
-2. Üç sayfa bir siteyi temsil eder mi — etmeyebilir. "Bu üç sayfa" denir.
-3. Altı sorgu bir sektör değildir. "Bu sorgularda çıkan sayfalar" denir.
-4. Çerçeve kusurları simetriktir ama sayfa yapıları farklıysa simetri bozulur:
-   tablo yoğun sayfaların paydası şişer. Blok sayısı da ayrıca raporlanır.
-5. Araç B kademesinde %83'te kalmıştır; bu yüzden o kademe yüzdesizdir.
+1. One day, one retrieval. Pages change — `data-mania.com` lost 181 footnote links in round 3, and the evidence is kept.
+2. Whether three pages represent a site — they may not. We say "these three pages".
+3. Six queries are not a field. We say "the pages these queries returned".
+4. Frame flaws are symmetrical, but symmetry breaks when page structures differ: table-heavy pages inflate the denominator. Block counts are reported separately as well.
+5. The instrument stalled at 83% on tier B; that is why the tier carries no percentage.
 
-## 8. Tur 5'in durumu
+## 8. Where round 5 stands
 
-Tur 5 **iptal edilmez**. v2 tamamlanınca ikisi karşılaştırılır: dar örneklemin
-sonucu geniş örneklemde de duruyor mu? Durmuyorsa bu da bir bulgudur.
+Round 5 is **not cancelled**. When v2 is complete the two are compared: does the
+narrow sample's result hold in the wide one? If it does not, that is a finding too.
 
 ---
 
-## DEĞİŞİKLİK 1 — 30.08.2026, SERP toplandıktan sonra, ölçüm BAŞLAMADAN önce
+## CHANGE 1 — 30.08.2026, after the SERPs were collected, before measurement began
 
-**§3 "site başına üç sayfa" kuralı kaldırıldı.** Yerine: **çerçeve SERP'in kendisidir.**
-Bir alan adı, Google onu kaç kez sıralıyorsa o kadar sayfayla girer.
+**The §3 rule of "three pages per site" is removed.** In its place: **the frame is
+the SERP itself.** A domain enters with as many pages as Google ranks it for.
 
-**Gerekçe:** "site başına üç sayfa" kuralı, ikinci ve üçüncü sayfayı *benim seçmemi*
-gerektiriyordu — hangi üç sayfa? Bu, tekrarlanabilirliği bozan bir hüküm adımıdır.
-SERP çerçevesi ise mekaniktir: aynı sorguları çalıştıran herkes aynı listeye ulaşır.
+**Reason:** "three pages per site" required *me* to choose the second and third page
+— which three? That is a judgement step, and it breaks reproducibility. The SERP
+frame is mechanical: anyone running the same queries reaches the same list.
 
-Ayrıca doğal ağırlıklandırma sağlıyor: `tryprofound.com` dört sorguda birden çıkıyor
-ve dört sayfayla giriyor. Bu bir kusur değil, o sitenin bu alandaki görünürlüğünün
-ölçüsü. Tek sayfayla çıkan siteler tek sayfayla giriyor.
+It also weights naturally: `tryprofound.com` appears in four queries and enters with
+four pages. That is not a flaw; it is a measure of that site's visibility in this
+field. Sites appearing with one page enter with one.
 
-**Sonuç:** 38 URL · 30 tekil alan adı. Çok sayfayla girenler: tryprofound.com (4),
-semrush.com (4), developers.google.com (2), searchengineland.com (2).
+**Result:** 38 URLs across 30 unique domains. Entering with more than one page:
+tryprofound.com (4), semrush.com (4), developers.google.com (2),
+searchengineland.com (2).
 
-**Tur 5'in konumu:** iptal değil. Tur 5 iki sorguluk **pilot** olarak raporlanır;
-altı sorguluk geniş çerçeve onu doğruluyor mu, ayrıca yazılır. Tur 5'in 19 sayfasından
-altısı yeni çerçevede de çıktı (digitalapplied, evertune, frase, industry-lens,
-llmrefs, semrush) — bu altısında iki turun sonucu karşılaştırılabilir.
+**Where round 5 sits:** not cancelled. Round 5 is reported as a two-query **pilot**,
+and whether the six-query frame confirms it is written up separately. Six of round
+5's 19 pages appear in the new frame as well (digitalapplied, evertune, frase,
+industry-lens, llmrefs, semrush) — for those six, the two rounds can be compared.

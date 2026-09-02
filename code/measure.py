@@ -1,92 +1,96 @@
 #!/usr/bin/env python3
 """EVIDENCE INDEX CODER v1.7
 =============================
-The AI Search Evidence Index'in ölçüm enstrümanı. Sürüm 1.7 — 31 Ağustos 2026.
-YAYINLANAN TABLOYU BU SÜRÜM ÜRETTİ. Revizyon geçmişi: notes/instrument-revisions.md.
+The measurement instrument of The AI Search Evidence Index. Version 1.7, 31 August 2026.
+THIS VERSION PRODUCED THE PUBLISHED TABLE. Revision history: notes/instrument-revisions.md.
 
-v1.2 (30 Ağustos) DOĞRULANMIŞTI: 92 iddialık örneklemin 46'sı elle kodlandı
-(insan hükmü = "bloktaki link GERÇEKTEN bu rakamı kaynaklıyor mu").
+v1.2 (30 August) WAS VALIDATED: 46 of a 92-claim sample were coded by hand
+(the human judgement being "does the link in this block ACTUALLY source this number").
 
-  v1.2'DE ÖLÇÜLEN GEÇERLİLİK: insan koduyla %82 uyum (39 kodlanabilir iddiada 32)
-  · yanlış pozitif 2  (kaynak var dedi, yok)
-  · kaçırılan     5  (kaynak vardı, göremedi)
+  VALIDITY MEASURED AT v1.2: 82% agreement with the human coding (32 of 39 codable claims)
+  · false positives 2  (said there was a source, there was not)
+  · missed          5  (there was a source, it did not see it)
 
-v1.7'nin güvenilirliği ayrı ve daha geniş bir örneklemde ölçüldü (120 blok,
-κ = 0,85): coding/blind-sample-120.json ve notes/reliability.md.
+v1.7's reliability was measured on a separate and wider sample (120 blocks,
+kappa = 0.85): coding/blind-sample-120.json and notes/reliability.md.
 
-Yanlış pozitif KASITLI olarak düşük tutuldu: adıyla skor yayınlanan bir çalışmada
-"kaynağı var" deyip yanılmak, kaçırmaktan çok daha zararlıdır. %82'yi koruyan ama
-yanlış pozitifi 6'ya çıkaran daha gevşek bir ayar denendi ve REDDEDİLDİ.
+False positives were kept low DELIBERATELY: in a study that publishes scores under
+company names, saying "it has a source" and being wrong is far more damaging than
+missing one. A looser setting that held 82% but raised false positives to 6 was
+tried and REJECTED.
 
-v1.1'DEN FARKI:
- D. ÇIPA KURALI — link, çıpa metni ya sayının kendisini içeriyorsa ya da iddia
-    cümlesiyle en az 2 anlamlı kelime paylaşıyorsa kaynak sayılır. v1.1 "blokta
-    link var" diyordu; elle kontrolde bu %38 yanlış verdi (Rankscale fiyatı için
-    Otterly linki, $35M yatırım için yatırımcının ana sayfası, vb.).
- E. ÇIPLAK ANA SAYFA SAYILMAZ — "seranking.com" gibi yolsuz bağlantı o rakamı
-    kanıtlamıyor.
- F. FİYAT SAYFASI İSTİSNASI — iddia fiyatsa ve link /pricing ya da /plans'e
-    gidiyorsa kaynak sayılır (çıpa metni eşleşmese de).
+DIFFERENCE FROM v1.1:
+ D. ANCHOR RULE: a link counts as a source if its anchor text either contains the
+    number itself or shares at least 2 meaningful words with the claim sentence.
+    v1.1 said "there is a link in the block"; hand checking made that 38% wrong
+    (an Otterly link for a Rankscale price, an investor's home page for a $35M
+    round, and so on).
+ E. A BARE HOME PAGE DOES NOT COUNT: a pathless link such as "seranking.com" does
+    not evidence that number.
+ F. PRICING-PAGE EXCEPTION: if the claim is a price and the link goes to /pricing
+    or /plans, it counts as a source (even when the anchor text does not match).
 
-DENENİP REDDEDİLEN: "kendi sitesine link sayılmaz" kuralı uyumu %77'den %54'e
-DÜŞÜRDÜ — kendi çalışmasına ya da kendi fiyat sayfasına link vermek meşru
-kaynaktır. Sezgi yanlıştı, ölçüm düzeltti.
+TRIED AND REJECTED: the rule "a link to the site's own pages does not count"
+DROPPED agreement from 77% to 54%. Linking to your own study or your own pricing
+page is a legitimate source. The intuition was wrong; the measurement corrected it.
 
-v1.0'DAN FARKI (elle doğrulamada bulunan üç kusur):
- A. ÜÇÜNCÜ KADEME: "kaynak adı var, link yok" artık sıfır sayılmıyor. v1.0 ikili
-    çalışıyordu; llmrefs.com kaynağını adıyla veriyordu (Vercel, Brandlight) ama
-    %0 çıkıyordu. Kendi kod kitabımızda bu sınıf zaten vardı.
- B. ŞABLON/ÖRNEK BLOKLARI ELENDİ: okura "böyle yaz" diye verilen tırnak içi
-    kalıplar iddia değildir (obapr.com, ayzeo.com'da bulundu).
- C. EŞİK: 10 iddianın altındaki sayfalar için YÜZDE VERİLMEZ, ham sayı verilir.
-    3 iddiada "%33" istatistiksel olarak boştur.
+DIFFERENCE FROM v1.0 (three defects found in verification by hand):
+ A. A THIRD TIER: "source named, no link" is no longer counted as zero. v1.0 was
+    binary; llmrefs.com named its sources (Vercel, Brandlight) but came out at 0%.
+    Our own codebook already contained this class.
+ B. TEMPLATE AND EXAMPLE BLOCKS REMOVED: quoted patterns offered to the reader as
+    "write it like this" are not claims (found on obapr.com and ayzeo.com).
+ C. THRESHOLD: pages with fewer than 10 claims get NO PERCENTAGE, only the raw
+    count. "33%" on 3 claims is statistically empty.
 
-NEDEN SÜRÜM: kural değişince rakam değişir. 30 Ağustos'ta iki kez değiştirdik ve
-rakip medyanı %5 -> %11 -> %19 oynadı; sayfalar aynıydı, kural değişti. Yayınlanan
-her rakam "v1.0 ile ölçüldü" diye etiketlenir, böylece yeniden üretilebilir kalır.
-Kural değişirse v1.1 açılır; eski rakamlar geçersiz olmaz, hangi aletle ölçüldüğü
-yazılıdır.
+WHY VERSIONS: when a rule changes, the number changes. On 30 August we changed it
+twice and the competitor median moved 5% -> 11% -> 19%; the pages were the same,
+the rule changed. Every published figure is labelled "measured with v1.0" so it
+stays reproducible. If a rule changes, v1.1 opens; the old figures do not become
+invalid, it is written down which instrument measured them.
 
-v1.0 KURALLARI (donmuş):
- 1. Blok türleri: p, li, tr, blockquote, h1-h6
- 2. İDDİA SAYILMAZ: başlık blokları · tarih satırları ("last updated" vb.) ·
-    60 karakterden kısa bloklar · yıl ve tarih desenleri
- 3. Sayısal iddia: fiyat, yüzde, çarpan, 2+ basamaklı sayı, "N motor/kaynak/soru"
- 4. ULAŞILABİLİR: bloğun içinde http ya da site-içi (/) bir bağlantı var
- 5. TABLO KURALI: tablo satırlarının hemen bitişiğindeki (±2 blok) linkli ve
-    400 karakterden kısa paragraf, o tablonun bütün satırlarını kapsar
- 6. Fiyat iddiaları ayrı raporlanır
+v1.0 RULES (frozen):
+ 1. Block types: p, li, tr, blockquote, h1-h6
+ 2. NOT A CLAIM: heading blocks · date lines ("last updated" and the like) ·
+    blocks shorter than 60 characters · year and date patterns
+ 3. A numeric claim: a price, a percentage, a multiplier, a number of 2+ digits,
+    "N engines/sources/questions"
+ 4. REACHABLE: the block contains an http or a site-internal (/) link
+ 5. TABLE RULE: a linked paragraph shorter than 400 characters immediately
+    adjacent to table rows (within 2 blocks) covers all rows of that table
+ 6. Price claims are reported separately
 
-BİLİNEN SINIR — v1.0'da KAPATILMADI:
- Kural 4 "blokta link var" der, "o link BU rakamı kaynaklıyor" demez. 30.08'de
- 40 iddialık elle kontrolde 20 "ulaşılabilir"in 7'si yanlış çıktı. Bu yüzden
- v1.0'ın ürettiği oran bir ÜST SINIRDIR, ölçülen hata payı ~%35. Rapor bunu
- böyle sunmak zorundadır. Kapatmak insan kodlaması gerektirir.
+KNOWN LIMIT, NOT CLOSED in v1.0:
+ Rule 4 says "there is a link in the block", not "that link sources THIS number".
+ In a hand check of 40 claims on 30.08, 7 of 20 "reachable" verdicts were wrong.
+ The rate v1.0 produces is therefore an UPPER BOUND, with a measured error of
+ about 35%. The report has to present it that way. Closing it requires human coding.
 
---- orijinal not ---
-TUR 3 ÖLÇÜM — temizlenmiş alet.
+--- original note ---
+ROUND 3 MEASUREMENT: the cleaned instrument.
 
-Elle doğrulamada (30.08, 40 iddia) iki kusur bulundu ve ikisi de burada kapalı:
+Verification by hand (30.08, 40 claims) found two defects, both closed here:
 
-  Hata 2 — iddia olmayanlar sayılıyordu: sayfa başlığı ("19 Best AI Tools"),
-           tarih satırı ("Last updated 12 June"), örnek hesap, kısa etiket.
-           ÇÖZÜM: başlık blokları, tarih satırları ve 60 karakterden kısa
-           bloklar iddia sayılmaz.
+  Error 2 - things that were not claims were being counted: a page title
+           ("19 Best AI Tools"), a date line ("Last updated 12 June"), a worked
+           example, a short label.
+           FIX: heading blocks, date lines and blocks shorter than 60 characters
+           are not claims.
 
-  Hata 1 — "blokta link var" ≠ "o link bu rakamı kaynaklıyor". 20 örnekte
-           7 kez yanlış çıktı. BU KAPATILAMADI (insan hükmü gerekiyor).
-           SONUÇ: "ulaşılabilir" oranı bir ÜST SINIRDIR, ~%35 hata payıyla.
-           Rapor bunu böyle sunmak zorunda.
+  Error 1 - "there is a link in the block" is not "that link sources this number".
+           Wrong 7 times in 20 examples. THIS COULD NOT BE CLOSED (it needs human
+           judgement). CONSEQUENCE: the "reachable" rate is an UPPER BOUND, with
+           an error margin of about 35%. The report has to present it that way.
 
-Tablo kuralı (29.08 kararı): tablonun bitişiğindeki linkli kaynak notu, o
-tablonun satırlarını da kapsar. Her siteye AYNI ŞEKİLDE uygulanır.
+Table rule (decided 29.08): a linked source note adjacent to a table also covers
+that table's rows. Applied IDENTICALLY to every site.
 """
 import re, io, os, csv, json, glob, html, collections, statistics as st
 
 D = os.path.dirname(os.path.abspath(__file__))          # code/
-KOK = os.path.dirname(D)                                # paketin kökü
-# Anlık görüntüler (v2-*.html) pakette YAYINLANMIYOR — telif. Kendi çekimini
-# code/fetch.py ile al, ya da SNAPSHOTS ile klasörünü göster.
+KOK = os.path.dirname(D)                                # the package root
+# Snapshots (v2-*.html) are NOT published in the package, for copyright reasons.
+# Take your own with code/fetch.py, or point at a folder with SNAPSHOTS.
 ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
 
 SAYI = re.compile(
@@ -196,7 +200,7 @@ def linkli(ham, cumle="", ALAN=None):
 
 def olc(h, ALAN=None):
     bl = bloklar(h)
-    # tablo kuralı: tr bloğunun bitişiğinde linkli kısa paragraf varsa kredi ver
+    # table rule: give credit if a short linked paragraph sits next to the tr block
     kredi = [False] * len(bl)
     for i, (tur, txt, ham) in enumerate(bl):
         if tur != "tr":
@@ -214,7 +218,7 @@ def olc(h, ALAN=None):
     adli = 0                                   # (A) kaynak adi var, link yok
     for i, (tur, txt, ham) in enumerate(bl):
         if tur.startswith("h") or TARIH.search(txt) or len(txt) < 60:
-            continue                                   # iddia değil
+            continue                                   # not a claim
         if SABLON.search(txt):
             continue                                   # (B) okura verilen kalip
         if BIYOGRAFI.search(txt) or ORNEKORAN.search(txt) or TARIH2.search(txt.strip()):
@@ -233,28 +237,28 @@ def olc(h, ALAN=None):
             if not ok and advar: adli += 1          # (A)
     return n, a_, fn, fa, adli
 
-# Ölçüm yalnızca bu dosya DOĞRUDAN çalıştırılınca yapılır. blind-sample.py
-# bu modülü kural tanımları için import ediyor; import etmek yayınlanan
-# data/measurement-by-block.json dosyasının üzerine YAZMAMALI.
+# The measurement runs only when this file is executed DIRECTLY. blind-sample.py
+# imports this module for the rule definitions; importing it must NOT overwrite
+# the published data/measurement-by-block.json.
 if __name__ == "__main__":
     with io.open(os.path.join(KOK, "data/retrieval-log.csv"), encoding="utf-8") as fh:
         cek = [r for r in csv.DictReader(fh)]
     alinan = [r for r in cek if r["status"] == "retrieved"]
     kume = {r["page_id"]: r["seed_query"] for r in alinan}
-    # Çekim penceresi = İLK çekimin zaman damgasından SON çekiminkine. Bu, tek
-    # kaynağı yayınlanan retrieval-log.csv olduğu için yeniden üretilebilir.
-    # NOT: ilk yayınlanan dosyadaki pencere fetch.py'nin kendi baslangic/bitis
-    # saatinden geliyordu ve son sayfanın indirme süresini de içeriyordu (85,4 sn);
-    # buradan türetilen 83,6 sn. Makaledeki "86 saniyenin içinde" ifadesi ikisinde
-    # de doğru. Ayrıntı: notes/instrument-revisions.md v1.8.
+    # Retrieval window = from the FIRST fetch's timestamp to the LAST one's. This is
+    # reproducible because its only source is the published retrieval-log.csv.
+    # NOTE: the window in the first published file came from fetch.py's own start and
+    # end times and included the download time of the last page (85.4 s); the one
+    # derived here is 83.6 s. The article's "inside 86 seconds" holds for both.
+    # Detail: notes/instrument-revisions.md v1.8.
     zaman = sorted(r["retrieved_utc"] for r in alinan)
     pencere = [zaman[0], zaman[-1]]
 
     rows = []
     anlik = sorted(glob.glob(os.path.join(ANLIK, "v2-*.html")))
     if not anlik:
-        raise SystemExit(f"Anlık görüntü bulunamadı: {ANLIK}\n"
-                         f"code/fetch.py ile çek, ya da SNAPSHOTS=<klasör> ver.")
+        raise SystemExit(f"No snapshots found: {ANLIK}\n"
+                         f"Fetch your own with code/fetch.py, or pass SNAPSHOTS=<folder>.")
     for f in anlik:
         ad = os.path.basename(f)[3:-5]
         n, a, fn, fa, adli = olc(io.open(f, encoding="utf-8", errors="ignore").read(), ALAN=ad.split("-")[0])
@@ -269,11 +273,11 @@ if __name__ == "__main__":
     def pct(a, b): return 100*a/b if b else None
 
     ESIK = 10   # (C) bu sayinin altinda YUZDE verilmez
-    print(f"\n{'site':21} {'iddia':>6} {'linkli':>7} {'adli':>6} {'ulaşılır':>9}  not")
+    print(f"\n{'site':21} {'claims':>6} {'linked':>7} {'named':>6} {'reachable':>10}  note")
     for r in sorted(rows, key=lambda x: -(x["blocks_sourced"]/x["blocks_with_numeric_claim"] if x["blocks_with_numeric_claim"] else 0)):
         p = pct(r["blocks_sourced"], r["blocks_with_numeric_claim"])
         az = r["blocks_with_numeric_claim"] < ESIK
-        gost = "az örneklem" if az else (f"%{p:.0f}" if p is not None else "—")
+        gost = "small sample" if az else (f"{p:.0f}%" if p is not None else "-")
         mark = "  <<<" if r["page_id"].startswith("BIZ") else ""
         print(f"  {r['page_id']:19} {r['blocks_with_numeric_claim']:6} {r['blocks_sourced']:7} {r['blocks_source_named_not_linked']:6} "
               f"{gost:>9}{mark}")
@@ -282,11 +286,11 @@ if __name__ == "__main__":
     rak = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in ge if not r["page_id"].startswith("BIZ")]
     biz = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in ge if r["page_id"].startswith("BIZ")]
     az  = [r["page_id"] for r in rows if r["blocks_with_numeric_claim"] < ESIK]
-    print(f"\n  (yüzde yalnızca {ESIK}+ iddiası olan sayfalar için)")
-    print(f"  RAKİP {len(rak)} sayfa · medyan %{st.median(rak):.0f} · "
-          f"sıfır {sum(1 for v in rak if v == 0)} · %10 altı {sum(1 for v in rak if v < 10)}")
-    print(f"  BİZ   {len(biz)} sayfa" + (f" · medyan %{st.median(biz):.0f}" if biz else " (bu cercevede yok)"))
-    print(f"  az örneklemli ({ESIK}'dan az): {', '.join(az) if az else 'yok'}")
+    print(f"\n  (a percentage is given only for pages with {ESIK}+ claims)")
+    print(f"  COMPETITORS {len(rak)} pages · median {st.median(rak):.0f}% · "
+          f"zeros {sum(1 for v in rak if v == 0)} · under 10% {sum(1 for v in rak if v < 10)}")
+    print(f"  OURS  {len(biz)} pages" + (f" · median {st.median(biz):.0f}%" if biz else " (not in this frame)"))
+    print(f"  small-sample (under {ESIK}): {', '.join(az) if az else 'none'}")
     adt = sum(r["blocks_source_named_not_linked"] for r in rows if not r["page_id"].startswith("BIZ"))
     print(f"\n  linksiz ama KAYNAK ADI verilen iddia (rakiplerde): {adt}")
     CIKTI = os.path.join(KOK, "data/measurement-by-block.json")

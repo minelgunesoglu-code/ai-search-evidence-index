@@ -1,352 +1,322 @@
-# Ölçüm aracının revizyon geçmişi — Evidence Index coder
+# Revision history of the instrument — Evidence Index coder
 
-Araç **30 Ağustos 2026'da bir gün içinde beş kez revize edildi.** Her revizyon,
-makinenin ürettiği sayıyı elle okuyunca ortaya çıktı. Hiçbiri makine tarafından
-bulunamazdı.
+The instrument was **revised five times in a single day, 30 August 2026.** Every
+revision came out of reading by hand a number the machine had produced. None of
+them could have been found by the machine.
 
-Bu geçmiş yayınlanacak: bir ölçüm aracının kaç kez ve neden yanıldığını göstermek,
-sonucun kendisi kadar önemli.
+This history is published: showing how many times a measuring instrument was wrong,
+and why, matters as much as the result.
 
 ---
 
 ## v0 → v1.0
 
-| # | Bulunan kusur | Nasıl bulundu | Etki |
+| # | Defect found | How it was found | Effect |
 |---|---|---|---|
-| 1 | **Tarihler iddia sayılıyordu** — `Updated On: July 28, 2026`'dan `28` ve `2026` çıkarılıyordu | data-mania'nın %79'u şüpheli görünüp örnekler okundu | 275 → 261 iddia |
-| 2 | **Tek blokta çok sayı** aynı kodu defalarca saydırıyordu | Tekrarlanan metinler fark edildi | Blok bazı raporlama eklendi |
-| 3 | **Sayfa başlıkları** iddia sayılıyordu (`19 Best AI Tools`) | 40 iddialık elle kontrol | %15 çerçeve kusuru |
-| 4 | **Tablo kaynak notu** satırları kapsamıyordu | Kendi GEO sayfamız %5 çıktı, sebebi arandı | Tablo kuralı eklendi |
+| 1 | **Dates were counted as claims** — `28` and `2026` were being extracted from `Updated On: July 28, 2026` | data-mania's 79% looked suspicious, so the examples were read | 275 → 261 claims |
+| 2 | **Several numbers in one block** made the same code count repeatedly | Repeated texts were noticed | Block-level reporting added |
+| 3 | **Page titles** were counted as claims (`19 Best AI Tools`) | A hand check of 40 claims | 15% frame defect |
+| 4 | **Table source notes** did not cover their rows | Our own GEO page came out at 5%; the reason was looked for | Table rule added |
 
 ## v1.0 → v1.1
 
-| # | Bulunan kusur | Nasıl bulundu | Etki |
+| # | Defect found | How it was found | Effect |
 |---|---|---|---|
-| 5 | **"Kaynak adı var, link yok" sıfır sayılıyordu** — llmrefs.com kaynağını adıyla veriyordu (Vercel, Brandlight) ama %0 görünüyordu | 5 sıfır sayfası elle okundu | Üçüncü kademe eklendi |
-| 6 | **Şablon/örnek cümleler** iddia sayılıyordu — obapr'ın *"✔ PR ajansları $5.000-$50.000 alır"* okura verdiği KALIP | Aynı okuma | Şablon filtresi |
-| 7 | **Küçük örneklemde yüzde** anlamsızdı — thehoth 3 iddiada "%33" | Aynı okuma | 10 iddia eşiği |
-| 8 | **Parantezli akademik atıf görülmüyordu** — `(Ahrefs, 2025)`, `(Gartner, 2024)`. nav43 %8 görünüyordu, gerçekte iddialarının %44'ünde kaynak belli | nav43 elle okundu | Adlı kademe 30 → 64 |
+| 5 | **"Source named, no link" was counted as zero** — llmrefs.com named its sources (Vercel, Brandlight) but showed as 0% | The 5 zero-scoring pages were read by hand | A third tier added |
+| 6 | **Template and example sentences** were counted as claims — obapr's *"✔ PR agencies charge $5,000-$50,000"* is a TEMPLATE offered to the reader | The same reading | Template filter |
+| 7 | **A percentage on a small sample** was meaningless — thehoth showed "33%" on 3 claims | The same reading | A 10-claim threshold |
+| 8 | **Parenthetical academic citations were invisible** — `(Ahrefs, 2025)`, `(Gartner, 2024)`. nav43 showed 8%; in reality the source is identified for 44% of its claims | nav43 read by hand | Named tier 30 → 64 |
 
-## v1.1 → v1.2 — DOĞRULAMA KÜMESİ
+## v1.1 → v1.2 — THE VALIDATION SET
 
-Burada yöntem değişti: tahmin yerine **ölçülmüş geçerlilik.**
+Here the method changed: **measured validity** instead of guesswork.
 
-92 iddialık katmanlı örneklem çıkarıldı, **46 linkli iddia elle kodlandı**
-(insan hükmü: *"bloktaki link GERÇEKTEN bu rakamı kaynaklıyor mu"*).
+A stratified sample of 92 claims was drawn and **46 linked claims were coded by
+hand** (the human judgement being: *"does the link in this block ACTUALLY source
+this number"*).
 
-**v1.1'in ölçülen hatası: %38** (39 kodlanabilir iddiada 15 yanlış).
-Ayrıca 46'nın 7'si (%15) iddia bile değildi — kart listelerindeki tarihler,
-`arXiv:2311.09735` gibi belge kimlikleri.
+**v1.1's measured error: 38%** (15 wrong out of 39 codable claims). On top of that,
+7 of the 46 (15%) were not claims at all — dates in card lists, document
+identifiers such as `arXiv:2311.09735`.
 
-Denenen kurallar ve doğrulama kümesine karşı uyumları:
+The rules tried, and how each agreed with the validation set:
 
-| Kural | Uyum | Yanlış pozitif |
+| Rule | Agreement | False positives |
 |---|---|---|
-| v1.1 — "blokta link varsa yeter" | %62 | 15 |
-| + kendi sitesine link sayılmasın | **%54** ↓ | — |
-| + çıplak ana sayfa sayılmasın | %67 | — |
-| + çıpa metni kuralı | %77 | 1 |
-| **+ fiyat sayfası istisnası** | **%82** | **2** |
-| + eşik gevşetilmiş hâli | %82 | 6 ❌ reddedildi |
+| v1.1 — "a link in the block is enough" | 62% | 15 |
+| + do not count a link to the site's own pages | **54%** ↓ | — |
+| + do not count a bare home page | 67% | — |
+| + anchor-text rule | 77% | 1 |
+| **+ pricing-page exception** | **82%** | **2** |
+| + a loosened threshold | 82% | 6 ❌ rejected |
 
-**Seçilen: %82 uyum, 2 yanlış pozitif.** Aynı uyumu veren daha gevşek ayar
-reddedildi — adıyla skor yayınlanan bir çalışmada *"kaynağı var"* deyip yanılmak,
-kaçırmaktan çok daha zararlıdır.
+**Chosen: 82% agreement, 2 false positives.** A looser setting giving the same
+agreement was rejected — in a study that publishes scores under company names,
+saying *"it has a source"* and being wrong is far more damaging than missing one.
 
-### Sezgimin yanıldığı yer
+### Where my intuition was wrong
 
-*"Kendi sitesine verilen link kaynak sayılmaz"* diye bir kural ekledim; mantıklı
-görünüyordu. Doğrulama kümesi uyumu **%77'den %54'e düşürdü** ve kural atıldı.
-Kendi çalışmasına ya da kendi fiyat sayfasına link vermek meşru kaynaktır.
-
----
-
-## Kalan sınırlar (v1.2'de KAPATILMADI)
-
-1. **%18 uyumsuzluk sürüyor** — 2 yanlış pozitif, 5 kaçırılan. Bunlar insan
-   hükmü gerektiriyor.
-2. **Kural bir yazım tarzını ödüllendiriyor.** Çıpa metninin iddiayı içermesi
-   iyi uygulamadır, ama bizim linklerimiz 30 Ağustos'ta tam o tarzda yazıldı;
-   rakipler marka adına çıpalıyor. **Bu asimetri raporda belirtilecektir.**
-3. Doğrulama kümesi **tek kodlayıcı** tarafından kodlandı (kör çift kodlama yok).
-4. Örneklem 46 linkli iddia — daha fazla kodlama uyum tahminini daraltır.
+I added a rule saying *"a link to the site's own pages does not count as a
+source"*; it looked sensible. The validation set dropped agreement **from 77% to
+54%** and the rule was thrown out. Linking to your own study or your own pricing
+page is a legitimate source.
 
 ---
 
-## v1.3 — 30 Ağustos, isim katmanı düzeltmesi
+## Remaining limits (NOT closed in v1.2)
 
-### Nasıl bulundu
+1. **18% disagreement persists** — 2 false positives, 5 missed. These require human judgement.
+2. **The rule rewards one writing style.** Putting the claim in the anchor text is good practice, but our own links were written in exactly that style on 30 August; competitors anchor on brand names. **This asymmetry will be stated in the report.**
+3. The validation set was coded by a **single coder** (no blind double coding).
+4. The sample is 46 linked claims — more coding would narrow the agreement estimate.
 
-10 maddelik bir alt küme, aracın çıktısı görülmeden elle kodlandı (kodlar önce
-`kor-kod-CLAUDE-1-10.json`'a mühürlendi, sha256 ile). Araçla uyum **7/10**.
+---
 
-Üç ıskanın **üçü de aynı yöndeydi**: kaynağını adıyla veren blokları
-"kaynaksız" sayıyordu.
+## v1.3 — 30 August, the named-tier correction
 
-| # | Sayfa | Kaçan ifade | Neden |
+### How it was found
+
+A subset of 10 items was coded by hand without seeing the instrument's output (the
+codes were sealed first into `kor-kod-CLAUDE-1-10.json`, with a sha256). Agreement
+with the instrument: **7/10**.
+
+All three misses ran **in the same direction**: blocks that named their source were
+being counted as unsourced.
+
+| # | Page | Phrase missed | Why |
 |---|---|---|---|
-| 1 | nav43.com | `(Joshua Blyskal/Profound, 100,000 prompts analyzed, 2025)` | parantezli desen `(İsim, YYYY)` bekliyordu; isimle yıl arasına metin girince kırılıyor |
-| 3 | llmpulse.ai | `Indig's data showed` | iyelik + rapor fiili kalıbı yoktu |
-| 9 | ayzeo.com | `Princeton-led GEO study` | yalnızca `study by X` vardı, `X-led study` yoktu |
+| 1 | nav43.com | `(Joshua Blyskal/Profound, 100,000 prompts analyzed, 2025)` | the parenthetical pattern expected `(Name, YYYY)` and broke when text appeared between the name and the year |
+| 3 | llmpulse.ai | `Indig's data showed` | there was no possessive-plus-reporting-verb pattern |
+| 9 | ayzeo.com | `Princeton-led GEO study` | only `study by X` existed, not `X-led study` |
 
-### Neden ciddi
+### Why this is serious
 
-Hata tek yönlü: **rakipleri olduğundan kaynaksız gösteriyordu.** Sayfaları adıyla
-yayınlayacağımız bir çalışmada bu, düzeltilemez bir yanlış beyandır.
+The error was one-way: **it made competitors look less sourced than they are.** In a
+study that publishes pages under their names, that is a misrepresentation that
+cannot be undone.
 
-### Aşırı uyum (overfitting) kontrolü
+### Overfitting check
 
-Desenler bu 10 maddeye bakılarak yazıldığı için sınav kendi sorularıyla çalışmak
-olurdu. Bu yüzden yeni desenler **korpusun tamamına** (2.258 linksiz blok)
-uygulandı ve yeni yakalananların hepsi elle okundu.
+Because the patterns were written by looking at those 10 items, testing on them
+would be marking my own exam. So the new patterns were applied to **the whole
+corpus** (2,258 unlinked blocks) and every new catch was read by hand.
 
-- İlk deneme: 20 yeni yakalama → **8'i yanlış alarm**
-  (`One study analyzed…` = isimsiz; `AI audit`/`site audit` = ürün özelliği adı;
-  `Once the report loads` = cümle başı gürültüsü)
-- Desen sıkılaştırıldı: cümle başındaki büyük harf sayılmaz; `audit`/`report`
-  baş isim olmaktan çıkarıldı (bu nişte ürün adı oluyorlar)
-- İkinci deneme: **11 yeni yakalama, 11'i de gerçek** (elle okundu, 0 yanlış alarm)
+- First attempt: 20 new catches → **8 were false alarms**
+  (`One study analyzed…` = unnamed; `AI audit` / `site audit` = a product feature name;
+  `Once the report loads` = sentence-start noise)
+- The pattern was tightened: a capital letter at the start of a sentence does not count; `audit` and `report` were removed as head nouns (in this niche they are product names)
+- Second attempt: **11 new catches, all 11 genuine** (read by hand, 0 false alarms)
 
-### Etki
+### Effect
 
-- Rakiplerde "adı var, linki yok" iddia: **69 → 85** (+%23)
-- `nav43.com` %8 → **A %8 / A+B %48** · `llmpulse.ai` %15 → **%46** ·
-  `xseek.io` %4 → **%42**
-- **Link katmanı (A) hiç değişmedi.** Bu düzeltme yalnızca isim katmanına
-  dokunur; v1.2'nin elle ölçülmüş **%82** link-katmanı geçerliliği aynen geçerli.
+- Competitor claims where a source is "named but not linked": **69 → 85** (+23%)
+- `nav43.com` 8% → **A 8% / A+B 48%** · `llmpulse.ai` 15% → **46%** · `xseek.io` 4% → **42%**
+- **The link tier (A) did not change at all.** This correction touches only the named tier; v1.2's hand-measured **82%** link-tier validity stands unchanged.
 
-### Rapora giren zorunlu sonuç
+### The consequence the report must carry
 
-Tek rakam yayınlanmayacak. Her sayfa **iki kademeli** verilecek:
-**A (link var)** ve **A+B (kaynak hiç değilse adıyla anılmış)**. Yalnızca A
-yayınlamak, kaynağını adıyla veren sayfaları kaynaksız göstermek olurdu.
+No single number will be published. Every page is given in **two tiers**:
+**A (a link exists)** and **A+B (the source is at least named)**. Publishing A alone
+would show pages that name their sources as sourcing nothing.
 
-### v1.3'te de kapatılmayan sınır
+### A limit v1.3 did not close either
 
-Blok düzeyinde tek etiket veriliyor. `ayzeo.com`'un 935 karakterlik bloğunda
-%40 rakamı Princeton çalışmasına, byline alıntısı Google dokümanına ait —
-iki ayrı kaynak, tek etiket. Blok başına birden çok atıf ayrıştırılmıyor.
+One label is given per block. In `ayzeo.com`'s 935-character block, the 40% figure
+belongs to the Princeton study and the byline quote to a Google document — two
+different sources, one label. Multiple citations within a block are not separated.
 
 ---
 
-## v1.4 — 30 Ağustos, doğrulama 30 maddeye çıkarıldı
+## v1.4 — 30 August, validation raised to 30 items
 
-Örneklem 10'dan 30'a çıkarıldı (kodlar `kor-kod-CLAUDE-1-30.json`'da mühürlü).
-v1.3 bu kümede **%73** verdi. İki kanıtlı hata bulundu:
+The sample went from 10 to 30 (codes sealed in `kor-kod-CLAUDE-1-30.json`). v1.3
+scored **73%** on this set. Two demonstrable errors were found:
 
-1. `according to` deseni **küçük harfliydi** — `According to BrightEdge` kaçıyordu.
-   Bu hata v1.2'den beri vardı.
-2. `predicts` / `forecasts` fiilleri yoktu — `Gartner predicts`, `Gartner forecasts`
-   kaçıyordu.
+1. The `according to` pattern was **lower-case only** — `According to BrightEdge` was slipping through. This error had been present since v1.2.
+2. The verbs `predicts` and `forecasts` were absent — `Gartner predicts`, `Gartner forecasts` were slipping through.
 
-**Uyum %73 → %83.**
+**Agreement 73% → 83%.**
 
-### Denenip geri alınanlar
+### Tried and rolled back
 
-Sırf sayıyı yükseltmek için eklenip korpusta yanlış alarm ürettiği görülen ve
-**geri çekilen** desenler:
+Patterns added purely to raise the number, seen to produce false alarms across the
+corpus, and **withdrawn**:
 
-| Denenen | Neden geri alındı |
+| Tried | Why it was rolled back |
 |---|---|
-| `shows / notes / states / finds` | `It shows the top 20 competitors`, `Page Analytics shows`, `This shows Warby Parker` — hepsi kaynak sanıldı |
-| Büyük harfli alan adı | Araç karşılaştırma yazılarında her ürün adına ateşledi (`Frase, Profound, Otterly.ai…` listesi) |
-| `X's own \w+` | Tablo hücrelerinde ateşledi (`Tied to Google's own retrieval`) |
+| `shows / notes / states / finds` | `It shows the top 20 competitors`, `Page Analytics shows`, `This shows Warby Parker` — all read as sources |
+| A capitalised domain name | In tool-comparison articles it fired on every product name (`Frase, Profound, Otterly.ai…` lists) |
+| `X's own \w+` | It fired inside table cells (`Tied to Google's own retrieval`) |
 
-Her deneme 2.347 linksiz bloğa uygulanıp yeni yakalamalar elle okundu.
+Each attempt was applied to 2,347 unlinked blocks and the new catches read by hand.
 
-### Kapatılamayan sınır → yayın kararı
+### The limit that could not be closed → the publication decision
 
-Kalan 5 ayrışmanın 4'ü **tek bir sınıf**: fiyat iddiasında satıcının kendi adı
-(`Profound covers one engine at $99 and three at $399`, `Frase plans start at
-$39/month`). Beşincisi makale içi bir karakter (`James's fastest method`) —
-okuyucunun dışarıdan bulamayacağı bir ad.
+4 of the 5 remaining disagreements belong to **a single class**: a vendor's own
+name inside a price claim (`Profound covers one engine at $99 and three at $399`,
+`Frase plans start at $39/month`). The fifth is a character inside an article
+(`James's fastest method`) — a name the reader could not look up.
 
-Bu yüzden **B kademesi rapora yüzde olarak GİRMEYECEK.** Her sayfa için yalnızca:
+For that reason **tier B will NOT enter the report as a percentage.** For each page,
+only:
 
-- **A (link var)** → yüzde yayınlanır, elle ölçülmüş **%82** geçerlilikle
-- **B (adı var, link yok)** → yalnızca *var / yok* işareti + **elle doğrulanmış
-  1-2 örnek** (ör. nav43 için `(Ahrefs, December 2025)`)
+- **A (a link exists)** → published as a percentage, with hand-measured **82%** validity
+- **B (named, not linked)** → a present/absent marker plus **1-2 hand-verified examples** (for nav43, `(Ahrefs, December 2025)`)
 
-Gerekçe: ölçemediğimiz bir sayıyı yayınlamak, adını verdiğimiz bir siteye
-haksızlık etme riski taşır. `nav43.com` tek rakamla %8 görünüyor; oysa
-iddialarının önemli kısmında kaynağı adıyla anıyor — sadece linklemiyor.
-
----
-
-## v1.5 — 30 Ağustos, ANA ölçümde bulunan hata (en ciddisi)
-
-Bu revizyon isim katmanında değil, **yayınlanacak ana rakamda** bir hata düzeltir.
-
-### Nasıl bulundu
-
-Adı verilecek sekiz sayfanın "linkli" sayılan **her** iddiası tek tek okundu.
-Aracın kaynak saydığı linklerin bir kısmı kaynak değildi:
-
-| Sayfa | Araç | Gerçek |
-|---|---|---|
-| `visiblie.com` | 3 linkli iddia | **üçü de "Start Free Trial" düğmesi** — `14-day trial` / `500+ companies` sayıları `app.visiblie.com/signup` linkine eşlenmişti |
-| `nav43.com` | 5 | **ikisi "Read Post" kartı** — yazı altındaki ilgili-yazı kutuları |
-| `data-mania.com` | 9 | biri **savvycal randevu linki** |
-| `useomnia.com` | 7 | biri `/demo` düğmesi |
-
-Kök sebep: v1.2'nin **(F) fiyat kuralı** `/signup` yolunu da fiyat sayfası
-sayıyordu; bir deneme süresi rakamı ile kayıt düğmesi eşleşiyordu.
-
-### Eklenen iki kural
-
-- **(G)** `/signup`, `/demo`, `/trial`, `/book`, `/contact`, `calendly`, `savvycal`
-  gibi **çağrı ve randevu linkleri kaynak sayılmaz.** (F) kuralı yalnızca
-  `/pricing` ve `/plans` ile sınırlandı.
-- **(H)** Çıpası `Read Post` / `Read more` / `Learn more` olan bloklar
-  **navigasyondur**, iddia değildir.
-
-### Etki
-
-| Sayfa | v1.4 | v1.5 |
-|---|---|---|
-| `visiblie.com` | %1 | **%0** |
-| `nav43.com` | %8 | **%5** |
-| `useomnia.com` | %41 | **%35** |
-| `data-mania.com` | %5 | %5 |
-| **bizim 4 sayfa** | — | **değişmedi (0 link düştü)** |
-
-### Bu asimetri rapora yazılacaktır
-
-Kural herkese aynı uygulanır; bizim sayfalarımızdan hiçbir link düşmez, çünkü
-kaynak olarak çağrı düğmesi kullanmıyoruz. Ama kural **rakip sayfalar okunurken
-bulundu**. Rapor bunu açıkça söyleyecek ve okuyucu kendi kontrol edebilsin diye
-elenen link örnekleri (`app.visiblie.com/signup` → "Start Free Trial →")
-verilecektir.
-
-### Ders
-
-İlk dört revizyon isim katmanını kovaladı; asıl hata **ana rakamdaydı** ve
-ancak sayfalar tek tek elle okunduğunda görüldü. Regex'i regex ile doğrulamak
-hatayı bulmuyor.
+The reason: publishing a number we cannot measure risks doing an injustice to a site
+we have named. `nav43.com` shows as 8% on a single figure; in fact it names its
+source for a substantial share of its claims, it simply does not link them.
 
 ---
 
-## v1.6 — 31 Ağustos, geniş çerçevede bulunan hata
+## v1.5 — 30 August, an error found in the MAIN measurement (the most serious)
 
-v2 çerçevesi (38 sayfa) elle okunurken çıktı.
+This revision corrects an error not in the named tier but in **the headline number
+that would be published**.
 
-### Bulgu
+### How it was found
 
-| Sayfa | Araç | Elle okununca |
+Every claim counted as "linked" on the 8 pages that would be named was read one
+at a time. Some of what the instrument counted as sources were not sources:
+
+| Page | Instrument | Reality |
 |---|---|---|
-| `hubspot.com` | %36 (4 linkli iddia) | **dördü de kendi ürün sayfasına** (`hubspot.com/products/aeo`) |
-| `digitalapplied.com` | 1 linkli | kendi **sözlük** sayfasına — ilgili içerik linki, kaynak değil |
+| `visiblie.com` | 3 linked claims | **all three were "Start Free Trial" buttons** — the `14-day trial` and `500+ companies` figures had been mapped to the `app.visiblie.com/signup` link |
+| `nav43.com` | 5 | **two were "Read Post" cards** — the related-article boxes beneath the article |
+| `data-mania.com` | 9 | one was a **savvycal booking link** |
+| `useomnia.com` | 7 | one was a `/demo` button |
 
-Buna karşılık meşru sayılanlar — **kendi yayınlanmış çalışmasına** link vermek:
-`aisearch.similarweb.com` → `similarweb.com/corp/reports/…` (kendi araştırma raporu),
-`tryprofound.com` → `/customers/…` (kendi vaka çalışması). Bunlar okuyucuyu
-rakamın çıktığı belgeye götürüyor; ürün sayfası götürmüyor.
+Root cause: v1.2's **(F) pricing rule** treated the `/signup` path as a pricing page
+too, so a trial-period figure matched a sign-up button.
 
-### Kural (I)
+### Two rules added
 
-Yayıncının **KENDİ** ürün / özellik / çözüm / sözlük / platform sayfasına giden
-link kaynak sayılmaz.
+- **(G)** Call-to-action and booking links such as `/signup`, `/demo`, `/trial`, `/book`, `/contact`, `calendly`, `savvycal` **do not count as sources.** Rule (F) was narrowed to `/pricing` and `/plans` only.
+- **(H)** Blocks anchored on `Read Post` / `Read more` / `Learn more` are **navigation**, not claims.
 
-### İlk deneme YANLIŞTI — düzeltildi
+### Effect
 
-Kural önce bütün linklere uygulandı ve `blog.google/products/search/…`
-adreslerini eledi. Bunlar Google'ın **blog yazıları**, ürün sayfası değil —
-yolunda `/products/` geçiyor diye eleniyorlardı. Kural **yalnız iç linklere**
-(aynı alan adı ya da göreli yol) daraltıldı.
-
-### Etki
-
-| Sayfa | v1.5 | v1.6 |
+| Page | v1.4 | v1.5 |
 |---|---|---|
-| `hubspot.com` | %36 | **%0** |
-| `frase.io` | %42 | %41 |
-| `purposelaunch.com` | %10 | %10 *(dış link, geri geldi)* |
-| **rakip medyan** | **%36** | **%23** |
+| `visiblie.com` | 1% | **0%** |
+| `nav43.com` | 8% | **5%** |
+| `useomnia.com` | 41% | **35%** |
+| `data-mania.com` | 5% | 5% |
+| **our own 4 pages** | — | **unchanged (0 links removed)** |
 
-## v1.8 — 1 Eylül 2026, paketleme onarımı (ÖLÇÜM MANTIĞI DEĞİŞMEDİ)
+### This asymmetry will be written into the report
 
-31 Ağustos'ta dosya ve klasör adları Türkçe'den İngilizce'ye çevrildi, ama kod
-güncellenmedi. Sonuç: **yayınlanan kod yayınlanan veriyi okuyamıyordu.** Kaynağa
-ulaşılabilirliği ölçen bir çalışmada, çalışmanın kendisi çalıştırılamıyordu.
+The rule is applied identically to everyone; not one link is removed from our pages,
+because we do not use call-to-action buttons as sources. But the rule **was found
+while reading competitors' pages**. The report will say so plainly, and will give
+examples of the removed links (`app.visiblie.com/signup` → "Start Free Trial →") so
+a reader can check for themselves.
 
-Bu revizyonda **hiçbir ölçüm kuralına dokunulmadı.** Kanıt: onarımdan sonra
-`measure.py` yeniden çalıştırıldı ve `data/measurement-by-block.json`'ın 25
-satırının 25'i, beş alanın hepsinde birebir aynı çıktı.
+### The lesson
 
-### Onarılanlar
+The first four revisions chased the named tier; the real error was **in the headline
+number**, and it only became visible when the pages were read one at a time.
+Validating a regex with a regex does not find the error.
 
-1. **Yollar.** Bütün betikler `code/` klasörüne göreliydi; artık paketin kökünü
-   buluyorlar. Anlık görüntüler `SNAPSHOTS` ortam değişkeniyle gösteriliyor
-   (varsayılan `snapshots/`), çünkü telif nedeniyle yayınlanmıyorlar.
-2. **`retrieval-log.csv` gerçek bir CSV.** `measure.py` ona `json.load()`
-   uyguluyordu, `fetch.py` ise üzerine JSON yazıyordu. İkisi de düzeltildi;
-   `fetch.py` artık yayınlanan dosyayla aynı sütunları yazıyor ve çekilemeyen
-   sayfaları satır olarak bırakıyor (`status = failed_http_<kod>`).
-3. **`sampling-frame.json` anahtarı.** `fetch.py` `sorgular` arıyordu, dosyada
-   `queries` yazıyor.
-4. **Çıktı anahtarları.** `measure.py` Türkçe anahtar yazıyordu; artık
-   yayınlanan dosyanın İngilizce anahtarlarını üretiyor.
-5. **`seed_query` kırpması.** Kodda 28 karakterlik bir kısaltma vardı. Yayınlanan
-   dosyada tam sorgular yazılı, yani kırpma oraya hiç yansımamıştı — ama kod
-   çalıştırılsaydı yansıyacaktı, çünkü yayınlanan dosyayı üreten sürüm bu
-   kısaltmayı taşımıyordu. Kısaltma tamamen kaldırıldı.
-6. **Import yan etkisi.** `measure.py` modül düzeyinde ölçümü çalıştırıp
-   `data/measurement-by-block.json`'ın üzerine yazıyordu; `blind-sample.py` onu
-   import ediyor. Onarımdan ÖNCE bu tehlike gerçekleşemiyordu, çünkü kod zaten
-   yol hatasından çöküyordu (madde 1) — ama yollar düzelir düzelmez aktif hale
-   geldi. Ölçüm artık `if __name__ == "__main__"` koruması altında.
-7. **`blind-sample.py` veri siliyordu.** Yayınlanan `blind-sample-120.json`
-   TAMAMLANMIŞ sayfadır (120 insan kodu + aracın hükmü). Betik ise BOŞ sayfa
-   üretir ve aynı yola yazıyordu. Aynı şekilde bu da onarımdan önce çökme
-   nedeniyle gerçekleşemiyordu; onarım sırasında bir kez gerçekleşti ve 120
-   insan kodu silindi, yedekten birebir geri alındı. Betik artık çıktısını
-   `SNAPSHOTS` klasörüne yazıyor.
-9. **`blind-sample.py` dosya adı çıkarımı.** Yolları mutlaklaştırırken
-   `alan = f[3:-5]` satırı `os.path.basename` almadan kaldı; blok kimlikleri
-   tam dosya yolu olarak üretilmeye başladı ve `alan` bozulduğu için
-   kendi-alan-adı kuralı yanlış çalıştı — tek bir blokta (`hubspot.com#85`)
-   aracın hükmü değişiyordu ve κ 0,852 yerine 0,835 çıkıyordu. Bu hata
-   onarım sırasında ÜRETİLDİ, aynı gün yapılan bağımsız denetimde yakalandı ve
-   düzeltildi. Düzeltmeden sonra betik yayınlanan örneklemi birebir yeniden
-   üretiyor: aynı 120 kimlik, aynı metinler, aynı hükümler, matris (37,1,7,75),
-   κ = 0,8522, %95 GA 0,753–0,951.
-8. **`dump-blocks.py`** `os`'u import etmiyordu ve argümansız çağrılınca
-   traceback veriyordu; artık kullanım satırı yazdırıyor.
+---
 
-### Çekim penceresi — küçük ama bildirilmesi gereken fark
+## v1.6 — 31 August, an error found in the wider frame
 
-Yayınlanan `retrieval_window` değeri `fetch.py`'nin kendi başlangıç/bitiş
-saatinden geliyordu ve son sayfanın indirme süresini de içeriyordu: 85,4 sn.
-`retrieval-log.csv`'deki satır zaman damgalarından türetilen pencere 83,6 sn.
-Tek kaynak artık CSV, çünkü yayınlanan tek şey o. Paketin tamamı bu değere
-hizalandı: makale, README, CITATION.cff, `notes/final-results.md` ve
-`data/measurement-per-number.json` artık 20:38:51–20:40:15 ve "84 saniye"
-diyor. `measurement-per-number.json` bu paketteki tek elle düzeltilen veri
-alanıdır; onu üreten bir betik yayınlanmıyor.
+It came out while reading the v2 frame (38 pages) by hand.
 
-### Onarımın sağladığı: bağımsız sayaç iddiası ilk kez doğrulandı
+### The finding
 
-Kod çalışır hale gelince `independent-counter.py` ilk kez v1.7 verisine karşı
-çalıştırılabildi. Makale ve README'nin **"25 sayfanın 17'si birebir tuttu, 8
-fark"** iddiası **doğrulandı** — ama yalnız doğru tabanda karşılaştırılınca.
-
-Bağımsız sayaçta fiyat ayrımı yok: fiyat bloklarını da toplam iddiaya katıyor.
-Karşılaştırma bu yüzden aletin fiyat DAHİL sayılarıyla yapılmalı — ve **hem
-toplam iddia hem kaynaklı sayısı** birlikte kıyaslanmalı. Yalnız toplamlara
-bakılırsa 19/25 çıkar; yayınlanan 17/25 ve adı geçen 8 sayfa ancak iki sayı
-birlikte kıyaslanınca üretilir:
-
-| karşılaştırma tabanı | birebir tutan | fark |
+| Page | Instrument | On reading by hand |
 |---|---|---|
-| fiyat dahil (sayacın saydığı gibi) | **17 / 25** | **8** — yayınlanan iddia |
-| fiyat ayrı (aletin saydığı gibi) | 11 / 25 | 14 |
+| `hubspot.com` | 36% (4 linked claims) | **all four went to its own product page** (`hubspot.com/products/aeo`) |
+| `digitalapplied.com` | 1 linked | to its own **glossary** page — a related-content link, not a source |
 
-İlk denemede ikinci satırı hesaplayıp iddianın yeniden üretilemediğini
-sandım; hata bendeydi, iddiada değil. **Ders:** makale "17 of 25" derken hangi
-tabanda karşılaştırıldığını yazmıyor. Yazmalı — yoksa doğrulamaya çalışan
-okuyucu da aynı yanlış tabanı seçip iddiayı çürütülmüş sanır.
+Against that, links counted as legitimate — to a publisher's **own published study**:
+`aisearch.similarweb.com` → `similarweb.com/corp/reports/…` (its own research report),
+`tryprofound.com` → `/customers/…` (its own case study). These take the reader to the
+document the number came from; a product page does not.
 
-Fiyat dahil tabanda kalan 8 fark: ahrefs.com, aisearch.similarweb.com,
-digitalapplied.com, frase.io, llmrefs.com, orchly.ai, seocrawl.ai, writer.com.
-README bunları iki nedene bağlıyor (bir uygulamada olan tablo-kredi kuralı ve
-ondalık yakalama boşluğu); sayıları yukarıdaki tabloyla tutuyor.
+### Rule (I)
+
+A link to the publisher's **OWN** product, feature, solution, glossary or platform
+page does not count as a source.
+
+### The first attempt WAS WRONG — and was corrected
+
+The rule was first applied to every link and removed `blog.google/products/search/…`
+addresses. Those are Google's **blog posts**, not product pages — they were being
+removed because `/products/` appeared in the path. The rule was narrowed to
+**internal links only** (same domain or a relative path).
+
+### Effect
+
+| Page | v1.5 | v1.6 |
+|---|---|---|
+| `hubspot.com` | 36% | **0%** |
+| `frase.io` | 42% | 41% |
+| `purposelaunch.com` | 10% | 10% *(an outbound link, restored)* |
+| **competitor median** | **36%** | **23%** |
+
+## v1.8 — 1 September 2026, packaging repair (NO MEASUREMENT LOGIC CHANGED)
+
+On 31 August the file and folder names were translated from Turkish to English, but
+the code was not updated. The result: **the published code could not read the
+published data.** In a study measuring whether sources can be reached, the study
+itself could not be run.
+
+**No measurement rule was touched in this revision.** The evidence: after the repair
+`measure.py` was re-run and all 25 of the 25 rows of `data/measurement-by-block.json` came out
+identical, field for field, across all five fields.
+
+### What was repaired
+
+1. **Paths.** Every script was relative to the `code/` folder; they now find the package root. Snapshots are pointed to with the `SNAPSHOTS` environment variable (default `snapshots/`), because copyright prevents publishing them.
+2. **`retrieval-log.csv` is a real CSV.** `measure.py` was calling `json.load()` on it while `fetch.py` was writing JSON over it. Both were fixed; `fetch.py` now writes the same columns as the published file and leaves failed pages as rows (`status = failed_http_<code>`).
+3. **The `sampling-frame.json` key.** `fetch.py` looked for `sorgular`; the file says `queries`.
+4. **Output keys.** `measure.py` wrote Turkish keys; it now produces the English keys of the published file.
+5. **The `seed_query` truncation.** The code carried a 28-character abbreviation. The published file holds the full queries, so the truncation never reached it — but it would have if the code had been run, because the version that produced the published file did not carry the abbreviation. It was removed entirely.
+6. **An import side effect.** `measure.py` ran the measurement at module level and overwrote `data/measurement-by-block.json`; `blind-sample.py` imports it. BEFORE the repair this danger could not materialise, because the code was already crashing on the path error (item 1) — but it became live the moment the paths were fixed. The measurement is now behind an `if __name__ == "__main__"` guard.
+7. **`blind-sample.py` was deleting data.** The published `blind-sample-120.json` is the COMPLETED sheet (120 human codes plus the instrument's verdict). The script produces an EMPTY sheet and was writing to the same path. This too could not happen before the repair because of the crash; during the repair it happened once and 120 human codes were deleted, then restored exactly from backup. The script now writes its output to the `SNAPSHOTS` folder.
+8. **`blind-sample.py` filename derivation.** While the paths were being made absolute, the line `alan = f[3:-5]` was left without `os.path.basename`; block identifiers started to be produced as full file paths, and because `alan` was corrupted the own-domain rule ran incorrectly — on a single block (`hubspot.com#85`) the instrument's verdict changed, and kappa came out at 0.835 instead of 0.852. This error was PRODUCED during the repair, caught in the independent audit run the same day, and corrected. After the fix the script reproduces the published sample exactly: the same 120 identifiers, the same texts, the same verdicts, the matrix (37,1,7,75), kappa = 0.8522, 95% CI 0.753–0.951.
+9. **`dump-blocks.py`** was not importing `os` and gave a traceback when called without arguments; it now prints a usage line.
+
+### The retrieval window — a small difference that must be reported
+
+The published `retrieval_window` value came from `fetch.py`'s own start and end
+times and included the download time of the last page: 85.4 seconds. The window
+derived from the row timestamps in `retrieval-log.csv` is 83.6 seconds. The CSV is
+now the single source, because it is the only thing published. The whole package was
+aligned to that value: the article, README, CITATION.cff, `notes/final-results.md`
+and `data/measurement-per-number.json` now say 20:38:51–20:40:15 and "84 seconds".
+`measurement-per-number.json` is the only hand-corrected data field in this package;
+no script that produces it is published.
+
+### What the repair made possible: the independent-counter claim verified for the first time
+
+Once the code ran, `independent-counter.py` could be run against the v1.7 data for
+the first time. The article's and README's claim that **"17 of 25 pages matched
+exactly, 8 differ"** was **confirmed** — but only when compared on the right basis.
+
+The independent counter draws no price distinction: it folds price blocks into the
+total claim count. The comparison therefore has to be made against the instrument's
+price-inclusive figures — and **both the total claims and the sourced count** have
+to be compared together. Looking at totals alone gives 19/25; the published 17/25
+and the eight pages named are produced only when the two numbers are compared
+together:
+
+| basis of comparison | matching exactly | differing |
+|---|---|---|
+| price included (as the counter counts) | **17 / 25** | **8** — the published claim |
+| price separate (as the instrument counts) | 11 / 25 | 14 |
+
+On the first attempt I computed the second row and concluded the claim could not be
+reproduced; the error was mine, not the claim's. **The lesson:** the article says
+"17 of 25" without saying which basis the comparison used. It should — otherwise a
+reader trying to verify it picks the same wrong basis and believes the claim
+refuted.
+
+The 8 that differ on the price-inclusive basis: ahrefs.com,
+aisearch.similarweb.com, digitalapplied.com, frase.io, llmrefs.com, orchly.ai,
+seocrawl.ai, writer.com. The README attributes them to two causes (a table-credit
+rule in one implementation and a gap in decimal capture); its numbers agree with the
+table above.

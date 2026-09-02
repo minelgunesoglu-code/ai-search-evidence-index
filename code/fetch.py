@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""v2 ÇEKİM — altı sorgunun organik sonuçları, TEK zaman damgasıyla.
+"""v2 RETRIEVAL: the organic results of six queries, under ONE timestamp.
 
-Çerçeve: data/sampling-frame.json (30.08.2026, google.com, hl=en&gl=us).
-Yayın platformları ve sponsorlu sonuçlar SERP çıkarımında zaten elenmişti.
+Frame: data/sampling-frame.json (30.08.2026, google.com, hl=en&gl=us).
+Publishing platforms and sponsored results were already removed when the SERPs were extracted.
 
-Çekilemeyen (403, ölü, boş) LİSTEDEN DÜŞER ve düştüğü raporlanır — sessizce atlanmaz.
-Dosyalar v2-<alan>[-N].html olarak yazılır; tur 3/4/5 dosyalarına DOKUNULMAZ.
+Anything that cannot be fetched (403, dead, empty) DROPS OUT and the drop is reported; it is never skipped silently.
+Files are written as v2-<domain>[-N].html; the round 3/4/5 files are NOT touched.
 """
 import subprocess, os, csv, json, datetime, time, collections
 import urllib.parse as up
 
 D = os.path.dirname(os.path.abspath(__file__))          # code/
-KOK = os.path.dirname(D)                                # paketin kökü
+KOK = os.path.dirname(D)                                # the package root
 ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
 os.makedirs(ANLIK, exist_ok=True)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
@@ -47,8 +47,8 @@ for ad, u, q in hedef:
     print(f"  ok     {ad:26} http 200 · {len(govde):>8} bayt")
     time.sleep(0.6)
 son = datetime.datetime.now(datetime.timezone.utc)
-# Çıktı gerçek bir CSV. Çekilemeyen sayfalar SATIR OLARAK kalır (sessizce
-# düşmez); sorgu ve zaman sütunları boş, status = failed_http_<kod>.
+# The output is a real CSV. Pages that could not be fetched stay AS ROWS (they
+# do not vanish); query and time columns empty, status = failed_http_<code>.
 with open(os.path.join(KOK, "data/retrieval-log.csv"), "w", encoding="utf-8", newline="") as fh:
     w = csv.writer(fh)
     w.writerow(["page_id", "url", "seed_query", "retrieved_utc", "characters", "status"])

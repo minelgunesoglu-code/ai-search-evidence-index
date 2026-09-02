@@ -2,11 +2,11 @@
 """Kor kodlama sayfasi: her iddia blogunu metni ve linkleriyle doker.
 Aracin hukmu AYRI dosyaya yazilir; kodlayan onu gormez."""
 import io, re, os, json, html, glob, random, importlib.util, sys
-# --- yol düzeni (paketteki bütün betiklerde aynı) ------------------------
+# --- path layout (identical in every script in this package) --------------
 _D   = os.path.dirname(os.path.abspath(__file__))     # code/
-KOK  = os.path.dirname(_D)                            # paketin kökü
-# Anlık görüntüler pakette yayınlanmıyor; türetilmiş çalışma dosyaları da
-# oraya yazılır ki yayınlanan veriyle karışmasın.
+KOK  = os.path.dirname(_D)                            # the package root
+# Snapshots are not published in the package; derived working files are
+# written there as well, so they cannot be mistaken for published data.
 ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
 
 
