@@ -10,7 +10,7 @@
 | **Pages** | 38 sampled · 32 retrieved · 13 in the published table |
 | **Headline** | Across the 13 pages, a median of **33%** of blocks containing a numeric claim carry a link to the source. The spread runs from **0% to 62%**. |
 | **Reliability** | Cohen's κ = 0.85, 95% CI [0.75–0.95], on 120 blocks coded blind against the instrument |
-| **Licence** | CC BY 4.0; see `LICENSE` for what it does and does not cover |
+| **Licence** | CC BY 4.0 (`LICENSE`); see `LICENCE-NOTES.md` for what it does and does not cover |
 
 
 Data, code and coding materials for a measurement of whether a reader can reach

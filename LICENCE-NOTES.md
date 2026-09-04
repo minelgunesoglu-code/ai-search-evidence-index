@@ -1,0 +1,40 @@
+# Licence notes
+
+The licence itself is in [`LICENSE`](LICENSE): Creative Commons Attribution 4.0
+International (CC BY 4.0). This file holds the two things a bare licence text
+cannot say, and it is the file to read before reusing anything here.
+
+  Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+  Summary:         https://creativecommons.org/licenses/by/4.0/
+
+## What is covered
+
+The material produced by the authors in this repository, meaning the measurement
+data, the coding sheets, the instrument and the supporting documents.
+
+You may share and adapt it, including commercially, provided you give appropriate
+credit, link to the licence, and indicate whether changes were made.
+
+Suggested attribution:
+
+    Gunesoglu, M. (2026). The AI Search Evidence Index: source determinability
+    of numeric claims on AI-visibility web pages. Is My Brand in AI.
+    https://ismybrandinai.com/do-ai-visibility-guides-link-their-sources
+
+## What this licence does NOT cover
+
+Short quoted excerpts from the measured pages appear in the coding sheets
+(`coding/`) where they are needed to show why a block received the code it did.
+Those excerpts remain the property of their original publishers and are
+reproduced here for the purpose of criticism, review and research. They are not
+licensed under CC BY 4.0 by the authors, who cannot license what they do not own.
+Excerpts are capped at 200 characters in the three coding sheets and at 700 in
+the reliability sample, and total about 38,000 characters across all measured
+pages, which for most pages is between 1% and 5% of the text.
+
+Raw HTML snapshots of the measured pages are not redistributed. The repository
+carries the SHA-256 hash of each snapshot instead, so that document identity can
+be verified without republishing third-party content.
+
+If you are a publisher of a measured page and want an excerpt removed, write to
+info@ismybrandinai.com and it will be removed.
