@@ -11,54 +11,54 @@ Run:  SNAPSHOTS=<dir> python3 code/bibliography-scan.py
 import re, io, os, glob, json, csv, sys, importlib.util
 spec=importlib.util.spec_from_file_location("ins","code/measure.py")
 ins=importlib.util.module_from_spec(spec); spec.loader.exec_module(ins)
-ANLIK=os.environ.get("SNAPSHOTS")
+SNAPS=os.environ.get("SNAPSHOTS")
 
-BASLIK = re.compile(r'^\s*(sources?|references?|bibliography|citations?|works cited|'
-                    r'further reading|sources? (?:&|and) references?|cited (?:works|sources))\s*:?\s*$', re.I)
+HEADING = re.compile(r'^\s*(sources?|references?|bibliography|citations?|works cited|'
+                     r'further reading|sources? (?:&|and) references?|cited (?:works|sources))\s*:?\s*$', re.I)
 
-def alan_adi(u):
+def host_of(u):
     m=re.match(r'https?://([^/]+)', u or '')
     return m.group(1).replace('www.','').lower() if m else ''
 
-puanlanan={r['page_id']:r for r in csv.DictReader(open('data/results.csv'))}
+scored={r['page_id']:r for r in csv.DictReader(open('data/results.csv'))}
 log={r['page_id']:r for r in csv.DictReader(open('data/retrieval-log.csv'))}
-sonuc=[]
-for yol in sorted(glob.glob(os.path.join(ANLIK,'v2-*.html'))):
-    ad=os.path.basename(yol)[3:-5]
-    if ad not in log: continue
-    h=io.open(yol,encoding='utf-8',errors='ignore').read()
-    bl=ins.bloklar(h)
-    if not bl: continue
-    kendi=alan_adi(log[ad]['url'])
-    # son %35'lik dilimde kaynak basligi ara
-    esik=int(len(bl)*0.65)
-    bulundu=None
-    for i,(tur,txt,ham) in enumerate(bl):
-        if i<esik: continue
-        if BASLIK.match(txt.strip()) or (tur.startswith('h') and BASLIK.match(txt.strip())):
-            bulundu=i; break
-    if bulundu is None:
-        sonuc.append({"page_id":ad,"bibliography":False}); continue
-    # basliktan sonraki bloklardaki linkler
-    ic=dis=0; ornek=[]
-    for tur,txt,ham in bl[bulundu+1:]:
-        for m in re.finditer(r'<a[^>]*href="([^"]+)"', ham):
+result=[]
+for path in sorted(glob.glob(os.path.join(SNAPS,'v2-*.html'))):
+    name=os.path.basename(path)[3:-5]
+    if name not in log: continue
+    h=io.open(path,encoding='utf-8',errors='ignore').read()
+    bls=ins.blocks(h)
+    if not bls: continue
+    own=host_of(log[name]['url'])
+    # look for a sources heading in the last 35% of the page
+    cutoff=int(len(bls)*0.65)
+    found=None
+    for i,(kind,txt,raw) in enumerate(bls):
+        if i<cutoff: continue
+        if HEADING.match(txt.strip()) or (kind.startswith('h') and HEADING.match(txt.strip())):
+            found=i; break
+    if found is None:
+        result.append({"page_id":name,"bibliography":False}); continue
+    # links in the blocks that follow the heading
+    internal=external=0; examples=[]
+    for kind,txt,raw in bls[found+1:]:
+        for m in re.finditer(r'<a[^>]*href="([^"]+)"', raw):
             u=m.group(1)
-            if not u.startswith('http'): 
-                ic+=1; continue
-            if alan_adi(u)==kendi: ic+=1
+            if not u.startswith('http'):
+                internal+=1; continue
+            if host_of(u)==own: internal+=1
             else:
-                dis+=1
-                if len(ornek)<3: ornek.append(u[:70])
-    sonuc.append({"page_id":ad,"bibliography":True,"heading":bl[bulundu][1].strip()[:40],
-                  "external_links":dis,"own_links":ic,"examples":ornek})
+                external+=1
+                if len(examples)<3: examples.append(u[:70])
+    result.append({"page_id":name,"bibliography":True,"heading":bls[found][1].strip()[:40],
+                   "external_links":external,"own_links":internal,"examples":examples})
 
-print(f"{'sayfa':<26}{'puanli':>7}  kunye  dis-link")
-for r in sorted(sonuc,key=lambda x:(not x['bibliography'],x['page_id'])):
-    p=f"%{float(puanlanan[r['page_id']]['percent_sourced']):.0f}" if r['page_id'] in puanlanan else "  —"
+print(f"{'page':<26}{'scored':>7}  biblio  ext-links")
+for r in sorted(result,key=lambda x:(not x['bibliography'],x['page_id'])):
+    p=f"{float(scored[r['page_id']]['percent_sourced']):.0f}%" if r['page_id'] in scored else "  —"
     if r['bibliography']:
-        print(f"  {r['page_id']:<24}{p:>7}   VAR   {r['external_links']:>3} dis · {r['own_links']} ic   [{r['heading']}]")
+        print(f"  {r['page_id']:<24}{p:>7}   YES   {r['external_links']:>3} ext · {r['own_links']} own   [{r['heading']}]")
         for u in r['examples']: print(f"      {u}")
     else:
-        print(f"  {r['page_id']:<24}{p:>7}   yok")
-json.dump(sonuc, io.open('/tmp/kunye-sonuc.json','w',encoding='utf-8'), ensure_ascii=False, indent=1)
+        print(f"  {r['page_id']:<24}{p:>7}   no")
+json.dump(result, io.open('/tmp/bibliography-scan.json','w',encoding='utf-8'), ensure_ascii=False, indent=1)

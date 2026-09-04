@@ -88,12 +88,12 @@ that table's rows. Applied IDENTICALLY to every site.
 import re, io, os, csv, json, glob, html, collections, statistics as st
 
 D = os.path.dirname(os.path.abspath(__file__))          # code/
-KOK = os.path.dirname(D)                                # the package root
+ROOT = os.path.dirname(D)                                # the package root
 # Snapshots (v2-*.html) are NOT published in the package, for copyright reasons.
 # Take your own with code/fetch.py, or point at a folder with SNAPSHOTS.
-ANLIK = os.environ.get("SNAPSHOTS", os.path.join(KOK, "snapshots"))
+SNAPS = os.environ.get("SNAPSHOTS", os.path.join(ROOT, "snapshots"))
 
-SAYI = re.compile(
+NUMBER = re.compile(
     r'(?<![\w.])(?:'
     r'\$\s?\d[\d,]*(?:\.\d+)?(?:\s?[kKmMbB]\b)?'
     r'|\d+(?:\.\d+)?\s?%'
@@ -102,37 +102,39 @@ SAYI = re.compile(
     r'|\b\d+\s+(?:engines?|sources?|prompts?|questions?|tools?|models?|domains?|'
     r'platforms?|queries|sites?|brands?|weeks?|months?|days?|runs?|citations?)\b'
     r')', re.I)
-AY = r'(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*'
-TARIH = re.compile(r'(last (updated|reviewed)|published|posted|updated on)\b', re.I)
-# (B) sablon/ornek blogu: okura verilen kalip cumle
-# (J) v1.7 (31.08) — IDDIA OLMAYAN bloklar. 30 maddelik elle kodlamada 7'si
-# gercek iddia degildi (%23) ve 7'nin 6'si LINKSIZ — payda sisiyor, pay sismiyor:
-# butun yuzdeler oldugundan DUSUK cikiyordu (havuz %37 -> %46 duzeltilince).
-# Yalniz MEKANIK olarak kesin olanlar elenir; "tavsiye cumlesi" gibi hukum
-# gerektirenler ELENMEZ, kalan hata orani raporda yazilir.
-BIYOGRAFI = re.compile(
+MONTH = r'(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*'
+DATE_LINE = re.compile(r'(last (updated|reviewed)|published|posted|updated on)\b', re.I)
+# (B) template/example block: a pattern sentence handed to the reader.
+# (J) v1.7 (31.08) — blocks that are NOT claims. In a 30-item hand coding, 7 were not
+# real claims (23%), and 6 of those 7 carried NO LINK: the denominator swells while the
+# numerator does not, so every percentage came out LOW (the pool moved from 37% to 46%
+# once corrected). Only cases that are MECHANICALLY certain are dropped; ones needing
+# judgement, such as an advice sentence, are KEPT, and the remaining error rate is
+# stated in the report.
+BIO = re.compile(
     r"\b\d+\+?\s*(?:years?|yrs?)\s+(?:of\s+)?(?:experience|expertise|in\b)"
     r"|\bbrings\s+\d+\+?\s*years?"
     r"|\bI(?:'|\u2019)ve\s+spent\s+the\s+last\s+\d+"
     r"|\bis\s+the\s+(?:Founder|Co-Founder|CEO|CTO|Head)\s+of\b"
     r"|\bFortune\s+\d00\b", re.I)
-ORNEKORAN = re.compile(r"\b\d+\s+out\s+of\s+\d+\b", re.I)
-TARIH2 = re.compile(r"\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(?:19|20)\d\d\s*$", re.I)
-SABLON = re.compile(r'^\s*[✔✓•\-]?\s*["“]|based on our \d{4} survey|\[(category|your brand|competitor|'
+N_OUT_OF_N = re.compile(r"\b\d+\s+out\s+of\s+\d+\b", re.I)
+TRAILING_DATE = re.compile(r"\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(?:19|20)\d\d\s*$", re.I)
+TEMPLATE = re.compile(r'^\s*[✔✓•\-]?\s*["“]|based on our \d{4} survey|\[(category|your brand|competitor|'
                     r'use case|task|job-to-be-done|the problem)', re.I)
-# (A) kaynak ADI var ama link yok
-# v1.4 (30.08) — 30 maddelik elle kodlamada v1.3 %73 verdi. Iki KANITLI hata:
-#   1) 'according to' desende kucuk harfliydi; 'According to BrightEdge' KACIYORDU
-#   2) 'predicts/forecasts' fiilleri yoktu; 'Gartner predicts' KACIYORDU
-# Denenip GERI ALINANLAR (korpusta yanlis alarm urettiler, 2.347 blokta olculdu):
-#   - shows/notes/states/finds  -> 'It shows the top 20 competitors', 'Page Analytics
-#     shows', 'This shows Warby Parker' hepsi kaynak sanildi
-#   - buyuk harfli alan adi     -> arac karsilastirma yazilarinda her urun adina atesledi
-#   - "X's own \w+"             -> tablo hucrelerinde atesledi
-# Kalan uyum: 25/30 = %83. Kapatilamayanlarin 4'u ayni sinif: fiyat iddiasinda
-# saticinin kendi adi (Profound $399, Frase $39). Bu yuzden B kademesi RAPORDA
-# YUZDE OLARAK YAYINLANMAZ; yalnizca isaret + elle dogrulanmis ornek verilir.
-ADI = re.compile(
+# (A) a source is NAMED but not linked.
+# v1.4 (30.08) — against a 30-item hand coding, v1.3 scored 73%. Two PROVEN misses:
+#   1) 'according to' was lower-case in the pattern, so 'According to BrightEdge' ESCAPED
+#   2) the verbs 'predicts/forecasts' were absent, so 'Gartner predicts' ESCAPED
+# TRIED AND REVERTED (they raised false alarms across the corpus, measured on 2,347 blocks):
+#   - shows/notes/states/finds -> 'It shows the top 20 competitors', 'Page Analytics
+#     shows', 'This shows Warby Parker' were all read as sources
+#   - a capitalised domain name -> in tool-comparison articles it fired on every product name
+#   - "X's own \w+"            -> it fired inside table cells
+# Remaining agreement: 25/30 = 83%. Four of the ones left open are the same class: a
+# price claim carrying the vendor's own name (Profound $399, Frase $39). That is why
+# tier B IS NOT PUBLISHED AS A PERCENTAGE; it is given as a signal plus hand-verified
+# examples only.
+SOURCE_NAMED = re.compile(
     r'\b[a-z0-9][a-z0-9-]{2,}\.(?:com|ai|org|io|net|co|dev)\b'
     r'|[Aa]ccording to\b|\bper\s+[A-Z]|[Cc]ited by\b'
     r'|\b[A-Z][A-Za-z]+(?:\s[A-Z][A-Za-z]+)?\s+(?:found|reports?|reported|says?|said|'
@@ -141,163 +143,164 @@ ADI = re.compile(
     r"|\b[A-Z][A-Za-z]+(?:'s|\u2019s)\s+(?:data|study|research|analysis|survey|report|audit|benchmark|figures?|numbers?)\b"
     r"|(?<=[a-z,;:] )[A-Z][A-Za-z]+(?:-(?:led|backed|funded|run))?\s+(?:[A-Z][A-Za-z]*\s)?(?:study|survey|benchmark|dataset)\b"
     r'|\b(?:study|research|survey|analysis|report|data|edition)\s+(?:of|by|from)\s+[A-Z]')
-FIYAT = re.compile(r'\$\s?\d')
+PRICE = re.compile(r'\$\s?\d')
 
-def bloklar(h):
+def blocks(h):
     h = re.sub(r'(?is)<(script|style|nav|header|footer|form|noscript)\b.*?</\1>', ' ', h)
     out = []
     for m in re.finditer(r'(?is)<(p|li|tr|h[1-6]|blockquote)\b[^>]*>(.*?)</\1>', h):
-        tur, ham = m.group(1).lower(), m.group(2)
-        txt = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', ham))).strip()
+        kind, raw = m.group(1).lower(), m.group(2)
+        txt = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', raw))).strip()
         if len(txt) >= 12:
-            out.append((tur, txt, ham))
+            out.append((kind, txt, raw))
     return out
 
-DUR = set("the a an of in on for to and or is are was were with by from that this it its as at".split())
-ANA = re.compile(r'https?://[^/]+/?$')
-FIYATSAYFA = re.compile(r'/(pricing|plans)(?:/|$|\?)', re.I)
-# v1.5 (30.08) — CTA/randevu linkleri KAYNAK DEGILDIR. Elle kontrolde visiblie.com'un
-# uc 'linkli iddiasi'nin ucu de 'Start Free Trial' dugmesiydi ('14-day trial' sayisi
-# /signup linkine eslendi); data-mania'nin biri savvycal randevu linkiydi.
+STOP = set("the a an of in on for to and or is are was were with by from that this it its as at".split())
+BARE_HOST = re.compile(r'https?://[^/]+/?$')
+PRICING_PATH = re.compile(r'/(pricing|plans)(?:/|$|\?)', re.I)
+# v1.5 (30.08) — CTA and booking links ARE NOT SOURCES. In hand checking, all three
+# of visiblie.com's 'linked claims' were the 'Start Free Trial' button (the '14-day
+# trial' figure matched a /signup link); one of data-mania's was a savvycal booking link.
 CTA = re.compile(r'/(signup|sign-up|register|demo|book|booking|contact|start|trial|get-started|checkout|cart|app)(?:/|$|\?)|calendly\.com|savvycal\.com|cal\.com', re.I)
-# ILGILI-YAZI KARTI — 'Read Post' / 'Read more' cipali bloklar navigasyondur, iddia degil.
-# nav43.com'un uc 'linkli iddiasi'nin ucu de yazi altindaki ilgili-yazi kutusuydu.
-# (I) v1.6 (31.08) — URUN / SOZLUK sayfasi kaynak DEGILDIR.
-# Elle kontrolde hubspot.com'un dort "kaynakli" iddiasinin dordu de kendi urun
-# sayfasina (hubspot.com/products/aeo) gidiyordu; digitalapplied'in tek iddiasi
-# kendi sozluk sayfasina. Buna karsilik similarweb'in kendi ARASTIRMA raporuna
-# (similarweb.com/corp/reports/...) ve tryprofound'un kendi VAKA calismasina
-# (/customers/...) link vermesi mesrudur — yayinlanmis kaynaga goturuyor.
-URUN = re.compile(r'/(products?|product-tour|features?|solutions?|glossary|integrations?|platform|use-cases?)(?:/|$|\?)', re.I)
-KART = re.compile(r'^\s*(read (post|more|article)|learn more|view (post|all))\s*$', re.I)
-FIYATIDDIA = re.compile(r'[\$€£]\s?\d|\btrial\b|/mo\b|per month', re.I)
+# RELATED-POST CARD — blocks whose anchor reads 'Read Post' or 'Read more' are
+# navigation, not claims. All three of nav43.com's 'sourced claims' were the
+# related-post box under the article.
+# (I) v1.6 (31.08) — a PRODUCT or GLOSSARY page IS NOT a source.
+# In hand checking, all four of hubspot.com's "sourced" claims went to its own
+# product page (hubspot.com/products/aeo), and digitalapplied's single claim to its
+# own glossary. Linking to your own RESEARCH report (similarweb.com/corp/reports/...)
+# or your own CASE study (tryprofound /customers/...) is legitimate by contrast: it
+# leads to a published source.
+OWN_PRODUCT = re.compile(r'/(products?|product-tour|features?|solutions?|glossary|integrations?|platform|use-cases?)(?:/|$|\?)', re.I)
+CARD_ANCHOR = re.compile(r'^\s*(read (post|more|article)|learn more|view (post|all))\s*$', re.I)
+PRICE_CLAIM = re.compile(r'[\$€£]\s?\d|\btrial\b|/mo\b|per month', re.I)
 
-def kelime(s):
-    return {w for w in re.findall(r"[a-z]{3,}", (s or "").lower()) if w not in DUR}
+def words(s):
+    return {w for w in re.findall(r"[a-z]{3,}", (s or "").lower()) if w not in STOP}
 
-def linkli(ham, cumle="", ALAN=None):
-    """(D)(E)(F) — link BU rakami kaynakliyor mu? Bkz. v1.2 notu."""
-    cum = kelime(cumle)
-    for m in re.finditer(r'<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', ham, re.S | re.I):
+def sourced(raw, sentence="", domain=None):
+    """(D)(E)(F) — does this link source THIS figure? See the v1.2 note."""
+    sent_words = words(sentence)
+    for m in re.finditer(r'<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S | re.I):
         u = m.group(1)
         if not (u.startswith("http") or (u.startswith("/") and len(u) > 3)):
             continue
-        cip = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', m.group(2))).strip()
-        if CTA.search(u): continue                      # (G) v1.5 CTA/randevu = kaynak degil
-        if URUN.search(u) and (u.startswith('/') or (ALAN and ALAN in u)):
-            continue                                    # (I) v1.6 KENDI urun/sozluk sayfasi
-        if KART.match(cip): continue                    # (H) v1.5 ilgili-yazi karti
-        if FIYATSAYFA.search(u) and FIYATIDDIA.search(cumle):      # (F)
+        anchor = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', m.group(2))).strip()
+        if CTA.search(u): continue                      # (G) v1.5 CTA/booking is not a source
+        if OWN_PRODUCT.search(u) and (u.startswith('/') or (domain and domain in u)):
+            continue                                    # (I) v1.6 the site's OWN product/glossary page
+        if CARD_ANCHOR.match(anchor): continue                    # (H) v1.5 related-post card
+        if PRICING_PATH.search(u) and PRICE_CLAIM.search(sentence):      # (F)
             return True
-        if ANA.match(u):                                            # (E)
+        if BARE_HOST.match(u):                                            # (E)
             continue
-        say = re.findall(r'\d[\d,.]*', cumle)
-        if any(s and s in cip for s in say):                        # (D) cipa sayiyi iceriyor
+        numbers = re.findall(r'\d[\d,.]*', sentence)
+        if any(s and s in anchor for s in numbers):                        # (D) anchor carries the figure
             return True
-        if len(kelime(cip) & cum) >= 2:                             # (D) cipa cumleyle ortak
+        if len(words(anchor) & sent_words) >= 2:                             # (D) anchor shares words with the sentence
             return True
     return False
 
-def olc(h, ALAN=None):
-    bl = bloklar(h)
+def measure(h, domain=None):
+    bls = blocks(h)
     # table rule: give credit if a short linked paragraph sits next to the tr block
-    kredi = [False] * len(bl)
-    for i, (tur, txt, ham) in enumerate(bl):
-        if tur != "tr":
+    credit = [False] * len(bls)
+    for i, (kind, txt, raw) in enumerate(bls):
+        if kind != "tr":
             continue
         a = i
-        while a > 0 and bl[a-1][0] == "tr": a -= 1
+        while a > 0 and bls[a-1][0] == "tr": a -= 1
         b = i
-        while b < len(bl)-1 and bl[b+1][0] == "tr": b += 1
+        while b < len(bls)-1 and bls[b+1][0] == "tr": b += 1
         for j in (a-1, a-2, b+1, b+2):
-            if 0 <= j < len(bl) and bl[j][0] in ("p", "li") and linkli(bl[j][2], bl[j][1]) and len(bl[j][1]) < 400:
-                kredi[i] = True
+            if 0 <= j < len(bls) and bls[j][0] in ("p", "li") and sourced(bls[j][2], bls[j][1]) and len(bls[j][1]) < 400:
+                credit[i] = True
                 break
-    n = a_ = 0
+    n = sourced_n = 0
     fn = fa = 0
-    adli = 0                                   # (A) kaynak adi var, link yok
-    for i, (tur, txt, ham) in enumerate(bl):
-        if tur.startswith("h") or TARIH.search(txt) or len(txt) < 60:
+    named = 0                                   # (A) a source is named, with no link
+    for i, (kind, txt, raw) in enumerate(bls):
+        if kind.startswith("h") or DATE_LINE.search(txt) or len(txt) < 60:
             continue                                   # not a claim
-        if SABLON.search(txt):
-            continue                                   # (B) okura verilen kalip
-        if BIYOGRAFI.search(txt) or ORNEKORAN.search(txt) or TARIH2.search(txt.strip()):
-            continue                                   # (J) v1.7 iddia degil
-        t2 = re.sub(AY + r'\.?\s+\d{1,2},?\s+(?:19|20)\d\d', ' ', txt, flags=re.I)
-        t2 = re.sub(r'\d{1,2}\s+' + AY + r'\.?\s+(?:19|20)\d\d', ' ', t2, flags=re.I)
+        if TEMPLATE.search(txt):
+            continue                                   # (B) a pattern handed to the reader
+        if BIO.search(txt) or N_OUT_OF_N.search(txt) or TRAILING_DATE.search(txt.strip()):
+            continue                                   # (J) v1.7 not a claim
+        t2 = re.sub(MONTH + r'\.?\s+\d{1,2},?\s+(?:19|20)\d\d', ' ', txt, flags=re.I)
+        t2 = re.sub(r'\d{1,2}\s+' + MONTH + r'\.?\s+(?:19|20)\d\d', ' ', t2, flags=re.I)
         t2 = re.sub(r'\b(?:19|20)\d\d\b', ' ', t2)
-        ok = linkli(ham, txt, ALAN=ALAN) or kredi[i]
-        advar = bool(ADI.search(txt))
-        vs = set(SAYI.findall(t2))
-        if not vs: continue
-        if all(FIYAT.search(v) for v in vs):
+        ok = sourced(raw, txt, domain=domain) or credit[i]
+        has_name = bool(SOURCE_NAMED.search(txt))
+        found = set(NUMBER.findall(t2))
+        if not found: continue
+        if all(PRICE.search(v) for v in found):
             fn += 1; fa += ok
         else:
-            n += 1; a_ += ok
-            if not ok and advar: adli += 1          # (A)
-    return n, a_, fn, fa, adli
+            n += 1; sourced_n += ok
+            if not ok and has_name: named += 1          # (A)
+    return n, sourced_n, fn, fa, named
 
 # The measurement runs only when this file is executed DIRECTLY. blind-sample.py
 # imports this module for the rule definitions; importing it must NOT overwrite
 # the published data/measurement-by-block.json.
 if __name__ == "__main__":
-    with io.open(os.path.join(KOK, "data/retrieval-log.csv"), encoding="utf-8") as fh:
-        cek = [r for r in csv.DictReader(fh)]
-    alinan = [r for r in cek if r["status"] == "retrieved"]
-    kume = {r["page_id"]: r["seed_query"] for r in alinan}
+    with io.open(os.path.join(ROOT, "data/retrieval-log.csv"), encoding="utf-8") as fh:
+        log = [r for r in csv.DictReader(fh)]
+    retrieved = [r for r in log if r["status"] == "retrieved"]
+    queries = {r["page_id"]: r["seed_query"] for r in retrieved}
     # Retrieval window = from the FIRST fetch's timestamp to the LAST one's. This is
     # reproducible because its only source is the published retrieval-log.csv.
     # NOTE: the window in the first published file came from fetch.py's own start and
     # end times and included the download time of the last page (85.4 s); the one
     # derived here is 83.6 s. The article's "inside 86 seconds" holds for both.
     # Detail: notes/instrument-revisions.md v1.8.
-    zaman = sorted(r["retrieved_utc"] for r in alinan)
-    pencere = [zaman[0], zaman[-1]]
+    stamps = sorted(r["retrieved_utc"] for r in retrieved)
+    window = [stamps[0], stamps[-1]]
 
     rows = []
-    anlik = sorted(glob.glob(os.path.join(ANLIK, "v2-*.html")))
-    if not anlik:
-        raise SystemExit(f"No snapshots found: {ANLIK}\n"
+    snaps = sorted(glob.glob(os.path.join(SNAPS, "v2-*.html")))
+    if not snaps:
+        raise SystemExit(f"No snapshots found: {SNAPS}\n"
                          f"Fetch your own with code/fetch.py, or pass SNAPSHOTS=<folder>.")
-    for f in anlik:
-        ad = os.path.basename(f)[3:-5]
-        n, a, fn, fa, adli = olc(io.open(f, encoding="utf-8", errors="ignore").read(), ALAN=ad.split("-")[0])
+    for f in snaps:
+        name = os.path.basename(f)[3:-5]
+        n, a, fn, fa, named = measure(io.open(f, encoding="utf-8", errors="ignore").read(), domain=name.split("-")[0])
         if n + fn < 3:
-            print(f"  ATLANDI (3'ten az iddia): {ad}")
+            print(f"  SKIPPED (fewer than 3 claims): {name}")
             continue
-        rows.append({"page_id": ad, "seed_query": kume.get(ad, "?"),
+        rows.append({"page_id": name, "seed_query": queries.get(name, "?"),
                      "blocks_with_numeric_claim": n, "blocks_sourced": a,
-                     "blocks_source_named_not_linked": adli,
+                     "blocks_source_named_not_linked": named,
                      "price_claims": fn, "price_claims_sourced": fa})
 
     def pct(a, b): return 100*a/b if b else None
 
-    ESIK = 10   # (C) bu sayinin altinda YUZDE verilmez
+    MIN_CLAIMS = 10   # (C) below this count NO PERCENTAGE is given
     print(f"\n{'site':21} {'claims':>6} {'linked':>7} {'named':>6} {'reachable':>10}  note")
     for r in sorted(rows, key=lambda x: -(x["blocks_sourced"]/x["blocks_with_numeric_claim"] if x["blocks_with_numeric_claim"] else 0)):
         p = pct(r["blocks_sourced"], r["blocks_with_numeric_claim"])
-        az = r["blocks_with_numeric_claim"] < ESIK
-        gost = "small sample" if az else (f"{p:.0f}%" if p is not None else "-")
+        small = r["blocks_with_numeric_claim"] < MIN_CLAIMS
+        shown = "small sample" if small else (f"{p:.0f}%" if p is not None else "-")
         mark = "  <<<" if r["page_id"].startswith("BIZ") else ""
         print(f"  {r['page_id']:19} {r['blocks_with_numeric_claim']:6} {r['blocks_sourced']:7} {r['blocks_source_named_not_linked']:6} "
-              f"{gost:>9}{mark}")
+              f"{shown:>9}{mark}")
 
-    ge = [r for r in rows if r["blocks_with_numeric_claim"] >= ESIK]                 # yuzde verilebilir
-    rak = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in ge if not r["page_id"].startswith("BIZ")]
-    biz = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in ge if r["page_id"].startswith("BIZ")]
-    az  = [r["page_id"] for r in rows if r["blocks_with_numeric_claim"] < ESIK]
-    print(f"\n  (a percentage is given only for pages with {ESIK}+ claims)")
-    print(f"  COMPETITORS {len(rak)} pages · median {st.median(rak):.0f}% · "
-          f"zeros {sum(1 for v in rak if v == 0)} · under 10% {sum(1 for v in rak if v < 10)}")
-    print(f"  OURS  {len(biz)} pages" + (f" · median {st.median(biz):.0f}%" if biz else " (not in this frame)"))
-    print(f"  small-sample (under {ESIK}): {', '.join(az) if az else 'none'}")
-    adt = sum(r["blocks_source_named_not_linked"] for r in rows if not r["page_id"].startswith("BIZ"))
-    print(f"\n  linksiz ama KAYNAK ADI verilen iddia (rakiplerde): {adt}")
-    CIKTI = os.path.join(KOK, "data/measurement-by-block.json")
+    rated = [r for r in rows if r["blocks_with_numeric_claim"] >= MIN_CLAIMS]                 # eligible for a percentage
+    rivals = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in rated if not r["page_id"].startswith("BIZ")]
+    ours = [pct(r["blocks_sourced"], r["blocks_with_numeric_claim"]) for r in rated if r["page_id"].startswith("BIZ")]
+    small  = [r["page_id"] for r in rows if r["blocks_with_numeric_claim"] < MIN_CLAIMS]
+    print(f"\n  (a percentage is given only for pages with {MIN_CLAIMS}+ claims)")
+    print(f"  COMPETITORS {len(rivals)} pages · median {st.median(rivals):.0f}% · "
+          f"zeros {sum(1 for v in rivals if v == 0)} · under 10% {sum(1 for v in rivals if v < 10)}")
+    print(f"  OURS  {len(ours)} pages" + (f" · median {st.median(ours):.0f}%" if ours else " (not in this frame)"))
+    print(f"  small-sample (under {MIN_CLAIMS}): {', '.join(small) if small else 'none'}")
+    named_total = sum(r["blocks_source_named_not_linked"] for r in rows if not r["page_id"].startswith("BIZ"))
+    print(f"\n  claims with a source NAMED but not linked (competitors): {named_total}")
+    OUT = os.path.join(ROOT, "data/measurement-by-block.json")
     json.dump({"_about": ("Block-unit measurement (the primary unit). One row per page: "
                           "how many blocks carry a numeric claim, and how many of those "
                           "carry a link to the source. The instrument judges each link "
                           "from its address and anchor text; it never opens it."),
-               "retrieval_window": pencere, "rows": rows},
-              io.open(CIKTI, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+               "retrieval_window": window, "rows": rows},
+              io.open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("\n-> data/measurement-by-block.json")
