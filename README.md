@@ -6,6 +6,7 @@
 |---|---|
 | **Article** | https://ismybrandinai.com/do-ai-visibility-guides-link-their-sources |
 | **Repository** | https://github.com/minelgunesoglu-code/ai-search-evidence-index |
+| **Archive** | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22257563.svg)](https://doi.org/10.5281/zenodo.22257563) concept DOI, resolves to the latest version; v1.0.1 is [10.5281/zenodo.22300386](https://doi.org/10.5281/zenodo.22300386) |
 | **Retrieved** | 30 August 2026, 20:38:51–20:40:15 UTC, one 84-second window |
 | **Pages** | 38 sampled · 32 retrieved · 13 in the published table |
 | **Headline** | Across the 13 pages, a median of **33%** of blocks containing a numeric claim carry a link to the source. The spread runs from **0% to 62%**. |
